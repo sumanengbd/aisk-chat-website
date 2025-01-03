@@ -1,0 +1,717 @@
+/**********************************
+MEDIA QUERIES
+***********************************/
+@media only screen and (max-width: 1199px) {
+	h1, .h1 { font-size: 44px; line-height: 54px; }
+	h2, .h2 { font-size: 38px; line-height: 48px; }
+
+	/**********************************
+	HEADER STYLE
+	***********************************/
+
+	.header-gutter {
+		height: 120px;
+		min-height: 120px;
+	}
+
+	.header {
+
+		.navbar {
+			padding: 40px 0 31px;
+
+			.navbar-header {
+
+				.logo {
+
+					.navbar-brand {
+					    
+					    img {
+					    	max-width: 335px;
+					    }
+					}
+				}
+			}
+
+			.navbar-collapse {
+
+				.navbar-nav {
+					margin-left: -5px;
+					margin-right: -5px;
+
+					> li {
+						margin-left: 5px;
+						margin-right: 5px;
+
+						&.menu-btn {
+
+							> a {
+								padding: 13px 16px 11px;
+
+								[class*=icon-] {
+								    font-size: 15px;
+								    line-height: 15px;
+								    margin-left: 15px;
+								}
+							}
+
+							&.transparent {
+
+								> a {
+
+									[class*=icon-] {
+									    font-size: 11px;
+									    line-height: 11px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**********************************
+	HOME STYLE
+	***********************************/
+
+	.banner {
+		padding: 60px 0;
+
+		.entry-title {
+		    margin-bottom: 30px;
+
+		    .sub-title {
+		    	font-size: 18px;
+		   		line-height: 26px;
+		    }
+		}
+
+		.overaly {
+			width: 800px;
+			height: 310px;
+		}
+
+		.scrollDown {
+			font-size: 18px;
+		    margin-top: 60px;
+			line-height: 18px;
+		}
+	}
+
+	.aboutstartup {
+	    padding: 80px 0;
+	}
+
+	.team-member {
+	    padding: 80px 0;
+
+	    &__item {
+
+	    	.team-info-wrapper {
+	    		padding: 12px;
+				min-height: 370px;
+
+	    		.info {
+
+	    			.text {
+
+	    				.name {
+	    					font-size: 18px;
+	    				}
+	    			}
+	    		}
+	    	}
+	    }
+	}
+
+	.partner {
+	    padding: 80px 0;
+	}
+
+	/***********************************
+	FOOTER STYLES
+	***********************************/
+	.social-media {
+		margin-left: -2.5px;
+		margin-right: -2.5px;
+
+		li {
+			padding-left: 2.5px;
+			padding-right: 2.5px;
+
+			a {
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+}/* 1199 */
+
+@media only screen and (max-width: 991px) {
+	h1, .h1 { font-size: 40px; line-height: 50px; }
+	h2, .h2 { font-size: 36px; line-height: 46px; }
+	h3, .h3 { font-size: 32px; line-height: 42px; }
+	h4, .h4 { font-size: 30px; line-height: 40px; }
+
+	.container, .container-fluid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+	.btn {
+	    padding: 12.5px 18px 11.5px;
+
+	    [class*=icon-] {
+		    margin-left: 10px;
+		    vertical-align: -1px;
+		    font-size: 14px !important;
+		    line-height: 14px !important;
+
+		    &.icon-underscore {
+			    font-size: 10px !important;
+			    line-height: 10px !important;
+			}
+		}
+	}
+
+	/**********************************
+	HEADER STYLE
+	***********************************/
+
+	.header-gutter {
+		height: 105px;
+		min-height: 105px;
+	}
+
+	.header {
+
+		.navbar {
+			padding: 35px 0 25px;
+
+			.navbar-header {
+
+				.logo {
+
+					.navbar-brand {
+					    
+					    img {
+					    	max-width: 290px;
+					    }
+					}
+				}
+			}
+
+			.navbar-collapse {
+
+				.navbar-nav {
+
+					> li {
+
+						&.menu-btn {
+
+							> a {
+								font-size: 14px;
+								line-height: 22px;
+								border-radius: 6px;
+								padding: 11px 14px 9px;
+
+								[class*=icon-] {
+								    font-size: 13px;
+								    line-height: 13px;
+								    margin-left: 10px;
+								}
+							}
+
+							&.transparent {
+
+								> a {
+
+									[class*=icon-] {
+									    font-size: 9px;
+									    line-height: 9px;
+									}
+								}
+							}
+						}
+
+						&:not(.mobile-navbar-toggler) {
+							
+							&:nth-child(1) {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**********************************
+	HOME STYLE
+	***********************************/
+
+	.banner {
+		padding: 50px 0;
+
+		.entry-title {
+		    margin-bottom: 25px;
+		}
+
+		.overaly {
+		    top: 80px;
+	        width: 750px;
+	        height: 260px;
+	    }
+
+		.action-box {
+			padding: 25px;
+			min-height: 260px;
+
+			.text {
+
+				.description {
+					font-size: 16px;
+				    line-height: 24px;
+				}
+			}
+		}
+
+		.scrollDown {
+		    margin-top: 40px;
+		}
+	}
+
+	.action-box {
+		min-height: 260px;
+
+		.text {
+
+			.description {
+			    max-width: 100%;
+			}
+		}
+	}
+
+	.aboutstartup {
+	    padding: 60px 0;
+
+	    .entry-title {
+		    max-width: 100%;
+		}
+	}
+
+	.team-member {
+	    padding: 60px 0;
+
+	    .entry-title {
+	    	margin-bottom: 25px;
+
+	    	.description {
+	    		line-height: 25px;
+	    	}
+	    }
+	}
+
+	.partner {
+	    padding: 60px 0;
+
+	    .entry-title {
+		    margin-bottom: 25px;
+		}
+	}
+
+	.signup {
+	    padding: 60px 0;
+
+	    &__content {
+		    max-width: 100%;
+		}
+	}
+	/***********************************
+	FOOTER STYLES
+	***********************************/
+	.footer {
+	    padding: 60px 0;
+
+	    .content-wrapper {
+		    padding: 0;
+	        height: auto;
+		    margin-bottom: 30px;
+
+		    &__content {
+			    max-width: 100%;
+		        margin-bottom: 15px;
+
+		        .footer_logo {
+
+		        	img {
+		        		max-width: 255px;
+		        	}
+		        }
+
+		        .content__editor {
+				    margin-top: 15px;
+				}
+
+			    .copyright {
+				    margin-top: 15px;
+				}
+			}
+		}
+	}
+}/* 991 */
+
+@media only screen and (max-width: 767px) {
+	h1, .h1 { font-size: 36px; line-height: 46px; }
+	h2, .h2 { font-size: 32px; line-height: 44px; }
+	h3, .h3 { font-size: 28px; line-height: 38px; }
+	h4, .h4 { font-size: 24px; line-height: 32px; }
+	h5, .h5 { font-size: 20px; line-height: 28px; }
+	h6, .h6 { font-size: 18px; line-height: 26px; }
+
+	.btn {
+	    border-radius: 8px;
+	    padding: 11.5px 16px 10.5px;
+
+	    [class*=icon-] {
+		    margin-left: 8px;
+		}
+	}
+
+	/**********************************
+	HEADER STYLE
+	***********************************/
+
+	.header-gutter {
+		height: 90px;
+		min-height: 90px;
+	}
+
+	.header {
+
+		.navbar {
+			padding: 28px 0 23px;
+
+			.navbar-header {
+
+				.logo {
+
+					.navbar-brand {
+
+						img {
+					        max-width: 275px;
+					    }
+					}
+				}
+			}
+
+			.navbar-collapse {
+
+				.navbar-nav {
+
+					> li {
+
+						&:not(.mobile-navbar-toggler) {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.navbar-toggle {
+		width: 38px;
+		height: 38px;
+		padding: 9px;
+		border-radius: 4px;
+
+		.icon-bar {
+			height: 3px;
+
+			&:not(:last-child) {
+				margin-bottom: 3px;
+			}
+		}
+	}
+	/**********************************
+	HOME STYLE
+	***********************************/
+	.banner {
+		padding: 40px 0;
+
+		.entry-title {
+		    margin-bottom: 20px;
+
+		    .sub-title {
+		    	font-size: 16px;
+		   		margin-bottom: 0;
+		   		line-height: 24px;
+
+		   		.dots {
+				    width: 4px;
+				    height: 4px;
+				    margin: 0 7px;
+				}
+		    }
+		}
+
+		.overaly {
+		    top: 120px;
+	        width: 680px;
+	        height: 230px;
+	    }
+
+		.action-box {
+			padding: 20px;
+			min-height: 240px;
+			border-radius: 12px;
+
+			.text {
+				max-width: 100%;
+
+				.btn {
+					margin-top: 15px;
+				}
+			}
+		}
+
+		.scrollDown {
+		    margin-top: 30px;
+		}
+	}
+
+	.action-box {
+        min-height: 240px;
+    }
+
+	.aboutstartup {
+	    padding: 50px 0;
+	}
+
+	.team-member {
+	    padding: 50px 0;
+
+	    .entry-title {
+	    	margin-bottom: 20px;
+
+	    	.description {
+	    		line-height: 24px;
+	    	}
+	    }
+	}
+
+	.partner {
+	    padding: 50px 0;
+
+	    .entry-title {
+		    margin-bottom: 20px;
+		}
+	}
+
+	.signup {
+	    padding: 50px 0;
+
+	    &__content {
+		    margin-bottom: 20px;
+		}
+	}
+	/***********************************
+	FOOTER STYLES
+	***********************************/
+	.footer {
+	    padding: 50px 0;
+
+	    .content-wrapper {
+
+		    &__content {
+
+		        .footer_logo {
+
+		        	img {
+		        		max-width: 245px;
+		        	}
+		        }
+			}
+		}
+	}
+
+	/***********************************
+	DEFAULT STYLES
+	***********************************/
+	.default-page {
+		padding: 50px 0;
+	}
+
+}/* 767 */
+
+@media only screen and (max-width: 575px) {
+	h1, .h1 { font-size: 32px; line-height: 43px; }
+	h2, .h2 { font-size: 30px; line-height: 40px; }
+
+	.container, .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+	.btn {
+	    border-radius: 8px;
+	    padding: 11.5px 16px 10.5px;
+
+	    [class*=icon-] {
+		    margin-left: 8px;
+		}
+	}
+
+	/**********************************
+	HEADER STYLE
+	***********************************/
+	.header-gutter {
+		height: 85px;
+		min-height: 85px;
+	}
+
+	.header {
+
+		.navbar {
+			padding: 25px 0 21px;
+		}
+	}
+
+	/**********************************
+	HOME STYLE
+	***********************************/
+	.banner {
+		padding: 30px 0;
+
+		.action-box {
+			padding: 15px;
+			min-height: 220px;
+		}
+
+		.scrollDown {
+		    margin-top: 30px;
+		}
+	}
+
+	.action-box {
+        min-height: 220px;
+    }
+
+	.aboutstartup {
+	    padding: 40px 0;
+	}
+
+	.team-member {
+	    padding: 40px 0;
+	}
+
+	.partner {
+	    padding: 40px 0;
+
+	    .minus {
+	    	margin-bottom: -10px;
+	    }
+
+	   &__item {
+		    padding: 5px;
+		    min-height: inherit;
+		    margin-bottom: 10px;
+		    height: calc(100% - 10px);
+		}
+	}
+
+	.signup {
+	    padding: 40px 0;
+	}
+
+	/***********************************
+	FOOTER STYLES
+	***********************************/
+	.footer {
+	    padding: 40px 0;
+
+	    .row {
+
+            [class^=col] {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+	}
+
+	/***********************************
+	DEFAULT STYLES
+	***********************************/
+	.default-page {
+		padding: 40px 0;
+	}
+
+}/* 575 */
+
+@media only screen and (max-width: 480px) {
+	/**********************************
+	HEADER STYLE
+	***********************************/
+	.header-gutter {
+		height: 85px;
+		min-height: 85px;
+	}
+
+	.header {
+
+		.navbar {
+
+			.navbar-header {
+
+				.logo {
+
+					.navbar-brand {
+
+						img {
+					        max-width: 230px;
+					    }
+					}
+				}
+			}
+		}
+	}
+
+	/***********************************
+	HOME STYLES
+	***********************************/
+	.team-member {
+
+		&__item {
+
+			.team-info-wrapper {
+		        min-height: 520px;
+		    }
+		}
+
+		.row {
+
+            [class^=col] {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+	}
+
+}/* 480 */
+
+@media only screen and (max-width: 380px) {
+	/***********************************
+	HOME STYLES
+	***********************************/
+	.team-member {
+
+		&__item {
+
+			.team-info-wrapper {
+		        min-height: 420px;
+		    }
+		}
+	}
+}/* 380 */

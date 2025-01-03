@@ -1,0 +1,13 @@
+@import "basic";
+
+/***********************************
+BASIC TEMPLATE STYLES
+***********************************/
+.mce-content-body { 
+
+	&:first-child {
+		padding-top: 60px;
+	}
+
+	@import 'editor';
+}

@@ -1,0 +1,25 @@
+/*
+Theme Name: Augusta
+Author: GoingClear Interactive
+Author URI: https://www.goingclear.com/
+Version: 1.0.0
+Text Domain: augusta
+*/
+
+@import "bootstrap";
+
+/***********************************
+BASE STYLES
+***********************************/
+
+// FONTS 
+@import url("https://use.typekit.net/nba4wnl.css");
+
+// MIXIN
+@import 'mixin';
+
+// BASE
+@import 'base';
+
+// TEMPLATE
+@import "template";
