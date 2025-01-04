@@ -1528,6 +1528,246 @@ HOME STYLES
      object-fit: cover;
 }
 
+.pricing {
+  padding: 80px 0;
+}
+.pricing__top-text {
+  margin-bottom: 50px;
+}
+.pricing__top-text .categories {
+  gap: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 991px) {
+  .pricing__top-text .categories {
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .pricing__top-text .categories {
+    gap: 5px;
+  }
+}
+.pricing__top-text .categories li {
+  margin: 0;
+  padding: 0;
+}
+.pricing__top-text .categories li a {
+  padding: 3px;
+  color: #000000;
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  padding-right: 12px;
+  white-space: nowrap;
+  border-radius: 500px;
+  background: transparent;
+  border: 1px solid #f3f5f4;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.pricing__top-text .categories li a:has([class*=icon-]) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.pricing__top-text .categories li a [class*=icon-] {
+  width: 28px;
+  height: 28px;
+  color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  overflow: hidden;
+  margin-right: 8px;
+  line-height: 14px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f3f5f4;
+  border-radius: 500px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.pricing__top-text .categories li a:-moz-any-link:hover, .pricing__top-text .categories li a:-moz-any-link:focus {
+  color: #fff;
+  background: #000;
+}
+.pricing__top-text .categories li a:any-link:hover, .pricing__top-text .categories li a:any-link:focus {
+  color: #fff;
+  background: #000;
+}
+.pricing__top-text .btn_group a {
+  color: #000000;
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.pricing__top-text .btn_group a span {
+  overflow: hidden;
+  border-radius: 500px;
+  padding: 2px 5px 3px;
+  background: -webkit-gradient(linear, left top, right top, from(rgb(225, 249, 175)), to(rgb(195, 217, 241)));
+  background: linear-gradient(90deg, rgb(225, 249, 175) 0%, rgb(195, 217, 241) 100%);
+}
+.pricing__top-text .btn_group a [class*=icon-] {
+  font-size: 14px;
+  margin-left: 5px;
+  line-height: 14px;
+  display: inline-block;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.pricing__top-text .btn_group a:active [class*=icon-], .pricing__top-text .btn_group a:hover [class*=icon-], .pricing__top-text .btn_group a:focus [class*=icon-] {
+  color: #c3eeab;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.pricing .minus {
+  margin-bottom: -20px;
+}
+.pricing__plans {
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 36px;
+  padding-bottom: 70px;
+  height: calc(100% - 20px);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color-1)), to(var(--color-2)));
+  background: linear-gradient(var(--color-1) 0%, var(--color-2) 100%);
+}
+.pricing__plans--hadding {
+  width: 100%;
+}
+.pricing__plans--hadding [class*=icon-] {
+  color: #000000;
+  display: block;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.pricing__plans--hadding .description {
+  margin-top: 5px;
+}
+.pricing__plans--hadding .price {
+  margin-top: 10px;
+}
+.pricing__plans--hadding .price__title {
+  color: #000000;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+}
+.pricing__plans--hadding .price__title span {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  display: inline-block;
+}
+.pricing__plans:has(.pricing__plans--packages) .pricing__plans--hadding {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ededed;
+}
+.pricing__plans--packages-list {
+  margin: 0;
+  padding: 0;
+}
+.pricing__plans--packages-list li {
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+.pricing__plans--packages-list li:not(:last-child) {
+  margin-bottom: 20px;
+}
+.pricing__plans--packages-list li h6.title {
+  color: #000000;
+  font-size: 16px;
+  max-width: 240px;
+  text-align: left;
+  line-height: 22px;
+  font-family: "Rubik", sans-serif;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.pricing__plans--packages-list li h6.title:before {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  margin-right: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.pricing__plans--packages-list li span {
+  color: #000000;
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Rubik", sans-serif;
+}
+.pricing__plans .btn-arrow {
+  left: 50%;
+  width: 100px;
+  bottom: -50px;
+  color: #000000;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  line-height: 20px;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 500px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 15px solid #FFFFFF;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color-1)), to(var(--color-2)));
+  background: linear-gradient(var(--color-1) 0%, var(--color-2) 100%);
+}
+.pricing__plans .btn-arrow:active, .pricing__plans .btn-arrow:hover, .pricing__plans .btn-arrow:focus {
+  color: #FFFFFF;
+  background: #000000;
+  -webkit-transform: translateX(-50%) rotate(0deg);
+          transform: translateX(-50%) rotate(0deg);
+}
+
 /***********************************
 FOOTER STYLES
 ***********************************/

@@ -1143,6 +1143,241 @@ HOME STYLES
 	}
 }
 
+.pricing {
+	padding: 80px 0;
+
+	&__top-text {
+		margin-bottom: 50px;
+
+		.categories {
+			gap: 12px;
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 0;
+
+			@media only screen and (max-width: 991px) {
+				gap: 10px;
+			}
+
+			@media only screen and (max-width: 767px) {
+				gap: 5px;
+			}
+
+			li {
+				margin: 0;
+				padding: 0;
+
+				a {
+					padding: 3px;
+					color: $black;
+					display: block;
+					font-size: 16px;
+					line-height: 22px;
+					padding-right: 12px;
+					white-space: nowrap;
+					border-radius: 500px;
+					background: transparent;
+					border: 1px solid #f3f5f4;
+					@include transition(all 0.5s ease);
+
+					&:has([class*="icon-"]) {
+						display: flex;
+						align-items: center;
+					    flex-direction: row-reverse;
+					}
+
+					[class*="icon-"] {
+						width: 28px;
+						height: 28px;
+						color: $black;
+						display: flex;
+						font-size: 14px;
+						overflow: hidden;
+						margin-right: 8px;
+						line-height: 14px;
+						align-items: center;
+						background: #f3f5f4;
+						border-radius: 500px;
+						justify-content: center;
+					    @include transition(all 0.3s ease);
+					}
+
+					&:any-link {
+
+						&:hover, &:focus {
+							color: #fff;
+							background: #000;
+						}
+					}
+				}
+			}
+		}
+
+		.btn_group {
+
+			a {
+				color: $black;
+				display: block;
+				font-size: 16px;
+				line-height: 22px;
+				@include transition(all 0.3s ease);
+
+				span {
+					overflow: hidden;
+					border-radius: 500px;
+					padding: 2px 5px 3px;
+					background: linear-gradient(90deg, rgba(225,249,175,1) 0%, rgba(195,217,241,1) 100%);
+				}
+
+				[class*="icon-"] {
+				    font-size: 14px;
+				    margin-left: 5px;
+				    line-height: 14px;
+				    display: inline-block;
+					@include transform(rotate(-45deg));
+					@include transition(all 0.3s ease);
+				}
+
+				&:active, &:hover, &:focus {
+
+					[class*="icon-"] {
+						color: #c3eeab;
+						@include transform(rotate(0deg));
+					}
+				}
+			}
+		}
+	}
+
+	.minus {
+		margin-bottom: -20px;
+	}
+
+	&__plans {
+		width: 100%;
+		padding: 30px;
+		position: relative;
+		margin-bottom: 20px;
+		border-radius: 36px;
+		padding-bottom: 70px;
+		height: calc(100% - 20px);
+		background: linear-gradient(var(--color-1) 0%, var(--color-2) 100%);
+
+		&--hadding {
+			width: 100%;
+
+			[class*="icon-"] {
+				color: $black;
+				display: block;
+				font-size: 20px;
+				line-height: 20px;
+				margin-bottom: 10px;
+			}
+
+			.description {
+				margin-top: 5px;
+			}
+
+			.price {
+				margin-top: 10px;
+
+				&__title {
+					color: $black;
+					font-weight: 500;
+					font-family: $rubik;
+
+					span {
+						font-size: 18px;
+						font-weight: 400;
+						line-height: 26px;
+						display: inline-block;
+					}
+				}
+			}
+		}
+
+		&:has(.pricing__plans--packages) {
+
+			.pricing__plans--hadding {
+				margin-bottom: 25px;
+				padding-bottom: 25px;
+				border-bottom: 1px solid #ededed;
+			}
+		}
+
+		&--packages {
+
+			&-list {
+				margin: 0;
+				padding: 0;
+
+				li {
+					gap: 5px;
+					margin: 0;
+					padding: 0;
+
+					&:not(:last-child) {
+						margin-bottom: 20px;
+					}
+
+					h6.title {
+						color: $black;
+						font-size: 16px;
+						max-width: 240px;
+						text-align: left;
+						line-height: 22px;
+						font-family: $rubik;
+						display: inline-flex;
+
+						&:before {
+						    width: 16px;
+						    height: 16px;
+						    margin-top: 2px;
+						    margin-right: 5px;
+						    align-items: center;
+						    display: inline-flex;
+						    justify-content: flex-start;
+						}
+					}
+
+					span {
+						color: $black;
+						display: block;
+						font-size: 16px;
+						line-height: 22px;
+						font-family: $rubik;
+					}
+				}
+			}
+		}
+
+		.btn-arrow {
+			left: 50%;
+			width: 100px;
+			bottom: -50px;
+			color: $black;
+			height: 100px;
+			display: flex;
+			font-size: 20px;
+			line-height: 20px;
+			position: absolute;
+			align-items: center;
+			border-radius: 500px;
+			justify-content: center;
+			border: 15px solid $white;
+			@include transition(all 0.3s ease);
+			transform: translateX(-50%) rotate(-45deg);
+			background: linear-gradient(var(--color-1) 0%, var(--color-2) 100%);
+
+			&:active, &:hover, &:focus {
+				color: $white;
+				background: $black;
+				transform: translateX(-50%) rotate(0deg);
+			}
+		}
+	}
+}
+
 /***********************************
 FOOTER STYLES
 ***********************************/
