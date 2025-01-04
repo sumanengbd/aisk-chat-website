@@ -185,6 +185,54 @@
         window.addEventListener("scroll", animateBenefitItems);
     });
 
+    /*** Trusted Slider */
+    function initTrustedSlider() {
+        const animateSlide = ($slide) => {
+            ['.text', '.media'].forEach((selector, i) => {
+                const animation = i === 0 ? 'animate__fadeInUp' : 'animate__fadeInRight';
+                $slide.find(selector).addClass(`animate__animated ${animation}`);
+                setTimeout(() => $slide.find(selector).removeClass(`animate__animated ${animation}`), 1000);
+            });
+        };
+
+        $('.trusted-slider')
+            .on('init afterChange', (e, slick, currentSlide) => 
+                animateSlide($(slick.$slides[currentSlide || 0]))
+            )
+            .slick({
+                dots: true,
+                fade: true,
+                arrows: false,
+                infinite: true,
+                autoplay: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplaySpeed: 5000,
+                adaptiveHeight: true,
+                cssEase: 'linear',
+                customPaging: (slider, i) => `<button>${i + 1}</button>`,
+            });
+    }
+
+    initTrustedSlider();
+
+    /*** lastNobullet */
+    function lastNobullet() {
+        var lastElement = false;
+        $(".last_no_bullet li").each(function() {
+            if (lastElement && lastElement.offset().top != $(this).offset().top) {
+                $(lastElement).addClass("no_bullet");
+            } else {
+                $(lastElement).removeClass("no_bullet");
+            }
+            lastElement = $(this);
+        }).last().addClass("no_bullet");
+    };
+    lastNobullet();
+
+    $(window).resize(function(){
+        lastNobullet();
+    });
 
     /*** Image to SVG */
     $('img.svg').each(function(){
@@ -367,5 +415,12 @@
             direction: direction
         });
     });
+
+    /*** Enable Masonry */
+    var $grid = $('.masonry').masonry({
+        itemSelector: '.col',
+        columnWidth: '.col',
+        horizontalOrder: true,
+   });
 
 }(jQuery));
