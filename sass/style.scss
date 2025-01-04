@@ -873,6 +873,75 @@ HOME STYLES
 	}
 }
 
+.reviews {
+	padding: 80px 0;
+
+	.background {
+		width: 100%;
+		padding: 50px;
+		background: #f3f5f4;
+		border-radius: 36px;
+
+		.text {
+
+			.title {
+				line-height: 75px;
+				font-family: $rubik;
+
+				span {
+					overflow: hidden;
+					border-radius: 500px;
+					padding: 0px 10px 6px;
+					background: linear-gradient(90deg, rgba(225,249,175,1) 0%, rgba(195,217,241,1) 100%);
+				}
+			}
+
+			.description {
+				max-width: 415px;
+				margin-top: 10px;
+				font-family: $sans;
+			}
+
+			.icon_group {
+				gap: 10px;
+				margin: 0;
+				display: flex;
+				margin-top: 20px;
+
+				li {
+					margin: 0;
+					padding: 0;
+
+					a {
+						width: 48px;
+						height: 48px;
+						display: flex;
+						color: #000000;
+						font-size: 18px;
+						overflow: hidden;
+						line-height: 18px;
+						align-items: center;
+						border-radius: 500px;
+						justify-content: center;
+						background: linear-gradient(90deg, rgba(225,249,175,1) 0%, rgba(195,217,241,1) 100%);
+					}
+				}
+			}
+		}
+
+		.media {
+			width: 100%;
+		    margin-bottom: -90px;
+
+		    img {
+		    	width: 100%;
+		    	height: 100%;
+		    	object-fit: cover;
+		    }
+		}
+	}
+}
+
 .our-benefits {
 	padding: 80px 0;
 
@@ -1143,8 +1212,177 @@ HOME STYLES
 	}
 }
 
-.pricing {
+.trusted {
 	padding: 80px 0;
+
+	&__top-text {
+
+		.btn_group {
+
+			a {
+				color: $black;
+				display: block;
+				font-size: 16px;
+				line-height: 22px;
+				@include transition(all 0.3s ease);
+
+				span {
+					overflow: hidden;
+					border-radius: 500px;
+					padding: 2px 5px 3px;
+					background: linear-gradient(90deg, rgba(225,249,175,1) 0%, rgba(195,217,241,1) 100%);
+				}
+
+				[class*="icon-"] {
+				    font-size: 14px;
+				    margin-left: 5px;
+				    line-height: 14px;
+				    display: inline-block;
+					@include transform(rotate(-45deg));
+					@include transition(all 0.3s ease);
+				}
+
+				&:active, &:hover, &:focus {
+
+					[class*="icon-"] {
+						color: #c3eeab;
+						@include transform(rotate(0deg));
+					}
+				}
+			}
+		}
+	}
+
+	.categories {
+		gap: 12px;
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 0;
+
+		@media only screen and (max-width: 991px) {
+			gap: 10px;
+		}
+
+		@media only screen and (max-width: 767px) {
+			gap: 5px;
+		}
+
+		li {
+			margin: 0;
+			padding: 0;
+
+			a {
+				padding: 3px;
+				color: $black;
+				display: block;
+				font-size: 16px;
+				line-height: 22px;
+				padding-right: 12px;
+				white-space: nowrap;
+				border-radius: 500px;
+				background: transparent;
+				border: 1px solid #f3f5f4;
+				@include transition(all 0.5s ease);
+
+				&:has([class*="icon-"]) {
+					display: flex;
+					align-items: center;
+				    flex-direction: row-reverse;
+				}
+
+				[class*="icon-"] {
+					width: 28px;
+					height: 28px;
+					color: $black;
+					display: flex;
+					font-size: 14px;
+					overflow: hidden;
+					margin-right: 8px;
+					line-height: 14px;
+					align-items: center;
+					background: #f3f5f4;
+					border-radius: 500px;
+					justify-content: center;
+				    @include transition(all 0.3s ease);
+				}
+
+				&:any-link {
+
+					&:hover, &:focus {
+						color: #fff;
+						background: #000;
+					}
+				}
+			}
+		}
+	}
+
+	.trusted-slider {
+		margin-top: 50px;
+
+		&__item {
+			gap: 30px;
+			width: 100%;
+			padding: 50px;
+			display: block;
+			overflow: hidden;
+			border-radius: 36px;
+			background: #f3f5f4;
+
+			.text {
+
+				.categories {
+
+					li {
+
+						a {
+							padding-left: 12px;
+							border-color: $black;
+						}
+					}
+				}
+
+				.description {
+					color: $black;
+					margin-top: 10px;
+					max-width: 426px;
+				}
+
+				.info {
+					margin-top: 15px;
+
+					.name {
+						color: $black;
+						font-weight: 500;
+						font-family: $rubik;
+					}
+
+					.position {
+						color: $black;
+						display: block;
+						font-family: $rubik;
+					}
+				}
+			}
+
+			.media {
+				width: 100%;
+				max-width: 420px;
+				overflow: hidden;
+				border-radius: 36px;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}
+
+.pricing {
+	padding: 80px 0 130px;
 
 	&__top-text {
 		margin-bottom: 50px;

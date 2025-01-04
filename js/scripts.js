@@ -352,19 +352,6 @@
         });
     }
 
-    // /*** carouselTicker Slider */
-    // $('.carouselTicker').each(function () {
-    //     var $slider = $(this);
-    //     var speed = $slider.data('speed');
-    //     var direction = $slider.data('direction');
-
-    //     $slider.carouselTicker({
-    //         speed: speed,
-    //         mode: 'vertical',
-    //         direction: direction
-    //     });
-    // });
-
     /*** carouselTicker Slider */
     $('.carouselTicker').each(function () {
         var $slider = $(this);
