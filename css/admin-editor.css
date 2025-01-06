@@ -10316,7 +10316,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1340px;
   position: relative;
   padding-left: 30px;
   padding-right: 30px;
@@ -10603,7 +10603,7 @@ BASIC TEMPLATE STYLES
   text-decoration: none;
 }
 .mce-content-body p strong a:not(.btn):hover, .mce-content-body p strong a:not(.btn):focus {
-  color: #F2CD00;
+  color: #fdf150;
   text-decoration: underline;
 }
 .mce-content-body p a:not(.btn) {
@@ -10613,13 +10613,13 @@ BASIC TEMPLATE STYLES
   transition: all 0.3s ease;
 }
 .mce-content-body p a:not(.btn):hover, .mce-content-body p a:not(.btn):focus {
-  color: #F2CD00;
+  color: #fdf150;
 }
 .mce-content-body p .btn {
   margin-bottom: 0;
 }
 .mce-content-body a:not(.btn):hover, .mce-content-body a:not(.btn):focus {
-  color: #F2CD00;
+  color: #fdf150;
 }
 .mce-content-body .btn {
   margin-bottom: 30px;

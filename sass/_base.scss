@@ -2,7 +2,7 @@
 $dark: #292B2C; 
 $white: #FFFFFF;
 $black: #000000; 
-$yellow: #F2CD00;
+$yellow: #fdf150;
 
 *:not(ul):not(ol):not(blockquote) {
 	-webkit-box-sizing: border-box;
@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6,
 
 .container {
 	width: 100%;
-	max-width: 1240px;
+	max-width: 1340px;
 	position: relative;
 	padding-left: 30px;
 	padding-right: 30px;
