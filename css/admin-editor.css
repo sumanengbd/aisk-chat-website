@@ -10213,33 +10213,33 @@ p {
 }
 
 h1, .h1 {
-  font-size: 56px;
-  line-height: 66px;
+  font-size: 64px;
+  line-height: 76px;
 }
 
 h2, .h2 {
   font-size: 48px;
-  line-height: 56px;
+  line-height: 60px;
 }
 
 h3, .h3 {
   font-size: 36px;
-  line-height: 44px;
+  line-height: 48px;
 }
 
 h4, .h4 {
   font-size: 30px;
-  line-height: 38px;
+  line-height: 42px;
 }
 
 h5, .h5 {
   font-size: 24px;
-  line-height: 32px;
+  line-height: 36px;
 }
 
 h6, .h6 {
   font-size: 20px;
-  line-height: 28px;
+  line-height: 32px;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -10247,7 +10247,7 @@ h1, h2, h3, h4, h5, h6,
   color: #000000;
   font-weight: 400;
   margin-bottom: 0;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .btn {
@@ -10256,11 +10256,16 @@ h1, h2, h3, h4, h5, h6,
   padding: 5px;
   color: #FFFFFF;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 22px;
-  padding-left: 15px;
+  padding-left: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   background: #000000;
   border-radius: 500px;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   -webkit-transition: all 0.3s ease;
@@ -10275,8 +10280,8 @@ h1, h2, h3, h4, h5, h6,
           align-items: center;
 }
 .btn [class*=icon-] {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10301,7 +10306,7 @@ h1, h2, h3, h4, h5, h6,
 .btn:active, .btn:hover, .btn:focus {
   outline: 0;
   color: #000000 !important;
-  background: #c3eeab !important;
+  background: #fdf150 !important;
 }
 .btn:active [class*=icon-], .btn:hover [class*=icon-], .btn:focus [class*=icon-] {
   color: #000000;

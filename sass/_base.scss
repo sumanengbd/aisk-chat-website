@@ -36,6 +36,7 @@ html {
 }
 
 $rubik: "Rubik", sans-serif;
+$oswald: "Oswald", sans-serif;
 $sans: "Work Sans", sans-serif;
 
 body {
@@ -106,19 +107,19 @@ p {
 	margin: 0 0 30px;
 }
 
-h1, .h1 { font-size: 56px; line-height: 66px; }
-h2, .h2 { font-size: 48px; line-height: 56px; }
-h3, .h3 { font-size: 36px; line-height: 44px; }
-h4, .h4 { font-size: 30px; line-height: 38px; }
-h5, .h5 { font-size: 24px; line-height: 32px; }
-h6, .h6 { font-size: 20px; line-height: 28px; }
+h1, .h1 { font-size: 64px; line-height: 76px; }
+h2, .h2 { font-size: 48px; line-height: 60px; }
+h3, .h3 { font-size: 36px; line-height: 48px; }
+h4, .h4 { font-size: 30px; line-height: 42px; }
+h5, .h5 { font-size: 24px; line-height: 36px; }
+h6, .h6 { font-size: 20px; line-height: 32px; }
 
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6 {
 	color: $black;
 	font-weight: 400;
 	margin-bottom: 0;
-	font-family: $sans;
+	font-family: $oswald;
 }
 
 .btn {
@@ -127,11 +128,14 @@ h1, h2, h3, h4, h5, h6,
 	padding: 5px;
 	color: #FFFFFF;
 	font-size: 16px;
-	font-weight: 400;
+	font-weight: 700;
 	line-height: 22px;
-	padding-left: 15px;
+	padding-left: 20px;
+	width: fit-content;
 	background: #000000;
 	border-radius: 500px;
+	font-family: $oswald;
+	text-transform: uppercase;
 	box-shadow: none !important;
 	@include transition(all 0.3s ease);
 
@@ -141,8 +145,8 @@ h1, h2, h3, h4, h5, h6,
 	}
 
 	[class*="icon-"] {
-		width: 36px;
-		height: 36px;
+		width: 44px;
+		height: 44px;
 		display: flex;
 		color: #000000;
 		font-size: 12px;
@@ -160,7 +164,7 @@ h1, h2, h3, h4, h5, h6,
 	&:active, &:hover, &:focus {
 		outline: 0;
 		color: $black !important;
-		background: #c3eeab !important;
+		background: $yellow !important;
 
 		[class*="icon-"] {
 			color: $black;
