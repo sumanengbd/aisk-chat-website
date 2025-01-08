@@ -1,14 +1,14 @@
 @font-face {
-  font-family: "azizultex";
-  src: url("../fonts/azizultex.eot?91760759");
-  src: url("../fonts/azizultex.eot?91760759#iefix") format("embedded-opentype"), url("../fonts/azizultex.woff2?91760759") format("woff2"), url("../fonts/azizultex.woff?91760759") format("woff"), url("../fonts/azizultex.ttf?91760759") format("truetype"), url("../fonts/azizultex.svg?91760759#azizultex") format("svg");
+  font-family: "supportbuddy";
+  src: url("../fonts/supportbuddy.eot?14292442");
+  src: url("../fonts/supportbuddy.eot?14292442#iefix") format("embedded-opentype"), url("../fonts/supportbuddy.woff2?14292442") format("woff2"), url("../fonts/supportbuddy.woff?14292442") format("woff"), url("../fonts/supportbuddy.ttf?14292442") format("truetype"), url("../fonts/supportbuddy.svg?14292442#supportbuddy") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 [data-icon^=icon-]:before, [data-icon*=" icon-"]:before {
   speak: none;
   line-height: 1;
-  font-family: "azizultex";
+  font-family: "supportbuddy";
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -20,7 +20,7 @@
 [class^=icon-]:before, [class*=" icon-"]:before {
   speak: none;
   line-height: 1;
-  font-family: "azizultex";
+  font-family: "supportbuddy";
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -29,60 +29,84 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-down:before {
+.icon-minus:before {
   content: "\e800";
 }
 
-.icon-arrow-left:before {
+.icon-phone:before {
   content: "\e801";
 }
 
-.icon-arrow-right:before {
+.icon-plus:before {
   content: "\e802";
 }
 
-.icon-arrow-up:before {
+.icon-quote-left:before {
   content: "\e803";
 }
 
-.icon-close:before {
+.icon-quote-right:before {
   content: "\e804";
 }
 
-.icon-headphones:before {
+.icon-tiktok:before {
   content: "\e805";
 }
 
-.icon-linkedin-squared:before {
+.icon-arrow-down:before {
   content: "\e806";
 }
 
-.icon-phone:before {
+.icon-arrow-left:before {
   content: "\e807";
 }
 
-.icon-lock:before {
+.icon-arrow-right:before {
   content: "\e808";
 }
 
-.icon-calendar-outlilne:before {
+.icon-arrow-up:before {
   content: "\e809";
 }
 
-.icon-diamond:before {
+.icon-close:before {
   content: "\e80a";
 }
 
-.icon-version:before {
+.icon-play:before {
   content: "\e80b";
 }
 
-.icon-twitter:before {
+.icon-pause:before {
   content: "\e80c";
 }
 
-.icon-tiktok:before {
+.icon-search:before {
   content: "\e80d";
+}
+
+.icon-mail:before {
+  content: "\e80e";
+}
+
+.icon-skype:before {
+  content: "\e80f";
+}
+
+.icon-headphones:before {
+  content: "\e810";
+}
+
+.icon-twitter:before {
+  content: "\f099";
+}
+
+.icon-facebook:before {
+  content: "\f09a";
+}
+
+.icon-github-circled:before {
+  content: "\f09b";
 }
 
 .icon-rss:before {
@@ -117,6 +141,10 @@
   content: "\f1d7";
 }
 
+.icon-facebook-official:before {
+  content: "\f230";
+}
+
 .icon-pinterest:before {
   content: "\f231";
 }
@@ -145,11 +173,7 @@
   content: "\f2c6";
 }
 
-.icon-facebook-squared:before {
-  content: "\f308";
-}
-
-.icon-facebook:before {
+.icon-linkedin-squared:before {
   content: "\f30c";
 }
 

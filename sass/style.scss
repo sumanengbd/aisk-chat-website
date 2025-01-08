@@ -14,8 +14,8 @@ BASE STYLES
 // ICON FONTS
 @include icon-config(
 	'fonts', 
-	'azizultex', 
-	'91760759'
+	'supportbuddy', 
+	'14292442'
 );
 
 @import 'icon';
@@ -36,8 +36,8 @@ HEADER STYLES
 }
 
 .header-gutter {
-	height: 80px;
-	min-height: 80px;
+	height: 100px;
+	min-height: 100px;
 }
 
 .header {
@@ -47,7 +47,7 @@ HEADER STYLES
 	width: 100%;
 	z-index: 1030;
 	position: fixed;
-	padding: 15.04px 0;
+	padding: 20.047px 0;
 	background: #FFFFFF;
 	@include transition(all 0.5s ease);
 
@@ -101,7 +101,7 @@ HEADER STYLES
 					margin-right: 20px;
 					
 					img {
-						max-width: 200px;
+						max-width: 240px;
 						@include transition(all 0.3s ease);
 					}
 				}
@@ -109,30 +109,21 @@ HEADER STYLES
 
 			.navbar-nav {
 				padding: 0;
-				margin-left: -12px;
-				margin-right: -12px;
+				margin-left: -15px;
+				margin-right: -15px;
 				align-items: center;
-
-				&:not(.navbar-nav-right) {
-					padding: 8px 0;
-					overflow: hidden;
-					border-radius: 500px;
-					backdrop-filter: blur(10px);
-					background: rgba(255, 255, 255, 0.5);
-				}
 
 				> li {
 					padding: 0;
-					margin-left: 12px;
-					margin-right: 12px;
+					margin-left: 15px;
+					margin-right: 15px;
 
 					> a {
 						color: $black;
 						display: flex;
-						font-size: 16px;
-						font-weight: 400;
-						line-height: 22px;
-						font-family: $sans;
+						font-size: 18px;
+						font-weight: 700;
+						line-height: 24px;
 						align-items: center;
 						justify-content: center;
 						@include transition(all 0.3s ease);
@@ -148,51 +139,50 @@ HEADER STYLES
 					&.menu-btn {
 						
 						> a {
-							padding: 3px;
+							z-index: 1;
 							color: $black;
-							display: block;
 							font-size: 16px;
+							overflow: hidden;
+							font-weight: 900;
 							line-height: 22px;
-							background: $white;
-							padding-left: 12px;
+							position: relative;
 							white-space: nowrap;
 							border-radius: 500px;
+							font-family: $nunito;
+							display: inline-block;
+							letter-spacing: 0.8px;
+							padding: 18px 25px 16px;
+							background: transparent;
+							border: 1px solid $blue;
+							text-transform: uppercase;
 							@include transition(all 0.5s ease);
 
-							&:has([class*="icon-"]) {
-								display: flex;
-								align-items: center;
-							}
-
-							[class*="icon-"] {
-								width: 32px;
-								height: 32px;
-								color: $black;
-								display: flex;
-								font-size: 12px;
-								overflow: hidden;
-								margin-left: 8px;
-								line-height: 12px;
-								align-items: center;
-								background: #c3eeab;
-								border-radius: 500px;
-								justify-content: center;
-							    @include transform(rotate(-45deg));
-							    @include transition(all 0.3s ease);
+							&:before {
+								top: 50%;
+								width: 0;
+								height: 0;
+								left: 50%;
+								z-index: -1;
+								content: "";
+								position: absolute;
+								display: inline-block;
+								box-sizing: border-box;
+								@include transition(all 0.3s ease);
 							}
 						}
 
 						&.current-menu-ancestor, &.active, &:hover, &:focus {
 
 							> a {
-								color: $black;
-								background: #c3eeab !important;
+								color: $white !important;
 
-								[class*="icon-"] {
-									color: $black;
-									background: $white;
-									@include transform(rotate(0deg));
-								}
+								&:before {
+									top:0;
+									left: 0;
+									width: 100%;
+									height:100%;
+									background: $blue;
+							   	}
 							}
 						}
 					}
@@ -311,32 +301,9 @@ HEADER STYLES
 	}
 
 	&.stop {
-		padding: 10.04px 0;
+		padding: 12px 0;
 		background: #FFFFFF;
 	    box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.12);
-
-	    .navbar {
-
-	    	.navbar-collapse {
-
-	    		.navbar-nav {
-
-	    			> li {
-
-	    				&.menu-btn {
-
-	    					> a {
-	    						background: rgba(243, 245, 244, 0.8);
-	    					}
-	    				}
-	    			}
-
-	    			&:not(.navbar-nav-right) {
-					    background: rgba(243, 245, 244, 0.8);
-					}
-	    		}
-	    	}
-	    }
 	}
 }
 
@@ -693,121 +660,30 @@ HEADER STYLES
 HOME STYLES
 ***********************************/
 .banner {
-	overflow: hidden;
-	min-height: 700px;
+	padding: 50px 0 100px;
 
 	&__text {
-	    margin: 175px 0px;
-
-		&:has(.icon_group) {
-			gap: 30px;
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: space-between;
+		max-width: 602px;
+	    
+	    .description {
+			color: $black;
+			margin-top: 10px;
+			font-family: $grotesque;
 		}
 
-		.entry-title {
-			max-width: 480px;
-
-			.description {
-				color: $black;
-				margin-top: 5px;
-				font-size: 18px;
-				line-height: 28px;
-			}
-
-			.btn_group {
-				gap: 10px;
-				margin-top: 20px;
-
-				.btn {
-
-					+ .btn {
-						color: $black;
-						background: #f4f4f4;
-					}
-				}
-			}
-		}
-
-		.icon_group {
-			margin: 0;
-			margin-bottom: 0;
-			margin-right: 30px;
-
-			li {
-				margin: 0;
-				padding: 0;
-
-				&:not(:last-child) {
-					margin-bottom: 10px;
-				}
-
-				a {
-					width: 48px;
-					height: 48px;
-					display: flex;
-					color: #000000;
-					font-size: 18px;
-					overflow: hidden;
-					line-height: 18px;
-					align-items: center;
-					border-radius: 500px;
-					justify-content: center;
-					background: linear-gradient(90deg, rgba(225,249,175,1) 0%, rgba(195,217,241,1) 100%);
-				}
-			}
+		.btn {
+			margin-top: 20px;
 		}
 	}
 
-	.carouselTicker {
-
-		&__list {
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-			list-style-type: none;
-
-			li {
-				margin: 0;
-			}
-		}
-	}
-
-	&__wrapper {
-		gap: 20px;
-		height: 700px;
-		display: flex;
-	}
-
-	&__item {
+	&__media {
 		width: 100%;
-	    height: auto;
-		display: block;
-	    min-width: 230px;
 		overflow: hidden;
-		border-radius: 24px;
-		margin-bottom: 20px;
-		background: #F3F5F4;
 
-		.media {
+		img {
 			width: 100%;
 			height: 100%;
-			overflow: hidden;
-			position: relative;
-
-			video {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
+			object-fit: cover;
 		}
 	}
 }
@@ -817,6 +693,13 @@ HOME STYLES
 
 	.entry-title {
 		margin-bottom: 30px;
+
+		.title {
+
+			span {
+				color: $blue;
+			}
+		}
 	}
 
 	.carouselTicker {
@@ -863,11 +746,12 @@ HOME STYLES
 	padding: 100px 0;
 
 	.entry-title {
-		max-width: 1020px;
+		max-width: 1080px;
 		margin-bottom: 50px;
 
 		.description {
 			margin-top: 5px;
+			font-family: $grotesque;
 		}
 	}
 
@@ -920,11 +804,13 @@ HOME STYLES
 			max-width: 575px;
 
 			.description {
-				margin-top: 10px;
+				margin-top: 5px;
 			}
 
 			.btn {
+				font-size: 16px;
 				margin-top: 20px;
+				line-height: 22px;
 			}
 		}
 	}
@@ -938,7 +824,7 @@ HOME STYLES
 	}
 
 	.background {
-		gap: 20px;
+		gap: 30px;
 		width: 100%;
 		display: flex;
 		overflow: hidden;
@@ -970,14 +856,13 @@ HOME STYLES
 				display: block;
 				font-weight: 700;
 		        font-size: 5.6rem;
-				font-family: $oswald;
+				font-family: $nunito;
 			}
 
 			.quote {
 				color: $black;
 				font-size: 18px;
 				line-height: 28px;
-				font-family: $sans;
 			}
 
 			.name {
@@ -986,7 +871,8 @@ HOME STYLES
 				font-size: 16px;
 				margin-top: 10px;
 				line-height: 24px;
-				font-family: $rubik;
+				font-weight: 700;
+				font-family: $nunito;
 				letter-spacing: 0.4px;
 				text-transform: uppercase;
 			}
@@ -1073,9 +959,9 @@ HOME STYLES
 			color: $black;
 			display: block;
 			font-size: 24px;
-			font-weight: 700;
+			font-weight: 900;
 			line-height: 34px;
-			font-family: $oswald;
+			font-family: $nunito;
 			text-transform: uppercase;
 		}
 
@@ -1091,6 +977,112 @@ HOME STYLES
 			line-height: 28px;
 			padding-top: 15px;
 			border-top: 1px solid $black;
+		}
+	}
+}
+
+.faqs {
+	padding: 100px 0;
+
+	.entry-title {
+		max-width: 1080px;
+		margin-bottom: 30px;
+
+		.description {
+			margin-top: 5px;
+			font-family: $grotesque;
+		}
+	}
+
+	&__accordion {
+
+		.card {
+			border: 0;
+			padding: 35px 0;
+			margin-bottom: 0;
+			border-radius: 0;
+			position: relative;
+			background: transparent;
+			border-bottom: 1px solid $black;
+			@include transition(all 0.3s ease);
+
+			&:before {
+				left: 0;
+				top: 30.5px;
+				width: 42px;
+				height: 42px;
+				display: flex;
+				color: $white;
+				font-size: 12px;
+				content: "\e802";
+				position: absolute;
+				background: $black;
+				align-items: center;
+				border-radius: 500px;
+				justify-content: center;
+				font-family: "supportbuddy";
+				@include transition(all 0.3s ease);
+			}
+
+			&[aria-expanded="true"] {
+
+				&:before {
+					content: "\e800";
+				}
+			}
+
+			.card-header {
+				border: 0;
+				padding: 0;
+				color: $black;
+				cursor: pointer;
+				font-size: 24px;
+				font-weight: 700;
+				border-radius: 0;
+				line-height: 34px;
+				margin-left: 57px;
+				background: transparent;
+				text-transform: uppercase;
+
+				.number {
+					top: -3px;
+					width: 30px;
+					height: 22px;
+					color: $black;
+					line-height: 1;
+					font-size: 14px;
+					margin-left: 5px;
+					overflow: hidden;
+					font-weight: 700;
+					position: relative;
+					border-radius: 4px;
+					align-items: center;
+					display: inline-flex;
+					justify-content: center;
+					border: 1px solid #E10532;
+				}
+			}
+
+			.card-body {
+				margin: 0;
+				padding: 0;
+				padding-top: 20px;
+				margin-left: 57px;
+
+				.content__editor {
+					color: $black;
+					font-size: 20px;
+					line-height: 1.4;
+
+					p {
+						margin: 0 0 15px;
+
+						&:last-child {
+							margin: 0;
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -1116,7 +1108,7 @@ HOME STYLES
 			.description {
 				color: $white;
 				margin-top: 15px;
-				font-family: $sans;
+				font-family: $grotesque;
 			}
 
 			.btn {
@@ -1138,8 +1130,8 @@ HOME STYLES
 FOOTER STYLES
 ***********************************/
 .footer {
-	padding: 100px 0;
 	background: $black;
+	padding: 100px 0 60px;
 	border-top-left-radius: 64px;
 	border-top-right-radius: 64px;
 
@@ -1154,6 +1146,13 @@ FOOTER STYLES
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+
+	&__text-area {
+		gap: 30px;
+		width: 100%;
+		height: 100%;
+		max-width: 500px;
 	}
 
 	&__widget {
@@ -1176,8 +1175,9 @@ FOOTER STYLES
 
 					> a {
 						color: $white;
-						font-weight: 700;
-						font-family: $oswald;
+						font-weight: 900;
+						font-family: $nunito;
+						letter-spacing: 0.8px;
 						text-transform: uppercase;
 					}
 				}
@@ -1185,8 +1185,9 @@ FOOTER STYLES
 				a {
 					color: $white;
 					font-size: 16px;
-					font-weight: 400;
+					font-weight: 700;
 					line-height: 22px;
+					letter-spacing: 0.4px;
 					display: inline-block;
 					@include transition(all 0.3s ease);
 
