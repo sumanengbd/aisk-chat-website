@@ -141,15 +141,14 @@ HEADER STYLES
 						> a {
 							z-index: 1;
 							color: $black;
+							display: block;
 							font-size: 16px;
 							overflow: hidden;
 							font-weight: 900;
 							line-height: 22px;
 							position: relative;
-							white-space: nowrap;
 							border-radius: 500px;
 							font-family: $nunito;
-							display: inline-block;
 							letter-spacing: 0.8px;
 							padding: 18px 25px 16px;
 							background: transparent;
@@ -591,14 +590,14 @@ HEADER STYLES
 .navbar-toggle {
 	margin: 0;
 	border: 0;
-	width: 44px;
-	height: 44px;
-	padding: 12px;
+	width: 50px;
+	height: 50px;
+	padding: 14px;
 	display: block;
 	overflow: hidden;
-	border-radius: 6px;
+	border-radius: 500px;
 	background: transparent;
-	border: 1px solid $yellow;
+	border: 1px solid $blue;
 	@include transition(all 0.3s ease);
 
 	&:hover {
@@ -647,7 +646,7 @@ HEADER STYLES
 		height: 3px;
 		display: block;
 		border-radius: 1px;
-		background-color: $dark;
+		background-color: $black;
 		@include transition(transform 150ms linear 150ms);
 
 		&:not(:last-child) {
@@ -851,12 +850,12 @@ HOME STYLES
 		.text {
 			max-width: 605px;
 
-			.icon-quote {
+			[class*=icon-] {
 				color: $black;
 				display: block;
-				font-weight: 700;
-		        font-size: 5.6rem;
-				font-family: $nunito;
+		        font-size: 24px;
+		        line-height: 24px;
+				margin-bottom: 10px;
 			}
 
 			.quote {
@@ -888,7 +887,7 @@ HOME STYLES
 	}
 
 	.minus {
-		margin-bottom: -20px;
+		margin-bottom: -30px;
 	}
 
 	&__item {
@@ -897,8 +896,8 @@ HOME STYLES
 		overflow: hidden;
 		background: $white;
 		border-radius: 36px;
-		margin-bottom: 20px;
-		height: calc(100% - 20px);
+		margin-bottom: 30px;
+		height: calc(100% - 30px);
 		box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.06), 0px 34px 44px 0px rgba(0, 0, 0, 0.06);
 
 		.media {
@@ -1019,7 +1018,7 @@ HOME STYLES
 				height: 42px;
 				display: flex;
 				color: $white;
-				font-size: 12px;
+				font-size: 14px;
 				content: "\e802";
 				position: absolute;
 				background: $black;
@@ -1033,7 +1032,9 @@ HOME STYLES
 			&[aria-expanded="true"] {
 
 				&:before {
+					color: $white;
 					content: "\e800";
+					background: $blue;
 				}
 			}
 
@@ -1122,11 +1123,6 @@ HOME STYLES
 				margin-top: 20px;
 				width: fit-content;
 				background: $white;
-
-				[class*=icon-] {
-					color: $white;
-					background: $black;
-				}
 			}
 		}
 	}
@@ -1150,6 +1146,7 @@ FOOTER STYLES
 		img {
 			width: 100%;
 			height: 100%;
+			max-width: 200px;
 			object-fit: cover;
 		}
 	}
