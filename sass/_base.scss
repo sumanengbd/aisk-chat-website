@@ -1,10 +1,8 @@
 // Color
-$dark: #292B2C; 
+$blue: #3b42c4;
 $white: #FFFFFF;
 $black: #000000; 
 $yellow: #fdf150;
-
-$blue: #3b42c4;
 
 *:not(ul):not(ol):not(blockquote) {
 	-webkit-box-sizing: border-box;
@@ -36,10 +34,6 @@ html {
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
-
-$rubik: "Rubik", sans-serif;
-$oswald: "Oswald", sans-serif;
-$sans: "Work Sans", sans-serif;
 
 $nunito: "Nunito Sans", sans-serif;
 $grotesque: "Bricolage Grotesque", sans-serif;
@@ -179,9 +173,9 @@ h1, h2, h3, h4, h5, h6,
 	font-size: 18px;
 	line-height: 28px;
 
-	@media only screen and (max-width: 991px) {
-		// font-size: 18px;
-		// line-height: 26px;
+	@media only screen and (max-width: 480px) {
+		font-size: 16px;
+		line-height: 22px;
 	}
 }
 
@@ -209,6 +203,16 @@ h1, h2, h3, h4, h5, h6,
 	>[class*="col"] {
 		padding-left: 10px;
 		padding-right: 10px;
+	}
+}
+
+.lr-0 {
+	margin-left: -0px;
+	margin-right: -0px;
+
+	>[class*="col"] {
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 }
 

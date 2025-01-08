@@ -10304,6 +10304,13 @@ h1, h2, h3, h4, h5, h6,
   font-size: 18px;
   line-height: 28px;
 }
+@media only screen and (max-width: 480px) {
+  .desc-big {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1340px;
@@ -10328,6 +10335,15 @@ h1, h2, h3, h4, h5, h6,
 .lr-10 > [class*=col] {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.lr-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.lr-0 > [class*=col] {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .list-inline {
@@ -10593,7 +10609,7 @@ BASIC TEMPLATE STYLES
   text-decoration: none;
 }
 .mce-content-body p strong a:not(.btn):hover, .mce-content-body p strong a:not(.btn):focus {
-  color: #fdf150;
+  color: #3b42c4;
   text-decoration: underline;
 }
 .mce-content-body p a:not(.btn) {
@@ -10603,13 +10619,13 @@ BASIC TEMPLATE STYLES
   transition: all 0.3s ease;
 }
 .mce-content-body p a:not(.btn):hover, .mce-content-body p a:not(.btn):focus {
-  color: #fdf150;
+  color: #3b42c4;
 }
 .mce-content-body p .btn {
   margin-bottom: 0;
 }
 .mce-content-body a:not(.btn):hover, .mce-content-body a:not(.btn):focus {
-  color: #fdf150;
+  color: #3b42c4;
 }
 .mce-content-body .btn {
   margin-bottom: 30px;
@@ -10635,30 +10651,4 @@ BASIC TEMPLATE STYLES
 .mce-content-body ul li ul, .mce-content-body ul li ol, .mce-content-body ol li ul, .mce-content-body ol li ol {
   margin-top: 15px;
   margin-bottom: 15px;
-}
-.mce-content-body blockquote {
-  border-left: 0;
-  margin: 30px 0;
-  position: relative;
-  padding: 20px 20px;
-  padding-left: 55px;
-  border-radius: 8px;
-  background-color: rgba(243, 235, 212, 0.5);
-}
-.mce-content-body blockquote:before {
-  top: 20px;
-  left: 15px;
-  content: "❝";
-  color: #000000;
-  font-size: 45px;
-  line-height: 45px;
-  position: absolute;
-}
-.mce-content-body blockquote p {
-  margin-bottom: 0;
-  font-style: italic;
-}
-.mce-content-body blockquote h1, .mce-content-body blockquote .h1, .mce-content-body blockquote h2, .mce-content-body blockquote .h2, .mce-content-body blockquote h3, .mce-content-body blockquote .h3, .mce-content-body blockquote h4,
-.mce-content-body blockquote .h4, .mce-content-body blockquote h5, .mce-content-body blockquote .h5, .mce-content-body blockquote h6, .mce-content-body blockquote .h6 {
-  margin: 0;
 }

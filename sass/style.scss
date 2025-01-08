@@ -191,19 +191,7 @@ HEADER STYLES
 						> a {
 
 							.dropdown-toggle {
-								margin-left: 8px;
-
-								&:after {
-								    border: 0;
-								    width: auto;
-								    color: $white;
-							        font-size: 12px;
-								    content: "\e817";
-							        line-height: 12px;
-								    vertical-align: middle;
-								    font-family: "capitalcarpet";
-									@include transition(all 0.3s ease);
-								}
+								margin-left: 3px;
 							}
 						}
 
@@ -316,7 +304,7 @@ HEADER STYLES
 	max-width: 300px;
 	overflow-y: auto;
 	overflow-x: hidden;
-	background: #F2F2F2;
+	background: $white;
 	box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.12);
 
 	&.right {
@@ -337,11 +325,11 @@ HEADER STYLES
 
 		.navbar-header {
 			padding: 25px 15px 20px;
-			border-bottom: 1px solid rgba($dark, 0.1);
+			border-bottom: 1px solid rgba($black, 0.1);
 			@include align-center('vertical');
 
 			.logo {
-				padding-right: 15px;
+				padding-right: 5px;
 
 				.navbar-brand {
 					margin: 0;
@@ -349,22 +337,14 @@ HEADER STYLES
 					padding-bottom: 0;
 
 					img {
-						max-width: 220px;
+						max-width: 180px;
 					}
 				}
 			}
 
 			.navbar-toggle {
-				border: 0;
-				padding: 0;
-				width: auto;
-				height: auto;
-				color: $dark;
-	    		display: block;
-				font-size: 16px;
-				line-height: 16px;
-				background: transparent;
-	    	}
+				display: block;
+			}
 		}
 
 		.navigation {
@@ -380,14 +360,14 @@ HEADER STYLES
 
 				> li {
 					padding: 15px;
-					border-bottom: 1px solid rgba($dark, 0.1);
+					border-bottom: 1px solid rgba($black, 0.1);
 
 					> a {
-						color: $dark;
+						color: $black;
 						display: block;
-						font-size: 16px;
+						font-size: 18px;
 						font-weight: 700;
-						line-height: 16px;
+						line-height: 24px;
 						@include transition(all 0.3s ease);
 
 						&:after {
@@ -398,58 +378,50 @@ HEADER STYLES
 					&.menu-btn {
 						
 						> a {
-							color: $white;
+							z-index: 1;
+							color: $black;
+							display: block;
 							font-size: 16px;
+							overflow: hidden;
+							font-weight: 900;
 							line-height: 22px;
-							background: $dark;
-							border-radius: 12px;
-							padding: 15px 20px 13px;
-							border: 1px solid $dark;
+							text-align: center;
+							position: relative;
+							border-radius: 500px;
+							font-family: $nunito;
+							letter-spacing: 0.8px;
+							padding: 18px 25px 16px;
+							background: transparent;
+							border: 1px solid $blue;
+							text-transform: uppercase;
 							@include transition(all 0.5s ease);
 
-							[class*="icon-"] {
-								color: #F4CD18;
-								font-size: 18px;
-								line-height: 18px;
-								margin-left: 20px;
+							&:before {
+								top: 50%;
+								width: 0;
+								height: 0;
+								left: 50%;
+								z-index: -1;
+								content: "";
+								position: absolute;
 								display: inline-block;
+								box-sizing: border-box;
 								@include transition(all 0.3s ease);
-							}
-
-							&.current-menu-ancestor, &.active, &:hover, &:focus {
-								color: $dark;
-								background: #F4CD18;
-								border-color: #F4CD18;
-
-								[class*="icon-"] {
-									color: $dark;
-									animation: shake .5s forwards;
-								}
 							}
 						}
 
-						&.transparent {
+						&.current-menu-ancestor, &.active, &:hover, &:focus {
 
 							> a {
-								color: $dark;
-								border-color: #F4CD18;
-								background: transparent;
+								color: $white !important;
 
-								[class*="icon-"] {
-									font-size: 13px;
-									line-height: 13px;
-								}
-
-								&.current-menu-ancestor, &.active, &:hover, &:focus {
-									color: $dark;
-									background: #F4CD18;
-									border-color: #F4CD18;
-
-									[class*="icon-"] {
-										color: $dark;
-										animation: shake .5s forwards;
-									}
-								}
+								&:before {
+									top:0;
+									left: 0;
+									width: 100%;
+									height:100%;
+									background: $blue;
+							   	}
 							}
 						}
 					}
@@ -491,13 +463,13 @@ HEADER STYLES
 							display: block;
 							box-shadow: none;
 							position: absolute;
-							background-color: #F2F2F2;
+							background-color: $white;
 							@include transform(translate3d(110%, 0, 0));
 							@include transition(all 0.4s ease);
 
 							li {
 								padding: 15px;
-								border-bottom: 1px solid rgba($dark, 0.1);
+								border-bottom: 1px solid rgba($black, 0.1);
 
 								&.dropdown-back {
 									display: flex;
@@ -508,7 +480,7 @@ HEADER STYLES
 									align-items: center;
 									padding-bottom: 15px;
 									justify-content: space-between;
-									border-bottom: 1px solid rgba($dark, 0.5);
+									border-bottom: 1px solid rgba($black, 0.5);
 
 									span {
 										width: 36px;
@@ -516,10 +488,10 @@ HEADER STYLES
 										color: $white;
 										font-size: 10px;
 										font-weight: 500;
-										line-height: 36px;
 										margin-left: 5px;
+										line-height: 36px;
+										background: $blue;
 										text-align: center;
-										background: $dark;
 										vertical-align: 2px;
 										border-radius: 500px;
 										display: inline-block;
@@ -531,10 +503,11 @@ HEADER STYLES
 									}
 
 									.title {
-										color: $dark;
-										font-size: 14px; 
-										font-weight: 600;
-										line-height: 22px; 
+										color: $black;
+										font-size: 20px; 
+										font-weight: 900;
+										line-height: 22px;
+										font-family: $nunito;
 									}
 								}
 
@@ -549,11 +522,11 @@ HEADER STYLES
 								> a {
 									padding: 0;
 									width: 100%;
-									color: $dark;
+									color: $black;
 									display: flex;
-									font-size: 16px;
+									font-size: 18px;
 									font-weight: 700;
-									line-height: 22px;
+									line-height: 24px;
 									flex-direction: column-reverse;
 									@include transition(all 0.3s ease);
 								}
@@ -564,7 +537,7 @@ HEADER STYLES
 									&:not(.menu-btn) {
 
 										> a {
-											color: $yellow;
+											color: $blue;
 										}
 									}
 								}
@@ -577,7 +550,7 @@ HEADER STYLES
 						&:not(.menu-btn) {
 
 							> a {
-								color: $yellow;
+								color: $blue;
 							}
 						}
 					}
@@ -683,6 +656,44 @@ HOME STYLES
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+	}
+}
+
+.communication {
+	padding: 100px 0;
+
+	.entry-title {
+	    max-width: 900px;
+		margin-bottom: 50px;
+	}
+
+	&__item {
+		width: 100%;
+		height: 100%;
+		padding: 40px;
+		overflow: hidden;
+		padding-bottom: 0 !important; 
+		background: var(--backgroundColor);
+
+		.text {
+			max-width: 100%;
+			margin-bottom: 30px;
+
+			.description {
+				margin-top: 5px;
+			}
+		}
+
+		.media {
+			width: 100%;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 	}
 }
@@ -1197,7 +1208,7 @@ FOOTER STYLES
 					&:any-link {
 
 						&:hover, &:focus {
-							color: $yellow;
+							color: $blue;
 							text-decoration: underline;
 						}
 					}
@@ -1228,7 +1239,7 @@ FOOTER STYLES
 					&:any-link {
 
 						&:hover, &:focus {
-							color: $yellow;
+							color: $blue;
 							text-decoration: underline;
 						}
 					}
@@ -1274,7 +1285,7 @@ FOOTER STYLES
 				&:any-link {
 
 					&:hover, &:focus {
-						color: $yellow;
+						color: $blue;
 						text-decoration: underline;
 					}
 				}
@@ -1334,64 +1345,6 @@ FOOTER STYLES
 /***********************************
 DEFAULT STYLES
 ***********************************/
-.breadcrumb-wrapper {
-	padding: 0;
-
-	.breadcrumb {
-		border-bottom: 1px solid #F4DCC2;
-	}
-}
-
-.breadcrumb {
-	border: 0;
-	margin: 0;
-	color: $black;
-	padding: 15px 0;
-	font-size: 16px;
-	border-radius: 0;
-	font-weight: 700;
-	line-height: 22px;
-	vertical-align: middle;
-	background: transparent;
-
-	span {
-
-		&.angle-right {
-			padding-left: 5px;
-			padding-right: 5px;
-			vertical-align: middle;
-		}
-	}
-
-	.current-page {
-		color: $black;
-		text-decoration: none;
-		text-transform: math-auto;
-	}
-
-	a {
-		color: $black;
-		vertical-align: middle;
-		@include transition(all 0.3s ease);
-
-		&:hover, &:focus {
-			color: $yellow;
-		}
-	}
-}
-
-.default-page {
-	padding: 60px 0;
-
-	@media only screen and (max-width: 767px) {
-		padding: 50px 0;
-	}
-
-	@media only screen and (max-width: 575px) {
-		padding: 40px 0;
-	}
-}
-
 .content__editor {
 	color: $black;
 	font-size: 16px;
@@ -1420,7 +1373,7 @@ DEFAULT STYLES
 		border-radius: 50%;
 		transform: scale(.24);
 		will-change: transform;
-		border: 8px solid $yellow;
+		border: 8px solid $blue;
 		transition: transform .4s cubic-bezier(.25,1,.5,1), background-color .2s ease;
 	}
   
@@ -1430,7 +1383,7 @@ DEFAULT STYLES
 
 			.cursor__circle {
 				transform: scale(1);
-				background-color: $yellow;
+				background-color: $blue;
 
 				&:before {
 					top: 50%;
@@ -1451,7 +1404,7 @@ DEFAULT STYLES
 
 			.cursor__circle {
 				transform: scale(0.12);
-				background-color: $yellow;
+				background-color: $blue;
 			}
 		}
 	}
