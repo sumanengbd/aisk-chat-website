@@ -983,6 +983,7 @@ HOME STYLES
 
 .faqs {
 	padding: 100px 0;
+	background: #edf2ed;
 
 	.entry-title {
 		max-width: 1080px;
@@ -998,17 +999,22 @@ HOME STYLES
 
 		.card {
 			border: 0;
-			padding: 35px 0;
-			margin-bottom: 0;
+			padding: 20px;
 			border-radius: 0;
+			background: $white;
 			position: relative;
-			background: transparent;
-			border-bottom: 1px solid $black;
+			margin-bottom: 20px;
+			border-radius: 16px;
 			@include transition(all 0.3s ease);
+		    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.06), 0px 34px 44px 0px rgba(0, 0, 0, 0.06);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 
 			&:before {
-				left: 0;
-				top: 30.5px;
+			    left: 20px;
+			    top: 16.5px;
 				width: 42px;
 				height: 42px;
 				display: flex;
