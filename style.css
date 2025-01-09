@@ -419,20 +419,14 @@ h1, h2, h3, h4, h5, h6,
 .btn {
   border: 0;
   outline: 0;
-  z-index: 1;
   color: #FFFFFF;
   font-size: 18px;
   font-weight: 900;
-  overflow: hidden;
   line-height: 24px;
   background: #3b42c4;
-  position: relative;
   border-radius: 500px;
   font-family: "Nunito Sans", sans-serif;
-  display: inline-block;
   letter-spacing: 0.8px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
   padding: 18px 25px 16px;
   text-transform: uppercase;
   -webkit-box-shadow: none !important;
@@ -440,30 +434,10 @@ h1, h2, h3, h4, h5, h6,
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.btn:before {
-  top: 50%;
-  width: 0;
-  height: 0;
-  left: 50%;
-  z-index: -1;
-  content: "";
-  position: absolute;
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
 .btn:active, .btn:hover, .btn:focus {
   outline: 0;
   color: #000000 !important;
-}
-.btn:active:before, .btn:hover:before, .btn:focus:before {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fdf150;
+  background: #fdf150 !important;
 }
 
 .desc-big {
@@ -647,14 +621,11 @@ HEADER STYLES
   display: none;
 }
 .header .navbar .navbar-collapse .navbar-nav > li.menu-btn > a {
-  z-index: 1;
   color: #000000;
   display: block;
   font-size: 16px;
-  overflow: hidden;
   font-weight: 900;
   line-height: 22px;
-  position: relative;
   border-radius: 500px;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.8px;
@@ -665,29 +636,9 @@ HEADER STYLES
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.header .navbar .navbar-collapse .navbar-nav > li.menu-btn > a:before {
-  top: 50%;
-  width: 0;
-  height: 0;
-  left: 50%;
-  z-index: -1;
-  content: "";
-  position: absolute;
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
 .header .navbar .navbar-collapse .navbar-nav > li.menu-btn.current-menu-ancestor > a, .header .navbar .navbar-collapse .navbar-nav > li.menu-btn.active > a, .header .navbar .navbar-collapse .navbar-nav > li.menu-btn:hover > a, .header .navbar .navbar-collapse .navbar-nav > li.menu-btn:focus > a {
-  color: #FFFFFF !important;
-}
-.header .navbar .navbar-collapse .navbar-nav > li.menu-btn.current-menu-ancestor > a:before, .header .navbar .navbar-collapse .navbar-nav > li.menu-btn.active > a:before, .header .navbar .navbar-collapse .navbar-nav > li.menu-btn:hover > a:before, .header .navbar .navbar-collapse .navbar-nav > li.menu-btn:focus > a:before {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: #3b42c4;
+  color: #FFFFFF !important;
 }
 .header .navbar .navbar-collapse .navbar-nav > li.dropdown > a .dropdown-toggle {
   margin-left: 3px;
@@ -804,7 +755,7 @@ HEADER STYLES
 .sidr .sidr-inner .navbar-header .navbar-toggle {
   display: block;
 }
-.sidr .sidr-inner .navigation .gc-mobile-nav {
+.sidr .sidr-inner .navigation .supportbuddy-mobile-nav {
   overflow: hidden;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
@@ -830,15 +781,12 @@ HEADER STYLES
   display: none;
 }
 .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn > a {
-  z-index: 1;
   color: #000000;
   display: block;
   font-size: 16px;
-  overflow: hidden;
   font-weight: 900;
   line-height: 22px;
   text-align: center;
-  position: relative;
   border-radius: 500px;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.8px;
@@ -849,29 +797,9 @@ HEADER STYLES
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.sidr .sidr-inner .navigation .navbar-nav > li.menu-btn > a:before {
-  top: 50%;
-  width: 0;
-  height: 0;
-  left: 50%;
-  z-index: -1;
-  content: "";
-  position: absolute;
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
 .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn.current-menu-ancestor > a, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn.active > a, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn:hover > a, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn:focus > a {
-  color: #FFFFFF !important;
-}
-.sidr .sidr-inner .navigation .navbar-nav > li.menu-btn.current-menu-ancestor > a:before, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn.active > a:before, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn:hover > a:before, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn:focus > a:before {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: #3b42c4;
+  color: #FFFFFF !important;
 }
 .sidr .sidr-inner .navigation .navbar-nav > li.dropdown {
   float: none;

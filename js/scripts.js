@@ -90,7 +90,7 @@
             $(this).parents().find( '.navbar-mobile' ).addClass("is-parent");
 
             var header = $(this).parent().parent().find('ul.dropdown-menu').height(),
-                gutter = $('.gc-mobile-nav');
+                gutter = $('.supportbuddy-mobile-nav');
 
             if ( gutter ) 
             {
@@ -113,7 +113,7 @@
             .first()
             .removeClass("is-parent");
 
-            var gutter = $('.gc-mobile-nav');
+            var gutter = $('.supportbuddy-mobile-nav');
 
             setTimeout(function() {
                 if (gutter) {
