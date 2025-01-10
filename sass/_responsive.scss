@@ -376,6 +376,11 @@ MEDIA QUERIES
 
 	    .background {
 	    	border-radius: 24px;
+
+	    	.media {
+			    margin-right: 25px;
+			    border-radius: 18px;
+			}
 	    }
 	}
 
@@ -542,6 +547,16 @@ MEDIA QUERIES
 
 	.call-action {
 	    padding: 50px 0;
+
+	    .background {
+
+	    	.media {
+			    margin-right: 0;
+				max-width: 100%;
+				min-width: 100%;
+				margin-bottom: 12px;
+			}
+	    }
 	}
 
 	/**********************************
