@@ -1485,6 +1485,10 @@ FOOTER STYLES
   height: 100%;
   max-width: 500px;
 }
+.footer__text-area .description {
+  margin-top: 10px;
+  line-height: 24px;
+}
 .footer__widget {
   margin-bottom: 30px;
 }
@@ -1494,17 +1498,19 @@ FOOTER STYLES
 .footer__widget--menu li {
   margin: 0;
   padding: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .footer__widget--menu li:last-child {
   margin-bottom: 0;
 }
 .footer__widget--menu li.title {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .footer__widget--menu li.title > a {
   color: #FFFFFF;
+  font-size: 24px;
   font-weight: 900;
+  line-height: 34px;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.8px;
   text-transform: uppercase;
@@ -1526,6 +1532,23 @@ FOOTER STYLES
 .footer__widget--menu li a:any-link:hover, .footer__widget--menu li a:any-link:focus {
   color: #3b42c4;
   text-decoration: underline;
+}
+.footer__widget .social-media li:first-child {
+  display: block;
+  margin-bottom: 20px;
+}
+.footer__widget .social-media li:first-child a {
+  width: auto;
+  height: auto;
+  color: #FFFFFF;
+  display: block;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 34px;
+  font-family: "Nunito Sans", sans-serif;
+  letter-spacing: 0.8px;
+  background: transparent;
+  text-transform: uppercase;
 }
 .footer .policies-copyright {
   gap: 20px;
@@ -2290,6 +2313,14 @@ MEDIA QUERIES
     padding-top: 80px;
     border-top-left-radius: 48px;
     border-top-right-radius: 48px;
+  }
+  .footer__widget--menu li.title > a {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .footer__widget .social-media li:first-child a {
+    font-size: 22px;
+    line-height: 32px;
   }
   .footer__text-area .tagline {
     font-size: 44px;

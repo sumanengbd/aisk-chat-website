@@ -161,6 +161,37 @@ MEDIA QUERIES
 	    border-top-left-radius: 48px;
 	    border-top-right-radius: 48px;
 
+	    &__widget {
+
+	    	&--menu {
+
+	    		li {
+
+	    			&.title {
+
+	    				> a {
+						    font-size: 22px;
+						    line-height: 32px;
+					    }
+	    			}
+	    		}
+	    	}
+
+	    	.social-media {
+
+				li {
+
+					&:first-child {
+
+						a {
+						    font-size: 22px;
+						    line-height: 32px;
+						}
+					}
+				}
+			}
+	    }
+
 	    &__text-area {
 
 	    	.tagline {
