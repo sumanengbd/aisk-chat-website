@@ -322,8 +322,6 @@ MEDIA QUERIES
 			    min-width: 100%;
 			    margin-bottom: 20px;
 			    border-top-right-radius: 0;
-    			border-bottom-left-radius: 24px;
-    			border-bottom-right-radius: 24px;
 			}
 
 			.text {
@@ -343,11 +341,6 @@ MEDIA QUERIES
 
 		&__item {
 			border-radius: 24px;
-
-			.media {
-		        border-bottom-left-radius: 24px;
-		        border-bottom-right-radius: 24px;
-		    }
 
 			.text {
 			    padding: 20px;
@@ -805,11 +798,6 @@ MEDIA QUERIES
 		.background {
 	        border-radius: 16px;
 
-	        .media {
-		        border-bottom-left-radius: 16px;
-		        border-bottom-right-radius: 16px;
-		    }
-
 		    .text [class*=icon-] {
 			    font-size: 20px;
 			    line-height: 20px;
@@ -822,11 +810,6 @@ MEDIA QUERIES
 
 	    &__item {
 	    	border-radius: 16px;
-
-	    	.media {
-			    border-bottom-left-radius: 16px;
-			    border-bottom-right-radius: 16px;
-			}
 	    }
 	}
 
