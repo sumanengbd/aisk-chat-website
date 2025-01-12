@@ -366,7 +366,7 @@ hr {
   margin: 0;
   padding: 0;
   border-width: 1px;
-  border-color: #F4DCC2;
+  border-color: #000000;
 }
 
 a:hover, a:focus, button:hover, button:focus {
@@ -1456,6 +1456,112 @@ HOME STYLES
   background: #3b42c4 !important;
 }
 
+.contact-us {
+  padding: 80px 0 100px;
+}
+.contact-us__content-area .entry-title {
+  max-width: 580px;
+}
+.contact-us__content-area .entry-title .sub-title {
+  color: #3b42c4;
+  margin-bottom: 5px;
+}
+.contact-us__content-area .entry-title .description {
+  margin-top: 10px;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+.contact-us__content-area .quick-contact {
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: -5px;
+}
+.contact-us__content-area .quick-contact > li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+.contact-us__content-area .quick-contact > li > a {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.contact-us__content-area .quick-contact > li > a:before {
+  width: 20px;
+  color: #3b42c4;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  line-height: 20px;
+  margin-right: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.contact-us__content-area .quick-contact > li > a:-moz-any-link:hover, .contact-us__content-area .quick-contact > li > a:-moz-any-link:focus {
+  color: #3b42c4;
+}
+.contact-us__content-area .quick-contact > li > a:any-link:hover, .contact-us__content-area .quick-contact > li > a:any-link:focus {
+  color: #3b42c4;
+}
+.contact-us__content-area .quick-contact > li > a:-moz-any-link:hover:before, .contact-us__content-area .quick-contact > li > a:-moz-any-link:focus:before {
+  animation: shake 0.5s forwards;
+}
+.contact-us__content-area .quick-contact > li > a:any-link:hover:before, .contact-us__content-area .quick-contact > li > a:any-link:focus:before {
+  -webkit-animation: shake 0.5s forwards;
+          animation: shake 0.5s forwards;
+}
+.contact-us__content-area .social-media {
+  margin-top: 20px;
+  margin-left: -2.5px;
+  margin-right: -2.5px;
+}
+.contact-us__content-area .social-media > li {
+  margin: 0;
+  padding-left: 2.5px;
+  padding-right: 2.5px;
+}
+.contact-us__content-area .social-media > li:first-child {
+  color: #000000;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  text-transform: uppercase;
+}
+.contact-us__content-area .social-media > li > a {
+  width: 38px;
+  height: 38px;
+  font-size: 18px !important;
+  line-height: 18px !important;
+}
+.contact-us__form {
+  width: 100%;
+  padding: 30px;
+  overflow: hidden;
+  background: #000000;
+  border-radius: 36px;
+}
+.contact-us__form .form-title {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
 /***********************************
 FOOTER STYLES
 ***********************************/
@@ -2306,6 +2412,9 @@ MEDIA QUERIES
   .call-action {
     padding: 80px 0;
   }
+  .contact-us {
+    padding: 60px 0 80px;
+  }
   /**********************************
   FOOTER STYLE
   ***********************************/
@@ -2475,6 +2584,15 @@ MEDIA QUERIES
     margin-right: 25px;
     border-radius: 18px;
   }
+  .contact-us {
+    padding: 50px 0 60px;
+  }
+  .contact-us__content-area {
+    margin-bottom: 30px;
+  }
+  .contact-us__content-area .entry-title {
+    max-width: 100%;
+  }
   /**********************************
   FOOTER STYLE
   ***********************************/
@@ -2598,7 +2716,7 @@ MEDIA QUERIES
     padding-top: 10px;
   }
   .faqs__accordion .card .card-body .content__editor {
-    font-size: 16px;
+    font-size: 24px;
   }
   .call-action {
     padding: 50px 0;
@@ -2608,6 +2726,13 @@ MEDIA QUERIES
     max-width: 100%;
     min-width: 100%;
     margin-bottom: 12px;
+  }
+  .contact-us {
+    padding: 40px 0 50px;
+  }
+  .contact-us__form {
+    padding: 20px;
+    border-radius: 16px;
   }
   /**********************************
   FOOTER STYLE
@@ -2792,6 +2917,22 @@ MEDIA QUERIES
   }
   .call-action .background .text .description {
     margin-top: 5px;
+  }
+  .contact-us {
+    padding: 30px 0 40px;
+  }
+  .contact-us__content-area {
+    margin-bottom: 25px;
+  }
+  .contact-us__content-area .entry-title .description {
+    margin-top: 5px;
+  }
+  .contact-us__content-area .quick-contact {
+    margin-top: 15px;
+  }
+  .contact-us__form {
+    padding: 20px;
+    border-radius: 16px;
   }
   /**********************************
   FOOTER STYLE

@@ -153,6 +153,9 @@ MEDIA QUERIES
 	    padding: 80px 0;
 	}
 
+	.contact-us {
+	    padding: 60px 0 80px;
+	}
 	/**********************************
 	FOOTER STYLE
 	***********************************/
@@ -415,6 +418,17 @@ MEDIA QUERIES
 	    }
 	}
 
+	.contact-us {
+	    padding: 50px 0 60px;
+
+	    &__content-area {
+	    	margin-bottom: 30px;
+
+	    	.entry-title {
+	    		max-width: 100%;
+	    	}
+	    }
+	}
 	/**********************************
 	FOOTER STYLE
 	***********************************/
@@ -569,7 +583,7 @@ MEDIA QUERIES
 			        padding-top: 10px;
 
 					.content__editor {
-					    font-size: 16px;
+					    font-size: 24px;
 					}
 				}
 			}
@@ -590,6 +604,14 @@ MEDIA QUERIES
 	    }
 	}
 
+	.contact-us {
+	    padding: 40px 0 50px;
+
+	    &__form {
+		    padding: 20px;
+		    border-radius: 16px;
+		}
+	}
 	/**********************************
 	FOOTER STYLE
 	***********************************/
@@ -864,6 +886,29 @@ MEDIA QUERIES
 	    }
 	}
 
+	.contact-us {
+	    padding: 30px 0 40px;
+
+	    &__content-area {
+	    	margin-bottom: 25px;
+
+	    	.entry-title {
+
+	    		.description {
+				    margin-top: 5px;
+				}
+	    	}
+
+	    	.quick-contact {
+			    margin-top: 15px;
+			}
+	    }
+
+	    &__form {
+		    padding: 20px;
+		    border-radius: 16px;
+		}
+	}
 	/**********************************
 	FOOTER STYLE
 	***********************************/
