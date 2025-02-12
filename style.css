@@ -1559,6 +1559,99 @@ HOME STYLES
 }
 
 /***********************************
+BLOG PAGE STYLES
+***********************************/
+.blog-details {
+  padding: 40px 0 100px;
+}
+.blog-details__banner {
+  padding-bottom: 100px;
+  border-bottom: 1px solid #00A3FF;
+}
+.blog-details__banner .content {
+  max-width: 100%;
+}
+.blog-details__banner .content .categories {
+  margin-bottom: 5px;
+}
+.blog-details__banner .content .socialshare {
+  margin: 0;
+  margin-bottom: 0;
+  margin-top: 25px;
+}
+.blog-details__banner .media {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.blog-details__banner .media img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.blog-details__banner .media:-moz-any-link:hover img, .blog-details__banner .media:-moz-any-link:focus img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.blog-details__banner .media:any-link:hover img, .blog-details__banner .media:any-link:focus img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.blog-details__content {
+  padding-top: 90px;
+}
+.blog-details__content .blog-cta {
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+  position: relative;
+  border-radius: 24px;
+  background: #3b42c4;
+  padding: 20px 30px 25px;
+}
+.blog-details__content .blog-cta:before {
+  top: -162px;
+  z-index: -1;
+  width: 600px;
+  right: -125px;
+  height: 577px;
+  position: absolute;
+  content: url(images/star.png);
+}
+.blog-details__content .blog-cta__text {
+  max-width: 450px;
+}
+.blog-details__content .blog-cta__text .title {
+  font-size: 30px;
+  line-height: 1.2;
+}
+.blog-details__content .blog-cta__text .description {
+  color: #FFFFFF;
+  font-size: 18px;
+  margin-top: 5px;
+  line-height: 28px;
+}
+.blog-details__content .blog-cta__text .btn {
+  color: #000000;
+  margin-top: 20px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 12px 20px 13px;
+}
+.blog-details__content .socialshare {
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 0;
+  padding-top: 30px;
+  border-top: 1px solid #00A3FF;
+}
+
+/***********************************
 FOOTER STYLES
 ***********************************/
 .footer {
