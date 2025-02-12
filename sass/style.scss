@@ -1222,7 +1222,6 @@ HOME STYLES
 /***********************************
 BLOG PAGE STYLES
 ***********************************/
-
 .blog-details {
 	padding: 40px 0 100px;
 
@@ -1231,16 +1230,34 @@ BLOG PAGE STYLES
 		border-bottom: 1px solid #00A3FF;
 
 		.content {
-			max-width: 100%;
+			max-width: 480px;
 
-			.categories {
-				margin-bottom: 5px;
-			}
+			.social-media {
+				margin-top: 20px;
+				margin-left: -2.5px;
+				margin-right: -2.5px;
 
-			.socialshare {
-				margin: 0;
-				margin-bottom: 0;
-				margin-top: 25px;
+				> li {
+					margin: 0;
+					padding-left: 2.5px;
+					padding-right: 2.5px;
+
+					&:first-child {
+						color: $black;
+						display: block;
+						font-weight: 700;
+						margin-bottom: 10px;
+						font-family: $grotesque;
+						text-transform: uppercase;
+					}
+
+					> a {
+						width: 38px;
+						height: 38px;
+						font-size: 18px !important;
+						line-height: 18px !important;
+					}
+				}
 			}
 		}
 
@@ -1248,7 +1265,33 @@ BLOG PAGE STYLES
 			width: 100%;
 			display: block;
 			overflow: hidden;
+			position: relative;
 			border-radius: 24px;
+
+			&.popup-video {
+
+				&:before {
+					z-index: 1;
+					width: 80px;
+					height: 80px;
+					display: flex;
+					color: $black;
+					font-size: 24px;
+					content: '\e80b';
+					text-indent: 5px;
+					overflow: hidden;
+					position: absolute;
+					background: $white;
+					align-items: center;
+					border-radius: 500px;
+					top: calc(50% - 40px);
+					left: calc(50% - 40px);
+					justify-content: center;
+					font-family: 'supportbuddy';
+					@include transition(all 0.3s ease);
+					box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.12), 0px 36px 36px 0px rgba(0, 0, 0, 0.24);
+				}
+			}
 
 			img {
 				width: 100%;
@@ -1260,6 +1303,15 @@ BLOG PAGE STYLES
 			&:any-link {
 
 				&:hover, &:focus {
+
+					&.popup-video {
+
+						&:before {
+							color: $white;
+							background: $blue;
+							@include transform(scale(0.9));
+						}
+					}
 
 					img {
 						@include transform(scale(1.2));
@@ -1278,8 +1330,8 @@ BLOG PAGE STYLES
 			overflow: hidden;
 			margin-top: 30px;
 			position: relative;
+			background: $black;
 			border-radius: 24px;
-			background: $blue;
 			padding: 20px 30px 25px;
 
 			&:before {
@@ -1311,8 +1363,7 @@ BLOG PAGE STYLES
 					color: $black;
 					margin-top: 20px;
 					background: $white;
-					border-radius: 12px;
-					padding: 12px 20px 13px;
+					// padding: 12px 20px 13px;
 				}
 			}
 		}
@@ -1567,11 +1618,253 @@ DEFAULT STYLES
 ***********************************/
 .content__editor {
 	color: $black;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 400;
-	line-height: 24px;
+	line-height: 30px;
 
 	@import 'editor';
+}
+
+.mfp-move-from-top {
+	@include transition(initial);
+
+	&.mfp-bg {
+		opacity: 1 !important;
+		background: transparent;
+		backdrop-filter: blur(10px) brightness(150%) opacity(115%);
+		--webkit-backdrop-filter: blur(10px) brightness(150%) opacity(115%);
+		background-color: rgba(#FFF, 0.3);
+	}
+
+	.mfp-container {
+		padding: 0;
+
+		.mfp-content {
+			height: 100%;
+			vertical-align: middle; 
+		}
+	}
+  
+  	/* start state */
+	.mfp-with-anim {
+		opacity: 0;
+		@include transition(all 0.5s);
+		@include transform(translateY(300px));
+	}
+  
+	&.mfp-bg {
+		opacity: 0;
+		@include transition(all 0.5s);
+	}
+  
+	/* animate in */
+	&.mfp-ready {
+
+		.mfp-with-anim {
+			opacity: 1;
+			@include transform(translateY(0));
+		}
+
+		&.mfp-bg {
+			opacity: 0.8;
+		}
+	}
+  
+	/* animate out */
+	&.mfp-removing {
+
+		.mfp-with-anim {
+			transform: translateY(100px);
+			opacity: 0;
+		}
+
+		&.mfp-bg {
+			opacity: 0;
+		}
+	}
+
+	.mfp-close { 
+		top: 10px;
+		right: 10px;
+		width: auto;
+		height: auto;
+		color: $black;
+		line-height: 1;
+		font-size: 14px;
+		cursor: pointer;
+		font-weight: 700;
+		align-items: center;
+		display: inline-flex;
+		opacity: 1 !important;
+		text-transform: uppercase;
+		@include transition(all 0.3s ease);
+
+		span {
+			color: $black;
+			font-size: 12px;
+			margin-left: 5px;
+			vertical-align: 0;
+	    	@include transition(all 0.3s ease);
+		}
+
+		&:hover, &:focus {
+			color: $red;
+
+			span {
+				color: $red;
+			}
+		}
+	}
+
+	.mfp-container {
+		right: 0;
+		width: 100%;
+		max-width: 1180px;
+		margin-left: auto;
+		margin-right: auto;
+
+		.mfp-content {
+			height: auto;
+			padding: 0 15px;
+
+			.mfp-figure {
+
+				&:after {
+					box-shadow: none;
+					background: transparent;
+				}
+
+				figure {
+					max-width: 880px;
+					overflow: hidden;
+					border-radius: 24px;
+
+					.mfp-img {
+						padding: 0;
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+		}
+
+		.mfp-arrow {
+			opacity: 1;
+			width: 70px;	
+			height: 70px;	
+			display: flex;
+			font-size: 12px;
+			font-weight: 700;
+			overflow: hidden;
+			margin-top: -45px;
+			background: $black;
+			line-height: normal;
+			border-radius: 700px;
+			letter-spacing: 0.48px;
+			text-transform: uppercase;
+			@include transition(all 0.3s ease);
+			filter: drop-shadow(0px 36px 46px rgba(0, 0, 0, 0.08));
+
+			@media only screen and (max-width: 900px) {
+				margin-top: -80px;
+			}
+
+			@media only screen and (max-width: 575px) {
+				@include transform(scale(0.6));
+			}
+
+			&:after {
+				content: none;
+			}
+
+			&:before {
+				margin: 0;
+				border: 0;
+				padding: 0;
+				opacity: 1;
+				color: $white;
+				display: flex;
+				width: inherit;
+				height: inherit;
+				position: inherit;
+				align-items: center;
+				justify-content: center;
+			}
+
+			&.mfp-arrow-left {
+				left: 30px;
+
+				@media only screen and (max-width: 991px) {
+					left: 20px;
+				}
+
+				&:before {
+					content: "Prev";
+				}
+			}
+
+			&.mfp-arrow-right {
+				right: 30px;
+
+				@media only screen and (max-width: 991px) {
+					right: 20px;
+				}
+
+				&:before {
+					content: "Next";	
+				}
+			}
+
+			&:hover {
+				background: $blue;
+
+				&:before {
+					color: $white;
+				}
+			}
+		}
+
+		.mfp-bottom-bar {
+			margin-top: 20px;
+			
+			.mfp-title {
+				color: $black;
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 22px;
+			}
+
+			.mfp-counter {
+				color: $black;
+				line-height: 1;
+				font-size: 16px;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.mfp-iframe-scaler {
+		overflow: inherit;
+		vertical-align: middle;
+
+		.mfp-iframe {
+			margin: 0;
+			padding: 0;
+			background: $white;
+		    border-radius: 24px;
+		}
+	}
+
+	&.counter-disable {
+
+		.mfp-container {
+
+			.mfp-bottom-bar {
+				display: none;
+			}
+		}
+	}
 }
 
 #cursor {

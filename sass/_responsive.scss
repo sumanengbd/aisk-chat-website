@@ -156,6 +156,22 @@ MEDIA QUERIES
 	.contact-us {
 	    padding: 60px 0 80px;
 	}
+
+	/**********************************
+	BLOG PAGE STYLE
+	***********************************/
+	.blog-details {
+		padding-bottom: 80px;
+
+		&__banner {
+			padding-bottom: 80px;
+		}
+
+		&__content {
+		    padding-top: 80px;
+		} 
+	}
+
 	/**********************************
 	FOOTER STYLE
 	***********************************/
@@ -422,6 +438,31 @@ MEDIA QUERIES
 	    	}
 	    }
 	}
+
+	/**********************************
+	BLOG PAGE STYLE
+	***********************************/
+	.blog-details {
+		padding-bottom: 60px;
+
+		&__banner {
+			padding-bottom: 60px;
+
+			.content {
+				max-width: 100%;
+				margin-bottom: 30px;
+
+				.social-media {
+				    margin-top: 15px;
+				}
+			}
+		}
+
+		&__content {
+		    padding-top: 50px;
+		} 
+	}
+
 	/**********************************
 	FOOTER STYLE
 	***********************************/
@@ -449,6 +490,14 @@ MEDIA QUERIES
     h4, .h4 { font-size: 24px; }
     h5, .h5 { font-size: 20px; }
 
+    .content__editor {
+	    font-size: 16px;
+	    line-height: 26px;
+
+	     p {
+	     	margin: 0 0 25px;
+	     }
+	}
 	/**********************************
 	HEADER STYLE
 	***********************************/
@@ -605,6 +654,26 @@ MEDIA QUERIES
 		    border-radius: 16px;
 		}
 	}
+
+	/**********************************
+	BLOG PAGE STYLE
+	***********************************/
+	.blog-details {
+		padding-bottom: 50px;
+
+		&__banner {
+			padding-bottom: 50px;
+
+			.content {
+				margin-bottom: 25px;
+			}
+		}
+
+		&__content {
+		    padding-top: 40px;
+		} 
+	}
+
 	/**********************************
 	FOOTER STYLE
 	***********************************/
@@ -691,6 +760,13 @@ MEDIA QUERIES
         letter-spacing: 0.4px;
         padding: 13px 15px 11px;
     }
+
+    .content__editor {
+	    
+	    p {
+	    	margin: 0 0 20px;
+	    }
+	}
 	/**********************************
 	HEADER STYLE
 	***********************************/
@@ -891,6 +967,36 @@ MEDIA QUERIES
 		    padding: 20px;
 		    border-radius: 16px;
 		}
+	}
+
+	/**********************************
+	BLOG PAGE STYLE
+	***********************************/
+	.blog-details {
+		padding-bottom: 40px;
+
+		&__banner {
+			padding-bottom: 40px;
+
+			.media {
+				border-radius: 16px;
+
+				&.popup-video {
+
+					&:before {
+					    width: 70px;
+					    height: 70px;
+					    font-size: 20px;
+					    top: calc(50% - 35px);
+					    left: calc(50% - 35px);
+					}
+				}
+			}
+		}
+
+		&__content {
+		    padding-top: 30px;
+		} 
 	}
 	/**********************************
 	FOOTER STYLE

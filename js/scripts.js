@@ -166,6 +166,49 @@
         }
     });
 
+    /*** enable lightbox */
+    $('.popup-video').magnificPopup({
+        type: 'iframe',
+        preloader: false,
+        fixedBgPos: true,
+        removalDelay: 500,
+        closeBtnInside: false,
+        fixedContentPos: true,
+        callbacks: {
+            beforeOpen: function() {
+                this.st.iframe.markup = this.st.iframe.markup.replace('mfp-iframe-scaler', 'mfp-iframe-scaler mfp-with-anim');
+                this.st.mainClass = this.st.el.attr('data-effect');
+            }
+        },
+        closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close">close<span class="icon-close"></span></button>',
+    });
+
+    $('.gallery-popup, .gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        midClick: true,
+        preloader: false,
+        fixedBgPos: true,
+        removalDelay: 500,
+        fixedContentPos: true,
+        closeBtnInside: false,
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0,1]
+        },
+        image: {
+            titleSrc: 'title'
+        },
+        callbacks: {
+            beforeOpen: function() {
+                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+                this.st.mainClass = 'mfp-move-from-top';
+            },
+        },
+        closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close">close<span class="icon-close"></span></button>',
+    });
+
     // Animate benefit items on scroll
     function animateBenefitItems() {
         const items = document.querySelectorAll(".our-benefits__item .right_area");
