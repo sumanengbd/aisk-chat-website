@@ -14,8 +14,8 @@ BASE STYLES
 // ICON FONTS
 @include icon-config(
 	'fonts', 
-	'supportbuddy', 
-	'14292442'
+	'aisk-chat-website', 
+	'74804745'
 );
 
 @import 'icon';
@@ -329,7 +329,7 @@ HEADER STYLES
 
 		.navigation {
 
-			.supportbuddy-mobile-nav {
+			.aisk-chat-website-mobile-nav {
 				overflow: hidden;
 				@include transition(all 500ms ease);
 			}
@@ -989,7 +989,7 @@ HOME STYLES
 				align-items: center;
 				border-radius: 500px;
 				justify-content: center;
-				font-family: "supportbuddy";
+				font-family: "aisk-chat-website";
 				@include transition(all 0.3s ease);
 			}
 
@@ -1222,6 +1222,433 @@ HOME STYLES
 /***********************************
 BLOG PAGE STYLES
 ***********************************/
+.feature {
+	padding: 60px 0;
+
+	.entry-title {
+		margin-bottom: 30px;
+	}
+
+	.mbm-20 {
+		margin-bottom: -20px;
+	}
+
+	&__item {
+		width: 100%;
+		position: relative;
+		margin-bottom: 20px;
+
+		.media {
+			width: 100%;
+			overflow: hidden;
+			margin-bottom: 10px;
+			border-radius: 16px;
+
+		    a {
+			    width: 100%;
+			    display: block;
+
+			    img {
+				    width: 100%;
+				    height: 100%;
+				    object-fit: cover;
+				    @include transition(all 0.3s ease);
+				}
+			}
+		}
+
+		.text {
+			max-width: 285px;
+
+			.title {
+				font-size: 20px;
+				font-weight: 700;
+				line-height: 26px;
+				@include transition(all 0.3s ease);
+			}
+
+			a {
+				width: 100%;
+				height: 100%;
+				display: block;
+
+				&:any-link {
+
+					&:hover, &:focus {
+
+						.title {
+							color: $red;
+							text-decoration: underline;
+						}
+
+						.date {
+							color: $red;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+
+			.user {
+				z-index: 1;
+				display: block;
+				margin-top: 10px;
+				position: relative;
+
+				&__media {
+					width: 28px;
+					height: 28px;
+					overflow: hidden;
+					margin-right: 5px;
+					border-radius: 500px;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						@include transition(all 0.3s ease);
+					}
+				}
+
+				.name {
+					margin-top: 2px;
+					font-size: 14px;
+					font-weight: 400;
+					margin-bottom: 0;
+					line-height: 18px;
+					letter-spacing: 0.28px;
+					@include transition(all 0.3s ease);
+				}
+
+				&:any-link {
+
+					&:hover, &:focus {
+
+						img {
+							@include transform(scale(1.1));
+						}
+
+						.name {
+							color: $red;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		&:hover {
+
+			.media {
+
+				a {
+
+					img {
+						@include transform(scale(1.2));
+					}
+				}
+			}
+		}
+	}
+}
+
+.blog-page {
+	padding: 100px 0;
+
+	&__title {
+		color: $black;
+		font-size: 20px;
+		font-weight: 800;
+		line-height: 28px;
+		margin-bottom: 20px;
+	}
+
+	.blog-posts {
+		width: 100%;
+		display: block;
+
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+
+		&__media {
+			z-index: 1;
+			width: 100%;
+			overflow: hidden;
+			max-width: 240px;
+			margin-right: 20px;
+			position: relative;
+			border-radius: 16px;
+
+		    a {
+			    width: 100%;
+			    display: block;
+
+			    img {
+				    width: 100%;
+				    height: 100%;
+				    object-fit: cover;
+				    @include transition(all 0.3s ease);
+				}
+			}
+		}
+
+		&__text {
+
+			.title {
+				font-size: 18px;
+				font-weight: 700;
+				line-height: 24px;
+				@include transition(all 0.3s ease);
+			}
+
+			a {
+
+				&:hover {
+
+					.title {
+						color: $blue;
+					}
+				}
+			}
+
+			.user {
+				z-index: 1;
+				display: block;
+				margin-top: 5px;
+				position: relative;
+
+				&__media {
+					width: 28px;
+					height: 28px;
+					overflow: hidden;
+					margin-right: 4px;
+					@include border-radius(500px);
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						@include transition(all 0.3s ease);
+					}
+				}
+
+				.name {
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 22px;
+					@include transition(all 0.3s ease);
+				}
+
+				&:any-link {
+
+					&:hover, &:focus {
+
+						img {
+							@include transform(scale(1.1));
+						}
+
+						.name {
+							color: $blue;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		&:hover {
+
+			.blog-posts__media {
+
+				a {
+
+					img {
+						@include transform(scale(1.2));
+					}
+				}
+			}
+		}
+	}
+
+	.widget {
+		margin-bottom: 30px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&__title {
+			color: $black;
+			font-size: 20px;
+			font-weight: 800;
+			line-height: 28px;
+			margin-bottom: 20px;
+		}
+
+		.search-form {
+
+			.form-group {
+			    margin: 0;
+			    display: flex;
+			    overflow: hidden;
+			    position: relative;
+			    border-radius: 6px;
+			    align-items: center;
+			    border: 1px solid $blue;
+
+			    input {
+					border: 0 !important;
+					width: 100% !important;
+			    	color: $black !important;
+			    	box-shadow: none !important;
+					border-radius: 0 !important;
+					font-weight: 400 !important;
+					padding: 13px 16px 14px !important;
+					padding-right: 55px !important;
+					@include transition(all 0.3s ease);
+					@include placeholder($black, 16px, 400);
+				}
+
+				button {
+					top: 0;
+					right: 0;
+					border: 0;
+					width: 50px;
+					color: $blue;
+					height: 100%;
+					cursor: pointer;
+					font-size: 18px;
+					position: absolute;
+					background: $white;
+					border-left: 1px solid $blue;
+					@include transition(all 0.3s ease);
+
+				    &:hover, &:focus {
+				    	color: $white;
+				    	background: $blue;
+				    }
+				}
+			}
+		}
+
+		.helpful_link {
+			margin-bottom: -24px;
+
+			&__item {
+				width: 100%;
+				padding: 20px;
+				display: block;
+				overflow: hidden;
+				min-height: 145px;
+				background: $white;
+				margin-bottom: 24px;
+				height: calc(100% - 20px);
+				@include border-radius(10px);
+				box-shadow: 0px 24px 36px 0px rgba(0, 0, 0, 0.04), 0px 0px 36px 0px rgba(0, 0, 0, 0.04);
+
+				[class*="icon-"] {
+					color: $black;
+					display: block;
+					font-size: 24px;
+					margin-bottom: 15px;
+					@include transition(all 0.3s ease);
+				}
+
+				.title {
+
+					span {
+						color: $blue;
+						display: block;
+						font-size: 18px;
+						font-weight: 400;
+						line-height: 26px;
+						text-transform: capitalize;
+					}
+				}
+
+				&:any-link {
+
+					&:hover, &:focus {
+
+						[class*="icon-"] {
+							color: $red;
+							animation: shake .5s forwards;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.pagination {
+		margin: 0;
+		display: block;
+		overflow: hidden;
+		border-radius: 0;
+		padding-top: 30px;
+		border-top: 2px solid $blue;
+
+		a:not(.btn) {
+			border: 0;
+			display: flex;
+			color: $black;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 22px;
+			align-items: center;
+			@include transition(all 0.3s ease);
+
+			[class*="icon-"] {
+				width: 62px;
+				color: $blue;
+				height: 62px;
+				display: flex;
+				font-size: 18px;
+				overflow: hidden;
+				align-items: center;
+				border-radius: 500px;
+				justify-content: center;
+				border: 2px solid $blue;
+				@include transition(all 0.3s ease);
+			}
+
+			&:active, &:hover, &:focus {
+				color: $blue;
+				background: transparent;
+
+				[class*="icon-"] {
+					color: $white;
+					background: $blue;
+					border-color: $blue;
+				}
+			}
+		}
+
+		.float-left {
+			padding-right: 10px;
+
+			a {
+
+				i {
+				    margin-right: 15px;
+				}
+			}
+		}
+
+		.float-right {
+			padding-left: 10px;
+
+			a {
+
+				i {
+				    margin-left: 15px;
+				}
+			}
+		}
+	}
+}
+
 .blog-details {
 	padding: 40px 0 100px;
 
@@ -1287,7 +1714,7 @@ BLOG PAGE STYLES
 					top: calc(50% - 40px);
 					left: calc(50% - 40px);
 					justify-content: center;
-					font-family: 'supportbuddy';
+					font-family: 'aisk-chat-website';
 					@include transition(all 0.3s ease);
 					box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.12), 0px 36px 36px 0px rgba(0, 0, 0, 0.24);
 				}

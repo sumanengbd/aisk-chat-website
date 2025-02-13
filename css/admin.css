@@ -1,14 +1,14 @@
 @font-face {
-  font-family: "supportbuddy";
-  src: url("../fonts/supportbuddy.eot?14292442");
-  src: url("../fonts/supportbuddy.eot?14292442#iefix") format("embedded-opentype"), url("../fonts/supportbuddy.woff2?14292442") format("woff2"), url("../fonts/supportbuddy.woff?14292442") format("woff"), url("../fonts/supportbuddy.ttf?14292442") format("truetype"), url("../fonts/supportbuddy.svg?14292442#supportbuddy") format("svg");
+  font-family: "aisk-chat-website";
+  src: url("../fonts/aisk-chat-website.eot?74804745");
+  src: url("../fonts/aisk-chat-website.eot?74804745#iefix") format("embedded-opentype"), url("../fonts/aisk-chat-website.woff2?74804745") format("woff2"), url("../fonts/aisk-chat-website.woff?74804745") format("woff"), url("../fonts/aisk-chat-website.ttf?74804745") format("truetype"), url("../fonts/aisk-chat-website.svg?74804745#aisk-chat-website") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 [data-icon^=icon-]:before, [data-icon*=" icon-"]:before {
   speak: none;
   line-height: 1;
-  font-family: "supportbuddy";
+  font-family: "aisk-chat-website";
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -20,7 +20,7 @@
 [class^=icon-]:before, [class*=" icon-"]:before {
   speak: none;
   line-height: 1;
-  font-family: "supportbuddy";
+  font-family: "aisk-chat-website";
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -95,6 +95,14 @@
 
 .icon-headphones:before {
   content: "\e810";
+}
+
+.icon-chat:before {
+  content: "\e826";
+}
+
+.icon-info:before {
+  content: "\e827";
 }
 
 .icon-twitter:before {

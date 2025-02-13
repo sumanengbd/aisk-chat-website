@@ -160,6 +160,10 @@ MEDIA QUERIES
 	/**********************************
 	BLOG PAGE STYLE
 	***********************************/
+	.blog-page {
+	    padding: 80px 0;
+	}
+
 	.blog-details {
 		padding-bottom: 80px;
 
@@ -438,10 +442,33 @@ MEDIA QUERIES
 	    	}
 	    }
 	}
-
 	/**********************************
 	BLOG PAGE STYLE
 	***********************************/
+	.feature {
+
+		&__item {
+
+			.text {
+			    max-width: 100%;
+			}
+		}
+	}
+
+	.blog-page {
+	    padding: 60px 0;
+
+	    .sidebar {
+	    	margin-top: 30px;
+
+	    	.helpful_link {
+			    display: flex;
+		        column-gap: 20px;
+			    align-items: center;
+			}
+	    }
+	}
+
 	.blog-details {
 		padding-bottom: 60px;
 
@@ -461,6 +488,16 @@ MEDIA QUERIES
 		&__content {
 		    padding-top: 50px;
 		} 
+	}
+
+	div[data-sticky_column] + div[style*="position:"] {
+	    display: none !important;
+	}
+
+	.is_stuck {
+	    position: initial !important;
+	    width: initial !important;
+	    top: initial !important;
 	}
 
 	/**********************************
@@ -658,6 +695,30 @@ MEDIA QUERIES
 	/**********************************
 	BLOG PAGE STYLE
 	***********************************/
+	.feature {
+		padding: 50px 0;
+
+		.entry-title {
+			margin-bottom: 20px;
+		}
+	}
+
+	.blog-page {
+	    padding: 50px 0;
+
+	    &__title {
+	    	margin-bottom: 15px;
+	    }
+
+	    .blog-posts {
+
+	    	&__media {
+			    max-width: 220px;
+			    margin-right: 15px;
+			}
+	    }
+	}
+
 	.blog-details {
 		padding-bottom: 50px;
 
@@ -972,6 +1033,66 @@ MEDIA QUERIES
 	/**********************************
 	BLOG PAGE STYLE
 	***********************************/
+	.feature {
+		padding: 40px 0;
+	}
+
+	.blog-page {
+	    padding: 40px 0;
+
+	    .blog-posts {
+
+	    	&:not(:last-child) {
+			    margin-bottom: 20px;
+			}
+
+	    	&__media {
+			    max-width: 100%;
+			    margin-right: 0;
+			    margin-bottom: 12px;
+			}
+	    }
+
+	    .sidebar {
+
+	    	.helpful_link {
+	    		display: block;
+	    	}
+	    }
+
+	    .pagination {
+
+			a:not(.btn) {
+
+				[class*="icon-"] {
+					width: 54px;
+					height: 54px;
+					font-size: 16px;
+				}
+			}
+
+			.float-left {
+
+				a {
+
+					i {
+					    margin-right: 10px;
+					}
+				}
+			}
+
+			.float-right {
+
+				a {
+
+					i {
+					    margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+
 	.blog-details {
 		padding-bottom: 40px;
 
