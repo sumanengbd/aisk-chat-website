@@ -1,9 +1,9 @@
 /*
-Theme Name: Startup Secrets
+Theme Name: Aisk
 Author: GoingClear Interactive
 Author URI: https://www.goingclear.com/
 Version: 1.0.0
-Text Domain: startup-secrets
+Text Domain: aisk
 */
 /***********************************
 BASE STYLES
@@ -1372,7 +1372,6 @@ HOME STYLES
   line-height: 34px;
   margin-left: 57px;
   background: transparent;
-  text-transform: uppercase;
 }
 .faqs__accordion .card .card-header .number {
   top: -3px;
@@ -1684,7 +1683,6 @@ BLOG PAGE STYLES
   background: #1B1827;
   padding: 6px 10.4px;
   border-radius: 500px;
-  text-transform: uppercase;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -2188,9 +2186,9 @@ FOOTER STYLES
   font-size: 24px;
   font-weight: 900;
   line-height: 34px;
+  pointer-events: none;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.8px;
-  text-transform: uppercase;
 }
 .footer__widget--menu li a {
   color: #FFFFFF;
@@ -2225,7 +2223,6 @@ FOOTER STYLES
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.8px;
   background: transparent;
-  text-transform: uppercase;
 }
 .footer .policies-copyright {
   gap: 20px;
@@ -2239,7 +2236,6 @@ FOOTER STYLES
   font-size: 16px;
   font-weight: 700;
   line-height: 22px;
-  text-transform: uppercase;
 }
 .footer .policies-copyright .copyright p a {
   color: #FFFFFF;
@@ -2282,7 +2278,6 @@ FOOTER STYLES
   font-size: 16px;
   font-weight: 700;
   line-height: 22px;
-  text-transform: uppercase;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -2546,6 +2541,20 @@ FOOTER STYLES
 /***********************************
 DEFAULT STYLES
 ***********************************/
+.default-page {
+  padding: 60px 0;
+}
+@media only screen and (max-width: 767px) {
+  .default-page {
+    padding: 50px 0;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .default-page {
+    padding: 40px 0;
+  }
+}
+
 .content__editor {
   color: #000000;
   font-size: 18px;
@@ -2618,6 +2627,45 @@ DEFAULT STYLES
 .content__editor ul li ul, .content__editor ul li ol, .content__editor ol li ul, .content__editor ol li ol {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.breadcrumb-wrapper {
+  padding: 0;
+}
+.breadcrumb-wrapper .breadcrumb {
+  border-bottom: 1px solid #000000;
+}
+
+.breadcrumb {
+  border: 0;
+  margin: 0;
+  color: #000000;
+  padding: 15px 0;
+  font-size: 16px;
+  border-radius: 0;
+  font-weight: 700;
+  line-height: 22px;
+  vertical-align: middle;
+  background: transparent;
+}
+.breadcrumb span.angle-right {
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+.breadcrumb .current-page {
+  color: #000000;
+  text-decoration: none;
+  text-transform: math-auto;
+}
+.breadcrumb a {
+  color: #000000;
+  vertical-align: middle;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.breadcrumb a:hover, .breadcrumb a:focus {
+  color: #3b42c4;
 }
 
 .mfp-move-from-top {
@@ -4059,3 +4107,4 @@ MEDIA QUERIES
     transform: translateX(-3px);
   }
 }
+/*# sourceMappingURL=style.css.map */

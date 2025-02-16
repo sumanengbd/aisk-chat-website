@@ -1,9 +1,9 @@
 /*
-Theme Name: Startup Secrets
+Theme Name: Aisk
 Author: GoingClear Interactive
 Author URI: https://www.goingclear.com/
 Version: 1.0.0
-Text Domain: startup-secrets
+Text Domain: aisk
 */
 /***********************************
 BASE STYLES
@@ -1013,7 +1013,6 @@ HOME STYLES
 				line-height: 34px;
 				margin-left: 57px;
 				background: transparent;
-				text-transform: uppercase;
 
 				.number {
 					top: -3px;
@@ -1354,7 +1353,6 @@ BLOG PAGE STYLES
 			background: #1B1827;
 			padding: 6px 10.4px;
 			border-radius: 500px;
-			text-transform: uppercase;
 			@include transition(all 0.3s ease);
 
 			&:any-link {
@@ -1882,9 +1880,9 @@ FOOTER STYLES
 						font-size: 24px;
 						font-weight: 900;
 						line-height: 34px;
+						pointer-events: none;
 						font-family: $nunito;
 						letter-spacing: 0.8px;
-						text-transform: uppercase;
 					}
 				}
 
@@ -1927,7 +1925,6 @@ FOOTER STYLES
 						font-family: $nunito;
 						letter-spacing: 0.8px;
 						background: transparent;
-						text-transform: uppercase;
 					}
 				}
 			}
@@ -1944,7 +1941,6 @@ FOOTER STYLES
 			font-size: 16px;
 			font-weight: 700;
 			line-height: 22px;
-			text-transform: uppercase;
 
 			p {
 
@@ -1996,7 +1992,6 @@ FOOTER STYLES
 				font-size: 16px;
 				font-weight: 700;
 				line-height: 22px;
-				text-transform: uppercase;
 				@include transition(all 0.3s ease);
 
 				&:any-link {
@@ -2062,6 +2057,18 @@ FOOTER STYLES
 /***********************************
 DEFAULT STYLES
 ***********************************/
+.default-page {
+	padding: 60px 0;
+
+	@media only screen and (max-width: 767px) {
+		padding: 50px 0;
+	}
+
+	@media only screen and (max-width: 575px) {
+		padding: 40px 0;
+	}
+}
+
 .content__editor {
 	color: $black;
 	font-size: 18px;
@@ -2069,6 +2076,52 @@ DEFAULT STYLES
 	line-height: 30px;
 
 	@import 'editor';
+}
+
+.breadcrumb-wrapper {
+	padding: 0;
+
+	.breadcrumb {
+		border-bottom: 1px solid $black;
+	}
+}
+
+.breadcrumb {
+	border: 0;
+	margin: 0;
+	color: $black;
+	padding: 15px 0;
+	font-size: 16px;
+	border-radius: 0;
+	font-weight: 700;
+	line-height: 22px;
+	vertical-align: middle;
+	background: transparent;
+
+	span {
+
+		&.angle-right {
+			padding-left: 5px;
+			padding-right: 5px;
+			vertical-align: middle;
+		}
+	}
+
+	.current-page {
+		color: $black;
+		text-decoration: none;
+		text-transform: math-auto;
+	}
+
+	a {
+		color: $black;
+		vertical-align: middle;
+		@include transition(all 0.3s ease);
+
+		&:hover, &:focus {
+			color: $blue;
+		}
+	}
 }
 
 .mfp-move-from-top {
