@@ -93,6 +93,10 @@ hr {
 	padding: 0;
 	border-width: 1px;
 	border-color: $black;
+
+	&.blue {
+		border-color: $blue;
+	}
 }
 
 a, button {

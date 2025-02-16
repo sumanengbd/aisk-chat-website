@@ -1223,25 +1223,20 @@ HOME STYLES
 BLOG PAGE STYLES
 ***********************************/
 .feature {
-	padding: 60px 0;
+	padding: 60px 0 100px;
 
 	.entry-title {
 		margin-bottom: 30px;
 	}
 
-	.mbm-20 {
-		margin-bottom: -20px;
-	}
-
 	&__item {
 		width: 100%;
 		position: relative;
-		margin-bottom: 20px;
 
 		.media {
 			width: 100%;
 			overflow: hidden;
-			margin-bottom: 10px;
+			margin-bottom: 15px;
 			border-radius: 16px;
 
 		    a {
@@ -1258,12 +1253,10 @@ BLOG PAGE STYLES
 		}
 
 		.text {
-			max-width: 285px;
+			max-width: 580px;
 
 			.title {
-				font-size: 20px;
 				font-weight: 700;
-				line-height: 26px;
 				@include transition(all 0.3s ease);
 			}
 
@@ -1289,51 +1282,8 @@ BLOG PAGE STYLES
 				}
 			}
 
-			.user {
-				z-index: 1;
-				display: block;
-				margin-top: 10px;
-				position: relative;
-
-				&__media {
-					width: 28px;
-					height: 28px;
-					overflow: hidden;
-					margin-right: 5px;
-					border-radius: 500px;
-
-					img {
-						width: 100%;
-						height: 100%;
-						object-fit: cover;
-						@include transition(all 0.3s ease);
-					}
-				}
-
-				.name {
-					margin-top: 2px;
-					font-size: 14px;
-					font-weight: 400;
-					margin-bottom: 0;
-					line-height: 18px;
-					letter-spacing: 0.28px;
-					@include transition(all 0.3s ease);
-				}
-
-				&:any-link {
-
-					&:hover, &:focus {
-
-						img {
-							@include transform(scale(1.1));
-						}
-
-						.name {
-							color: $red;
-							text-decoration: underline;
-						}
-					}
-				}
+			.description {
+				margin-top: 5px;
 			}
 		}
 
@@ -1346,6 +1296,72 @@ BLOG PAGE STYLES
 					img {
 						@include transform(scale(1.2));
 					}
+				}
+			}
+		}
+
+		&.has--small {
+
+			&:not(:last-child) {
+				margin-bottom: 30px;
+				padding-bottom: 30px;
+				border-bottom: 1px solid $blue;
+			}
+
+			.media {
+				max-width: 240px;
+				margin-bottom: 0;
+			}
+
+			.text {
+				max-width: 100%;
+				margin-right: 20px;
+
+				.title {
+					font-size: 20px;
+					line-height: 28px;
+				}
+
+				.description {
+					margin-top: 0;
+					font-size: 16px;
+					line-height: 22px;
+				}
+			}
+		}
+	}
+}
+
+.categories {
+	gap: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 5px;
+
+	li {
+		margin: 0;
+		padding: 0;
+
+		a {
+			z-index: 5;
+			color: $white;
+			display: block;
+			font-size: 12px;
+			font-weight: 700;
+			line-height: 17px;
+			position: relative;
+			text-align: center;
+			background: #1B1827;
+			padding: 6px 10.4px;
+			border-radius: 500px;
+			text-transform: uppercase;
+			@include transition(all 0.3s ease);
+
+			&:any-link {
+
+				&:hover {
+					color: $white;
+					background: $blue;
 				}
 			}
 		}
@@ -1369,6 +1385,8 @@ BLOG PAGE STYLES
 
 		&:not(:last-child) {
 			margin-bottom: 30px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid $blue;
 		}
 
 		&__media {
@@ -1396,9 +1414,9 @@ BLOG PAGE STYLES
 		&__text {
 
 			.title {
-				font-size: 18px;
+				font-size: 24px;
 				font-weight: 700;
-				line-height: 24px;
+				line-height: 34px;
 				@include transition(all 0.3s ease);
 			}
 
@@ -1586,8 +1604,6 @@ BLOG PAGE STYLES
 		display: block;
 		overflow: hidden;
 		border-radius: 0;
-		padding-top: 30px;
-		border-top: 2px solid $blue;
 
 		a:not(.btn) {
 			border: 0;
@@ -1609,7 +1625,7 @@ BLOG PAGE STYLES
 				align-items: center;
 				border-radius: 500px;
 				justify-content: center;
-				border: 2px solid $blue;
+				border: 1px solid $blue;
 				@include transition(all 0.3s ease);
 			}
 
@@ -1659,32 +1675,8 @@ BLOG PAGE STYLES
 		.content {
 			max-width: 480px;
 
-			.social-media {
-				margin-top: 20px;
-				margin-left: -2.5px;
-				margin-right: -2.5px;
-
-				> li {
-					margin: 0;
-					padding-left: 2.5px;
-					padding-right: 2.5px;
-
-					&:first-child {
-						color: $black;
-						display: block;
-						font-weight: 700;
-						margin-bottom: 10px;
-						font-family: $grotesque;
-						text-transform: uppercase;
-					}
-
-					> a {
-						width: 38px;
-						height: 38px;
-						font-size: 18px !important;
-						line-height: 18px !important;
-					}
-				}
+			.categories {
+				margin-bottom: 15px;
 			}
 		}
 
@@ -1744,6 +1736,33 @@ BLOG PAGE STYLES
 						@include transform(scale(1.2));
 					}
 				}
+			}
+		}
+	}
+
+	.social-media {
+		margin-left: -2.5px;
+		margin-right: -2.5px;
+
+		> li {
+			margin: 0;
+			padding-left: 2.5px;
+			padding-right: 2.5px;
+
+			&:first-child {
+				color: $black;
+				display: block;
+				font-weight: 700;
+				margin-bottom: 10px;
+				font-family: $grotesque;
+				text-transform: uppercase;
+			}
+
+			> a {
+				width: 38px;
+				height: 38px;
+				font-size: 18px !important;
+				line-height: 18px !important;
 			}
 		}
 	}

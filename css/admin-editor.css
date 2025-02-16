@@ -10202,6 +10202,9 @@ hr {
   border-width: 1px;
   border-color: #000000;
 }
+hr.blue {
+  border-color: #3b42c4;
+}
 
 a:hover, a:focus, button:hover, button:focus {
   outline: 0;
