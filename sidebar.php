@@ -39,7 +39,9 @@
 						foreach ( $categories as $category ) 
 						{
 						    printf( 
-						    	'<li%s><a href="%s">%s</a></li>', 
+						    	'<li%s>
+						    		<a href="%s" class="d-flex align-items-center justify-content-between">%s <span class="icon-arrow-right"></span></a>
+						    	</li>', 
 						    	(get_queried_object()->term_id == $category->term_id ? ' class="active"' : ''),
 						    	esc_url( get_category_link( $category->term_id ) ), 
 						    	$category->name 

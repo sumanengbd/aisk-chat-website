@@ -6,6 +6,7 @@
 $tagline = get_field( 'tagline', 'options' );
 $contacts = get_field( 'contacts', 'options' );
 $footer_logo = get_field( 'footer_logo', 'options' );
+$description = get_field( 'description', 'options' );
 $social_media = get_field( 'social_media', 'options' ); ?>
 
 	<footer class="footer">
@@ -50,10 +51,15 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 										get_bloginfo('description')  
 									);
 								}
+
+								if ( $description ) 
+								{
+									printf( 
+										'<div class="description desc-big text-white">%s</div>',  
+										$description
+									);
+								}
 							?>
-							<div class="description desc-big text-white">
-								<p>After connecting, your conversations will not be viewable and answerable on the mobile WhatsApp Business App but are easily</p>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -96,12 +102,28 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 
 						<div class="col">
 							<div class="footer__widget">
-								<ul class="social-media list-inline">
-									<li class="title"><a>Resources</a></li>
-									<li><a href="#" class="icon-facebook" target="_blank"></a></li>
-									<li><a href="#" class="icon-twitter" target="_blank"></a></li>
-									<li><a href="#" class="icon-linkedin" target="_blank"></a></li>
-								</ul>
+								<?php
+									if ( $social_media ) 
+									{
+										echo '<ul class="social-media list-inline">';
+
+											printf( 
+												'<li class="title"><a>%s</a></li>',
+												esc_html__( 'Resources', 'aisk' )  
+											);
+
+											foreach ( $social_media as $social ) 
+											{
+												printf( 
+													'<li><a href="%s" class="%s" target="_blank"></a></li>',  
+													esc_url( $social['url'] ),
+													esc_html( $social['icon'] )
+												);
+											}
+
+										echo '</ul>';
+									}
+								?>
 							</div>
 						</div>
 					</div>

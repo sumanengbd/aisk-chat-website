@@ -47,8 +47,8 @@ HEADER STYLES
 	width: 100%;
 	z-index: 1030;
 	position: fixed;
+	background: $white;
 	padding: 20.047px 0;
-	background: #FFFFFF;
 	@include transition(all 0.5s ease);
 
 	&.transparent {
@@ -191,7 +191,7 @@ HEADER STYLES
 								content: "";
 								height: 6px;
 								z-index: -1;
-								background: #FFFFFF;
+								background: $white;
 								position: absolute;
 								transform: rotate(45deg);
 							}
@@ -268,7 +268,7 @@ HEADER STYLES
 
 	&.stop {
 		padding: 12px 0;
-		background: #FFFFFF;
+		background: $white;
 	    box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.12);
 	}
 }
@@ -915,9 +915,9 @@ HOME STYLES
 		width: 100%;
 		padding: 30px;
 		overflow: hidden;
+		background: $gray;
 		border-radius: 16px;
 		margin-bottom: 20px;
-		background: #edf2ed;
 		height: calc(100% - 20px);
 
 		.step {
@@ -947,7 +947,7 @@ HOME STYLES
 
 .faqs {
 	padding: 100px 0;
-	background: #edf2ed;
+	background: $gray;
 
 	.entry-title {
 		max-width: 1080px;
@@ -1029,8 +1029,8 @@ HOME STYLES
 					border-radius: 4px;
 					align-items: center;
 					display: inline-flex;
+					border: 1px solid $red;
 					justify-content: center;
-					border: 1px solid #E10532;
 				}
 			}
 
@@ -1410,7 +1410,7 @@ HOME STYLES
 											background: $white;
 											position: absolute;
 											border-radius: 500px;
-											border: 1px solid #D5D5D5;
+											border: 1px solid $gray;
 										}
 
 										&:after {
@@ -1487,7 +1487,7 @@ HOME STYLES
 									position: absolute;
 									background: $white;
 									border-radius: 4px;
-									border: 1px solid #D5D5D5;
+									border: 1px solid $gray;
 								}
 
 								&:after {
@@ -1882,7 +1882,7 @@ BLOG PAGE STYLES
 			line-height: 17px;
 			position: relative;
 			text-align: center;
-			background: #1B1827;
+			background: $black;
 			padding: 6px 10.4px;
 			border-radius: 500px;
 			@include transition(all 0.3s ease);
@@ -2080,6 +2080,32 @@ BLOG PAGE STYLES
 			}
 		}
 
+		.category {
+
+			li {
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				a {
+					color: $white;
+					display: block;
+					font-weight: 700;
+					padding: 13px 20px;
+					background: $blue;
+					border-radius: 16px;
+					@include transition(all 0.3s ease);
+
+					&:hover {
+						color: $white;
+						background: $red;
+					}
+				}
+			}
+		}
+
 		.helpful_link {
 			margin-bottom: -24px;
 
@@ -2205,7 +2231,7 @@ BLOG PAGE STYLES
 
 		.page-numbers {
 			border: 0;
-			color: #1C1B1F;
+			color: $black;
 			font-size: 16px;
 			font-weight: 500;
 			line-height: 22px;
@@ -2278,7 +2304,7 @@ BLOG PAGE STYLES
 			&:not(.next):not(.prev):not(.dots) {
 				width: 30px;
 				height: 30px;
-				color: #1C1B1F;
+				color: $black;
 				display: inline;
 				font-weight: 700;
 				line-height: 28px;
@@ -2288,7 +2314,7 @@ BLOG PAGE STYLES
 			}
 
 			&.current {
-				color: #1C1B1F !important;
+				color: $black !important;
 				border: 1px solid $blue !important;
 			}
 		}
@@ -2300,7 +2326,7 @@ BLOG PAGE STYLES
 
 	&__banner {
 		padding-bottom: 100px;
-		border-bottom: 1px solid #00A3FF;
+		border-bottom: 1px solid $blue;
 
 		.content {
 
@@ -2706,7 +2732,7 @@ DEFAULT STYLES
 		background: transparent;
 		backdrop-filter: blur(10px) brightness(150%) opacity(115%);
 		--webkit-backdrop-filter: blur(10px) brightness(150%) opacity(115%);
-		background-color: rgba(#FFF, 0.3);
+		background-color: rgba($white, 0.3);
 	}
 
 	.mfp-container {
@@ -2998,7 +3024,7 @@ DEFAULT STYLES
 	#cursor.overlay .cursor__circle {
 		width: 48px;
 		height: 48px;
-		background-color: rgba(227, 222, 193, 0.08);
+		background-color: rgba($black, 0.08);
 		border-color: transparent;
 	}
 }
