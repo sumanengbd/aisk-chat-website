@@ -24,70 +24,19 @@ get_header(); ?>
 		<section class="feature">
 			<div class="container">
 				<?php
-					echo '<div class="entry-title'.( !$bcontent['disable'] && $paged == 1 && $fposts_query->have_posts() ? ' text-center' : ' mb-0').'">';
+					echo '<div class="entry-title mb-0">';
 
-						printf( 
-							'<h1 class="title">%s</h1>',  
-							get_the_title( $page_id )
-						);
+						the_archive_title( '<h1 class="title">', '</h1>' );
 
-						if( '' !== $blog_page->post_content )
-				        {
-				        	echo '<div class="description font-weight-normal mt-2 h6">';
-
-				        		echo apply_filters('the_content', $blog_page->post_content);
-
-				        	echo '</div>';
-				        }
+						if ( get_the_archive_description() ) 
+						{
+							printf( 
+								'<div class="description font-weight-normal mt-2 h6">%s</div>', 
+								get_the_archive_description() 
+							);
+						}
 
 					echo '</div>';
-
-					if ( !$bcontent['disable'] && $paged == 1 && $fposts_query->have_posts() ) 
-					{
-						echo '<div class="row lr-10 mbm-20">';
-							echo '<div class="col-lg-6">';
-
-								while ( $fposts_query->have_posts() ) 
-								{
-									$fposts_query->the_post();
-
-									get_template_part( 
-										'template-parts/content', 
-										'post',
-										array(
-											'image' => 'post_large',
-											'class' => 'feature__item',
-										)
-									);
-
-									break;
-								}
-
-							echo '</div>';
-
-							if ( $fposts_query->found_posts > 1 ) 
-							{
-								echo '<div class="col-lg-6">';
-
-									while ( $fposts_query->have_posts() ) 
-									{
-										$fposts_query->the_post();
-
-										get_template_part( 
-											'template-parts/content', 
-											'post',
-											array(
-												'class' => 'feature__item has--small d-sm-flex align-items-center justify-content-between flex-row-reverse'
-											)
-										);
-									}
-
-								echo '</div>';
-							}
-
-						echo '</div>';
-					}
-					wp_reset_query();
 				?>
 			</div>
 		</section>

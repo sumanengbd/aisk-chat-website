@@ -1,6 +1,9 @@
 jQuery( document ).ready(function() {
-    // Landing
-    dynamic_title_repeater_accordion('testimonials', 'name');
+    dynamic_title_repeater_accordion('chats', 'title');
+    dynamic_title_repeater_accordion('features', 'title');
+    dynamic_title_repeater_accordion('stories', 'title');
+    dynamic_title_repeater_accordion('steps', 'title');
+    dynamic_title_repeater_accordion('faqs', 'question');
 });
 
 function dynamic_title_repeater_accordion(repeater_name, field_name) {
@@ -21,3 +24,28 @@ function dynamic_title_repeater_accordion(repeater_name, field_name) {
 
     }
 }
+
+function hideVisualEditorOnTemplate() {
+    const hiddenTemplates = ["aisk-page.php"];
+
+    function toggleVisualEditor(template) {
+        const editor = document.querySelector(".editor-visual-editor");
+        if (editor) editor.style.display = hiddenTemplates.includes(template) ? "none" : "";
+    }
+
+    function init() {
+        if (!wp?.data?.subscribe) return setTimeout(init, 100);
+        let prevTemplate = wp.data.select("core/editor").getEditedPostAttribute("template");
+        toggleVisualEditor(prevTemplate);
+
+        wp.data.subscribe(() => {
+            const currentTemplate = wp.data.select("core/editor").getEditedPostAttribute("template");
+            if (currentTemplate !== prevTemplate) toggleVisualEditor((prevTemplate = currentTemplate));
+        });
+    }
+    init();
+}
+
+document.addEventListener("DOMContentLoaded", hideVisualEditorOnTemplate);
+window.addEventListener("load", hideVisualEditorOnTemplate);
+

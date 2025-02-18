@@ -1,0 +1,134 @@
+{
+    "key": "group_67b37359a0341",
+    "title": "Blog Page Options",
+    "fields": [
+        {
+            "key": "field_67b373597d8a7",
+            "label": "Helpful Links",
+            "name": "helpful_links",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add New Helpful Link",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67b373717d8a8",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "cicon_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "icon_categories": "",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 1,
+                    "placeholder": "",
+                    "choices": {
+                        "Basic": {
+                            "icon-minus": "Minus",
+                            "icon-phone": "Phone",
+                            "icon-plus": "Plus",
+                            "icon-quote-left": "Quote Left",
+                            "icon-quote-right": "Quote Right",
+                            "icon-tiktok": "Tiktok",
+                            "icon-arrow-down": "Arrow Down",
+                            "icon-arrow-left": "Arrow Left",
+                            "icon-arrow-right": "Arrow Right",
+                            "icon-arrow-up": "Arrow Up",
+                            "icon-close": "Close",
+                            "icon-play": "Play",
+                            "icon-pause": "Pause",
+                            "icon-search": "Search",
+                            "icon-mail": "Mail",
+                            "icon-skype": "Skype",
+                            "icon-headphones": "Headphones",
+                            "icon-chat": "Chat",
+                            "icon-info": "Info",
+                            "icon-twitter": "Twitter",
+                            "icon-facebook": "Facebook",
+                            "icon-github-circled": "Github Circled",
+                            "icon-rss": "Rss",
+                            "icon-gplus": "Gplus",
+                            "icon-linkedin": "Linkedin",
+                            "icon-youtube": "Youtube",
+                            "icon-instagram": "Instagram",
+                            "icon-vkontakte": "Vkontakte",
+                            "icon-qq": "Qq",
+                            "icon-wechat": "Wechat",
+                            "icon-facebook-official": "Facebook Official",
+                            "icon-pinterest": "Pinterest",
+                            "icon-whatsapp": "Whatsapp",
+                            "icon-clone": "Clone",
+                            "icon-reddit-alien": "Reddit Alien",
+                            "icon-snapchat-ghost": "Snapchat Ghost",
+                            "icon-quora": "Quora",
+                            "icon-telegram": "Telegram",
+                            "icon-linkedin-squared": "Linkedin Squared",
+                            "icon-sina-weibo": "Sina Weibo"
+                        }
+                    },
+                    "default_value": "",
+                    "parent_repeater": "field_67b373597d8a7"
+                },
+                {
+                    "key": "field_67b3738e7d8a9",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_67b373597d8a7"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "posts_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1739813814
+}

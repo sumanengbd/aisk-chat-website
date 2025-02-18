@@ -5,6 +5,9 @@ $white: #FFFFFF;
 $black: #000000; 
 $yellow: #fdf150;
 
+$nunito: "Nunito Sans", sans-serif;
+$grotesque: "Bricolage Grotesque", sans-serif;
+
 *:not(ul):not(ol):not(blockquote) {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -36,9 +39,6 @@ html {
 	overflow-y: scroll;
 }
 
-$nunito: "Nunito Sans", sans-serif;
-$grotesque: "Bricolage Grotesque", sans-serif;
-
 body {
 	margin: 0;
 	width: 100%;
@@ -56,15 +56,15 @@ section {
 	padding: 50px 0;
 }
 
-input[type="text"]:not(.select2-input),
-input[type="number"],
-input[type="email"],
-input[type="tel"],
-input[type="url"],
-input[type="search"],
-input[type="password"],
-input[type="file"],
-select, textarea {
+input[type="text"]:not(.select2-input):not([name^="acf-block"]),
+input[type="number"]:not([name^="acf-block"]),
+input[type="email"]:not([name^="acf-block"]),
+input[type="tel"]:not([name^="acf-block"]),
+input[type="url"]:not([name^="acf-block"]),
+input[type="search"]:not([name^="acf-block"]),
+input[type="password"]:not([name^="acf-block"]),
+input[type="file"]:not([name^="acf-block"]),
+select:not([name^="acf-block"]), textarea:not([name^="acf-block"]) {
 	@include appearance;
 	width: 100% !important;
 	color: #282525 !important;
@@ -134,11 +134,10 @@ h1, h2, h3, h4, h5, h6,
 	font-weight: 900;
 	line-height: 24px;
 	background: $blue;
+	padding: 13px 25px;
 	border-radius: 500px;
 	font-family: $nunito;
 	letter-spacing: 0.8px;
-	padding: 18px 25px 16px;
-	text-transform: uppercase;
 	box-shadow: none !important;
 	@include transition(all 0.3s ease);
 
@@ -216,9 +215,10 @@ h1, h2, h3, h4, h5, h6,
 
 	h1, h2, h3, h4, h5, h6,
 	.h1, .h2, .h3, .h4, .h5, .h6, p, 
-	.entry-title, .description, .block-content, 
+	.entry-title, .description, 
 	.content, .testi-item, .quote, 
-	.missionvission__content, .content__editor, .text {
+	[class*="__editor"], [class*="__content"], 
+	[class*="-content"], [class*="text"] {
 		max-width: 100% !important;
 	}
 }

@@ -12,8 +12,8 @@ if ( ! function_exists( 'aisk_setup' ) ) {
 
 		/** Enable support for Post Thumbnails on posts and pages. */
 		add_theme_support( 'post-thumbnails' );
-		// add_image_size( 'post_thumb', 380, 248, true );
-		// add_image_size( 'post_large', 580, 322, true );
+		add_image_size( 'post_thumb', 240, 156, true );
+		add_image_size( 'post_large', 625, 400, true );
 
 		/*** Editor Style */
 		add_editor_style(get_template_directory_uri() . '/css/admin-editor.min.css');
@@ -39,11 +39,10 @@ function aisk_preconnect() {
 }
 add_action('wp_head', 'aisk_preconnect', 5);
 
-function aisk_scripts() {
+function aisk_enqueue_scripts() {
 
 	/*** Enqueue styles. */
-	wp_enqueue_style(
-		'plugins', get_template_directory_uri() . '/css/plugins.css', array(), date("ymd-Gis", filemtime( get_template_directory() . '/css/plugins.css' )), 'all');
+	wp_enqueue_style('plugins', get_template_directory_uri() . '/css/plugins.css', array(), date("ymd-Gis", filemtime( get_template_directory() . '/css/plugins.css' )), 'all');
 	wp_enqueue_style( 'aisk-style', get_stylesheet_uri(), array(), "0.1.0");
 
 	/*** Enqueue scripts. */
@@ -51,7 +50,7 @@ function aisk_scripts() {
 	wp_enqueue_script('plugins', get_template_directory_uri() . '/js/plugins.js', array(), date("ymd-Gis", filemtime( get_template_directory() . '/js/plugins.js' )), true);
 	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array(), date("ymd-Gis", filemtime( get_template_directory() . '/js/scripts.js' )), true);
 }
-add_action( 'wp_enqueue_scripts', 'aisk_scripts' );
+add_action( 'wp_enqueue_scripts', 'aisk_enqueue_scripts' );
 
 // REMOVE WP EMOJI
 remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -218,6 +217,7 @@ function aisk_custom_mime_types( $mimes ) {
 	$mimes['svg'] = 'image/svg+xml';
 	$mimes['svgz'] = 'image/svg+xml';
 	$mimes['doc'] = 'application/msword';
+	$mimes['avi'] = 'video/x-msvideo';
 	 
 	// Optional. Remove a mime type.
 	unset( $mimes['exe'] );

@@ -27,7 +27,7 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 						        {
 						            printf(
 						                '<img src="%s" class="img-fluid" alt="%s">', 
-						                esc_url( get_theme_file_uri('images/logo.png') ), 
+						                esc_url( get_theme_file_uri('images/footer-logo.png') ), 
 						                get_bloginfo('name')
 						            );
 						        }

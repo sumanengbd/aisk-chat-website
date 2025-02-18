@@ -24,10 +24,10 @@
             wp_site_icon(); 
         }
 
-        // if ( is_single() ) 
-        // {
-        //     echo '<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=67726cad1bf8f7001aa8a1b7&product=inline-share-buttons" async="async"></script>';
-        // }
+        if ( is_single() ) 
+        {
+            echo '<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=67b2e0323c04610012ab7070&product=inline-share-buttons" async="async"></script>';
+        }
 
         wp_head(); 
     ?>

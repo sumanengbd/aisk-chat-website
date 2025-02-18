@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Aisk
 Author: GoingClear Interactive
@@ -39,30 +40,6 @@ BASE STYLES
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-minus:before {
-  content: "\e800";
-}
-
-.icon-phone:before {
-  content: "\e801";
-}
-
-.icon-plus:before {
-  content: "\e802";
-}
-
-.icon-quote-left:before {
-  content: "\e803";
-}
-
-.icon-quote-right:before {
-  content: "\e804";
-}
-
-.icon-tiktok:before {
-  content: "\e805";
-}
-
 .icon-arrow-down:before {
   content: "\e806";
 }
@@ -79,44 +56,76 @@ BASE STYLES
   content: "\e809";
 }
 
+.icon-chat:before {
+  content: "\e826";
+}
+
+.icon-clone:before {
+  content: "\f24d";
+}
+
 .icon-close:before {
   content: "\e80a";
-}
-
-.icon-play:before {
-  content: "\e80b";
-}
-
-.icon-pause:before {
-  content: "\e80c";
-}
-
-.icon-search:before {
-  content: "\e80d";
-}
-
-.icon-mail:before {
-  content: "\e80e";
-}
-
-.icon-skype:before {
-  content: "\e80f";
 }
 
 .icon-headphones:before {
   content: "\e810";
 }
 
-.icon-chat:before {
-  content: "\e826";
-}
-
 .icon-info:before {
   content: "\e827";
 }
 
-.icon-twitter:before {
-  content: "\f099";
+.icon-mail:before {
+  content: "\e80e";
+}
+
+.icon-minus:before {
+  content: "\e800";
+}
+
+.icon-pause:before {
+  content: "\e80c";
+}
+
+.icon-phone:before {
+  content: "\e801";
+}
+
+.icon-play:before {
+  content: "\e80b";
+}
+
+.icon-plus:before {
+  content: "\e802";
+}
+
+.icon-quote-left:before {
+  content: "\e803";
+}
+
+.icon-quote-right:before {
+  content: "\e804";
+}
+
+.icon-rss:before {
+  content: "\f09e";
+}
+
+.icon-search:before {
+  content: "\e80d";
+}
+
+.icon-skype:before {
+  content: "\e80f";
+}
+
+.icon-tiktok:before {
+  content: "\e805";
+}
+
+.icon-facebook-official:before {
+  content: "\f230";
 }
 
 .icon-facebook:before {
@@ -127,76 +136,68 @@ BASE STYLES
   content: "\f09b";
 }
 
-.icon-rss:before {
-  content: "\f09e";
-}
-
 .icon-gplus:before {
   content: "\f0d5";
-}
-
-.icon-linkedin:before {
-  content: "\f0e1";
-}
-
-.icon-youtube:before {
-  content: "\f16a";
 }
 
 .icon-instagram:before {
   content: "\f16d";
 }
 
-.icon-vkontakte:before {
-  content: "\f189";
+.icon-linkedin-squared:before {
+  content: "\f30c";
 }
 
-.icon-qq:before {
-  content: "\f1d6";
-}
-
-.icon-wechat:before {
-  content: "\f1d7";
-}
-
-.icon-facebook-official:before {
-  content: "\f230";
+.icon-linkedin:before {
+  content: "\f0e1";
 }
 
 .icon-pinterest:before {
   content: "\f231";
 }
 
-.icon-whatsapp:before {
-  content: "\f232";
-}
-
-.icon-clone:before {
-  content: "\f24d";
-}
-
-.icon-reddit-alien:before {
-  content: "\f281";
-}
-
-.icon-snapchat-ghost:before {
-  content: "\f2ac";
+.icon-qq:before {
+  content: "\f1d6";
 }
 
 .icon-quora:before {
   content: "\f2c4";
 }
 
-.icon-telegram:before {
-  content: "\f2c6";
-}
-
-.icon-linkedin-squared:before {
-  content: "\f30c";
+.icon-reddit-alien:before {
+  content: "\f281";
 }
 
 .icon-sina-weibo:before {
   content: "\f33f";
+}
+
+.icon-snapchat-ghost:before {
+  content: "\f2ac";
+}
+
+.icon-telegram:before {
+  content: "\f2c6";
+}
+
+.icon-twitter:before {
+  content: "\f099";
+}
+
+.icon-vkontakte:before {
+  content: "\f189";
+}
+
+.icon-wechat:before {
+  content: "\f1d7";
+}
+
+.icon-whatsapp:before {
+  content: "\f232";
+}
+
+.icon-youtube:before {
+  content: "\f16a";
 }
 
 *:not(ul):not(ol):not(blockquote) {
@@ -247,15 +248,15 @@ section {
   padding: 50px 0;
 }
 
-input[type=text]:not(.select2-input),
-input[type=number],
-input[type=email],
-input[type=tel],
-input[type=url],
-input[type=search],
-input[type=password],
-input[type=file],
-select, textarea {
+input[type=text]:not(.select2-input):not([name^=acf-block]),
+input[type=number]:not([name^=acf-block]),
+input[type=email]:not([name^=acf-block]),
+input[type=tel]:not([name^=acf-block]),
+input[type=url]:not([name^=acf-block]),
+input[type=search]:not([name^=acf-block]),
+input[type=password]:not([name^=acf-block]),
+input[type=file]:not([name^=acf-block]),
+select:not([name^=acf-block]), textarea:not([name^=acf-block]) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -281,15 +282,15 @@ select, textarea {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
 }
-input[type=text]:not(.select2-input)::-webkit-inner-spin-button,
-input[type=number]::-webkit-inner-spin-button,
-input[type=email]::-webkit-inner-spin-button,
-input[type=tel]::-webkit-inner-spin-button,
-input[type=url]::-webkit-inner-spin-button,
-input[type=search]::-webkit-inner-spin-button,
-input[type=password]::-webkit-inner-spin-button,
-input[type=file]::-webkit-inner-spin-button,
-select::-webkit-inner-spin-button, textarea::-webkit-inner-spin-button {
+input[type=text]:not(.select2-input):not([name^=acf-block])::-webkit-inner-spin-button,
+input[type=number]:not([name^=acf-block])::-webkit-inner-spin-button,
+input[type=email]:not([name^=acf-block])::-webkit-inner-spin-button,
+input[type=tel]:not([name^=acf-block])::-webkit-inner-spin-button,
+input[type=url]:not([name^=acf-block])::-webkit-inner-spin-button,
+input[type=search]:not([name^=acf-block])::-webkit-inner-spin-button,
+input[type=password]:not([name^=acf-block])::-webkit-inner-spin-button,
+input[type=file]:not([name^=acf-block])::-webkit-inner-spin-button,
+select:not([name^=acf-block])::-webkit-inner-spin-button, textarea:not([name^=acf-block])::-webkit-inner-spin-button {
   -webkit-appearance: none;
   cursor: pointer;
   display: block;
@@ -298,75 +299,75 @@ select::-webkit-inner-spin-button, textarea::-webkit-inner-spin-button {
   text-align: center;
   position: relative;
 }
-input[type=text]:not(.select2-input)::-webkit-input-placeholder,
-input[type=number]::-webkit-input-placeholder,
-input[type=email]::-webkit-input-placeholder,
-input[type=tel]::-webkit-input-placeholder,
-input[type=url]::-webkit-input-placeholder,
-input[type=search]::-webkit-input-placeholder,
-input[type=password]::-webkit-input-placeholder,
-input[type=file]::-webkit-input-placeholder,
-select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+input[type=text]:not(.select2-input):not([name^=acf-block])::-webkit-input-placeholder,
+input[type=number]:not([name^=acf-block])::-webkit-input-placeholder,
+input[type=email]:not([name^=acf-block])::-webkit-input-placeholder,
+input[type=tel]:not([name^=acf-block])::-webkit-input-placeholder,
+input[type=url]:not([name^=acf-block])::-webkit-input-placeholder,
+input[type=search]:not([name^=acf-block])::-webkit-input-placeholder,
+input[type=password]:not([name^=acf-block])::-webkit-input-placeholder,
+input[type=file]:not([name^=acf-block])::-webkit-input-placeholder,
+select:not([name^=acf-block])::-webkit-input-placeholder, textarea:not([name^=acf-block])::-webkit-input-placeholder {
   color: #282525;
   font-size: 16px;
   font-weight: 500;
 }
-input[type=text]:not(.select2-input)::-moz-placeholder,
-input[type=number]::-moz-placeholder,
-input[type=email]::-moz-placeholder,
-input[type=tel]::-moz-placeholder,
-input[type=url]::-moz-placeholder,
-input[type=search]::-moz-placeholder,
-input[type=password]::-moz-placeholder,
-input[type=file]::-moz-placeholder,
-select::-moz-placeholder, textarea::-moz-placeholder {
+input[type=text]:not(.select2-input):not([name^=acf-block])::-moz-placeholder,
+input[type=number]:not([name^=acf-block])::-moz-placeholder,
+input[type=email]:not([name^=acf-block])::-moz-placeholder,
+input[type=tel]:not([name^=acf-block])::-moz-placeholder,
+input[type=url]:not([name^=acf-block])::-moz-placeholder,
+input[type=search]:not([name^=acf-block])::-moz-placeholder,
+input[type=password]:not([name^=acf-block])::-moz-placeholder,
+input[type=file]:not([name^=acf-block])::-moz-placeholder,
+select:not([name^=acf-block])::-moz-placeholder, textarea:not([name^=acf-block])::-moz-placeholder {
   color: #282525;
   font-size: 16px;
   font-weight: 500;
 }
-input[type=text]:not(.select2-input):-ms-input-placeholder,
-input[type=number]:-ms-input-placeholder,
-input[type=email]:-ms-input-placeholder,
-input[type=tel]:-ms-input-placeholder,
-input[type=url]:-ms-input-placeholder,
-input[type=search]:-ms-input-placeholder,
-input[type=password]:-ms-input-placeholder,
-input[type=file]:-ms-input-placeholder,
-select:-ms-input-placeholder, textarea:-ms-input-placeholder {
+input[type=text]:not(.select2-input):not([name^=acf-block]):-ms-input-placeholder,
+input[type=number]:not([name^=acf-block]):-ms-input-placeholder,
+input[type=email]:not([name^=acf-block]):-ms-input-placeholder,
+input[type=tel]:not([name^=acf-block]):-ms-input-placeholder,
+input[type=url]:not([name^=acf-block]):-ms-input-placeholder,
+input[type=search]:not([name^=acf-block]):-ms-input-placeholder,
+input[type=password]:not([name^=acf-block]):-ms-input-placeholder,
+input[type=file]:not([name^=acf-block]):-ms-input-placeholder,
+select:not([name^=acf-block]):-ms-input-placeholder, textarea:not([name^=acf-block]):-ms-input-placeholder {
   color: #282525;
   font-size: 16px;
   font-weight: 500;
 }
-input[type=text]:not(.select2-input):-moz-placeholder,
-input[type=number]:-moz-placeholder,
-input[type=email]:-moz-placeholder,
-input[type=tel]:-moz-placeholder,
-input[type=url]:-moz-placeholder,
-input[type=search]:-moz-placeholder,
-input[type=password]:-moz-placeholder,
-input[type=file]:-moz-placeholder,
-select:-moz-placeholder, textarea:-moz-placeholder {
+input[type=text]:not(.select2-input):not([name^=acf-block]):-moz-placeholder,
+input[type=number]:not([name^=acf-block]):-moz-placeholder,
+input[type=email]:not([name^=acf-block]):-moz-placeholder,
+input[type=tel]:not([name^=acf-block]):-moz-placeholder,
+input[type=url]:not([name^=acf-block]):-moz-placeholder,
+input[type=search]:not([name^=acf-block]):-moz-placeholder,
+input[type=password]:not([name^=acf-block]):-moz-placeholder,
+input[type=file]:not([name^=acf-block]):-moz-placeholder,
+select:not([name^=acf-block]):-moz-placeholder, textarea:not([name^=acf-block]):-moz-placeholder {
   color: #282525;
   font-size: 16px;
   font-weight: 500;
 }
-input[type=text]:not(.select2-input):hover, input[type=text]:not(.select2-input):focus,
-input[type=number]:hover,
-input[type=number]:focus,
-input[type=email]:hover,
-input[type=email]:focus,
-input[type=tel]:hover,
-input[type=tel]:focus,
-input[type=url]:hover,
-input[type=url]:focus,
-input[type=search]:hover,
-input[type=search]:focus,
-input[type=password]:hover,
-input[type=password]:focus,
-input[type=file]:hover,
-input[type=file]:focus,
-select:hover,
-select:focus, textarea:hover, textarea:focus {
+input[type=text]:not(.select2-input):not([name^=acf-block]):hover, input[type=text]:not(.select2-input):not([name^=acf-block]):focus,
+input[type=number]:not([name^=acf-block]):hover,
+input[type=number]:not([name^=acf-block]):focus,
+input[type=email]:not([name^=acf-block]):hover,
+input[type=email]:not([name^=acf-block]):focus,
+input[type=tel]:not([name^=acf-block]):hover,
+input[type=tel]:not([name^=acf-block]):focus,
+input[type=url]:not([name^=acf-block]):hover,
+input[type=url]:not([name^=acf-block]):focus,
+input[type=search]:not([name^=acf-block]):hover,
+input[type=search]:not([name^=acf-block]):focus,
+input[type=password]:not([name^=acf-block]):hover,
+input[type=password]:not([name^=acf-block]):focus,
+input[type=file]:not([name^=acf-block]):hover,
+input[type=file]:not([name^=acf-block]):focus,
+select:not([name^=acf-block]):hover,
+select:not([name^=acf-block]):focus, textarea:not([name^=acf-block]):hover, textarea:not([name^=acf-block]):focus {
   outline: 0;
 }
 
@@ -435,11 +436,10 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 900;
   line-height: 24px;
   background: #3b42c4;
+  padding: 13px 25px;
   border-radius: 500px;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.8px;
-  padding: 18px 25px 16px;
-  text-transform: uppercase;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   -webkit-transition: all 0.3s ease;
@@ -515,9 +515,10 @@ h1, h2, h3, h4, h5, h6,
 }
 .fluid h1, .fluid h2, .fluid h3, .fluid h4, .fluid h5, .fluid h6,
 .fluid .h1, .fluid .h2, .fluid .h3, .fluid .h4, .fluid .h5, .fluid .h6, .fluid p,
-.fluid .entry-title, .fluid .description, .fluid .block-content,
+.fluid .entry-title, .fluid .description,
 .fluid .content, .fluid .testi-item, .fluid .quote,
-.fluid .missionvission__content, .fluid .content__editor, .fluid .text {
+.fluid [class*=__editor], .fluid [class*=__content],
+.fluid [class*=-content], .fluid [class*=text] {
   max-width: 100% !important;
 }
 
@@ -637,13 +638,12 @@ HEADER STYLES
   font-size: 16px;
   font-weight: 900;
   line-height: 22px;
+  padding: 13px 25px;
   border-radius: 500px;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.8px;
-  padding: 18px 25px 16px;
   background: transparent;
   border: 1px solid #3b42c4;
-  text-transform: uppercase;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -803,13 +803,12 @@ HEADER STYLES
   font-weight: 900;
   line-height: 22px;
   text-align: center;
+  padding: 13px 25px;
   border-radius: 500px;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.8px;
-  padding: 18px 25px 16px;
   background: transparent;
   border: 1px solid #3b42c4;
-  text-transform: uppercase;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -1233,7 +1232,7 @@ HOME STYLES
   width: 100%;
   overflow: hidden;
   background: #FFFFFF;
-  border-radius: 36px;
+  border-radius: 16px;
   margin-bottom: 30px;
   height: calc(100% - 30px);
   -webkit-box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.06), 0px 34px 44px 0px rgba(0, 0, 0, 0.06);
@@ -1254,6 +1253,9 @@ HOME STYLES
 .success-stories__item .text {
   padding: 30px;
   padding-top: 25px;
+}
+.success-stories__item .text .btn {
+  margin-top: 10px;
 }
 .success-stories__item:-moz-any-link:hover .media img, .success-stories__item:-moz-any-link:focus .media img {
   -webkit-transform: scale(1.2);
@@ -1277,7 +1279,7 @@ HOME STYLES
   width: 100%;
   padding: 30px;
   overflow: hidden;
-  border-radius: 36px;
+  border-radius: 16px;
   margin-bottom: 20px;
   background: #edf2ed;
   height: calc(100% - 20px);
@@ -1289,7 +1291,6 @@ HOME STYLES
   font-weight: 900;
   line-height: 34px;
   font-family: "Nunito Sans", sans-serif;
-  text-transform: uppercase;
 }
 .step-started__item .media {
   width: 100%;
@@ -1424,7 +1425,7 @@ HOME STYLES
   min-height: 220px;
   padding-top: 25px;
   background: #000000;
-  border-radius: 36px;
+  border-radius: 16px;
 }
 .call-action .background .media {
   width: 100%;
@@ -1432,7 +1433,7 @@ HOME STYLES
   max-width: 420px;
   min-width: 420px;
   margin-right: 30px;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 .call-action .background .media img {
   width: 100%;
@@ -1561,11 +1562,482 @@ HOME STYLES
   padding: 30px;
   overflow: hidden;
   background: #000000;
-  border-radius: 36px;
+  border-radius: 16px;
 }
 .contact-us__form .form-title {
   color: #FFFFFF;
   margin-bottom: 20px;
+}
+
+.gform_confirmation_wrapper .gform_confirmation_message {
+  color: #000000;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  padding-left: 25px;
+}
+.gform_confirmation_wrapper .gform_confirmation_message:before {
+  left: 0;
+  color: green;
+  content: "✔";
+  position: absolute;
+  padding-right: 10px;
+}
+
+.gform_wrapper form .gform_body .gform_fields {
+  grid-row-gap: 14px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.hidden_label .gfield_label {
+  display: none;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gf_full_width .ginput_container {
+  margin-left: 0;
+  margin-right: 0;
+  grid-row-gap: 16px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gf_full_width .ginput_container span {
+  width: 100%;
+  padding: 0 !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gf_full_width .ginput_container label {
+  padding-top: 0;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gf_full_width .ginput_container .gf_clear {
+  display: none;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gsection {
+  border: 0;
+  padding: 0;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gsection .gsection_title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .gfield_label {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .gfield_label .gfield_required {
+  display: none;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .validation_message {
+  border: 0;
+  padding: 0;
+  margin: 5px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  background: transparent;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_name label {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_textarea {
+  line-height: 0;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_textarea textarea {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_textarea textarea.small {
+  height: 70px !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_textarea textarea.medium {
+  height: 90px !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_textarea textarea.large {
+  height: 120px !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container .address_country {
+  position: relative;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select:before, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container .address_country:before {
+  top: 21px;
+  z-index: 1;
+  right: 15px;
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border: 5px solid transparent;
+  border-top-color: #FFFFFF;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select select, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container .address_country select {
+  color: #FFFFFF !important;
+  background: #3b42c4 !important;
+  border-color: #3b42c4 !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_radio, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_checkbox, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_radio {
+  gap: 10px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice input, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_radio .gchoice input, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_checkbox .gchoice input, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_radio .gchoice input {
+  display: none !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice input:checked ~ label:after, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_radio .gchoice input:checked ~ label:after, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_checkbox .gchoice input:checked ~ label:after, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_radio .gchoice input:checked ~ label:after {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice label, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_radio .gchoice label, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_checkbox .gchoice label, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_radio .gchoice label {
+  color: #000000;
+  margin-left: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  position: relative;
+  padding-left: 22px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice label:before, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_radio .gchoice label:before, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_checkbox .gchoice label:before, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_radio .gchoice label:before {
+  left: 0;
+  top: 1px;
+  width: 16px;
+  content: "";
+  height: 16px;
+  background: #FFFFFF;
+  position: absolute;
+  border-radius: 500px;
+  border: 1px solid #D5D5D5;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice label:after, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_radio .gchoice label:after, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_checkbox .gchoice label:after, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_radio .gchoice label:after {
+  top: 5px;
+  left: 4px;
+  width: 8px;
+  opacity: 0;
+  content: "";
+  height: 8px;
+  background: #000000;
+  position: absolute;
+  visibility: hidden;
+  border-radius: 500px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice label a, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_radio .gchoice label a, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_checkbox .gchoice label a, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_radio .gchoice label a {
+  color: #000000;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice label a:hover, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_radio .gchoice label a:hover, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_checkbox .gchoice label a:hover, .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_radio .gchoice label a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice label:before {
+  border-radius: 4px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice label:after {
+  border-radius: 4px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_required {
+  display: none;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label {
+  color: #000000;
+  margin-left: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  padding-left: 22px;
+  position: relative;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label:before {
+  left: 0;
+  top: 1px;
+  width: 16px;
+  content: "";
+  height: 16px;
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #D5D5D5;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label:after {
+  top: 5px;
+  left: 4px;
+  width: 8px;
+  content: "";
+  opacity: 0;
+  height: 8px;
+  background: #000000;
+  position: absolute;
+  visibility: hidden;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label a {
+  color: #000000;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label a:hover {
+  color: #3b42c4;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent input[type=checkbox] {
+  display: none !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent input[type=checkbox]:checked ~ label:after {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gfield--type-fileupload {
+  position: relative;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gfield--type-fileupload input[type=file] {
+  cursor: pointer;
+  block-size: 40px;
+  position: relative;
+  width: 100% !important;
+  padding: 10px 15px !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gfield--type-fileupload input[type=file]::-webkit-file-upload-button {
+  top: 0;
+  border: 0;
+  right: -12px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 400;
+  block-size: 100%;
+  background: #3b42c4;
+  padding: 8px 14px;
+  line-height: 18px;
+  position: absolute;
+  border-radius: 0px 4px 4px 0px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gfield--type-fileupload input[type=file]::file-selector-button {
+  top: 0;
+  border: 0;
+  right: -12px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 400;
+  block-size: 100%;
+  background: #3b42c4;
+  padding: 8px 14px;
+  line-height: 18px;
+  position: absolute;
+  border-radius: 0px 4px 4px 0px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gfield--type-fileupload .gform_fileupload_rules {
+  display: none;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gfield--type-captcha:not(.gfield_error) {
+  margin-bottom: -30px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gfield--type-captcha .ginput_recaptcha {
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+}
+.gform_wrapper form .gform_body .gform_fields .gfield.gfield--type-captcha .validation_message {
+  margin-top: -28px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield#field_submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield#field_submit .btn {
+  outline: 0 !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  font-weight: 700 !important;
+  background: #3b42c4 !important;
+  line-height: 20px !important;
+  padding: 14px 20px !important;
+  text-align: center !important;
+  border-radius: 4px !important;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield#field_submit .btn.full {
+  width: 100% !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield#field_submit .btn:hover {
+  color: #FFFFFF !important;
+  background: #6268d0 !important;
+  border-color: #6268d0 !important;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield#field_submit .gform_ajax_spinner, .gform_wrapper form .gform_body .gform_fields .gfield#field_submit .gform-loader {
+  display: none;
+}
+.gform_wrapper form.gform_footer_inline .gform_footer {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: none !important;
+}
+.gform_wrapper form .gform_footer {
+  padding-bottom: 0 !important;
+}
+.gform_wrapper form .gform_footer:has(.full) {
+  width: 100%;
+}
+.gform_wrapper form .gform_footer .btn {
+  outline: 0 !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  background: #3b42c4 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  font-weight: 700 !important;
+  line-height: 20px !important;
+  padding: 14px 20px !important;
+  text-align: center !important;
+  border-radius: 4px !important;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gform_wrapper form .gform_footer .btn.full {
+  width: 100% !important;
+}
+.gform_wrapper form .gform_footer .btn:hover {
+  color: #FFFFFF !important;
+  background: #6268d0 !important;
+  border-color: #6268d0 !important;
+}
+.gform_wrapper form .gform_footer .gform_ajax_spinner, .gform_wrapper form .gform_footer .gform-loader {
+  display: none;
+}
+.gform_wrapper .gform_validation_errors {
+  display: none !important;
+}
+
+.bgblack .gform_confirmation_wrapper .gform_confirmation_message {
+  color: #FFFFFF;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .gfield_label {
+  color: #FFFFFF;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=text]:not(.select2-input):not([name^=acf-block]),
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=number]:not([name^=acf-block]),
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=email]:not([name^=acf-block]),
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=tel]:not([name^=acf-block]),
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=url]:not([name^=acf-block]),
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=search]:not([name^=acf-block]),
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=password]:not([name^=acf-block]),
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=file]:not([name^=acf-block]),
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container select:not([name^=acf-block]), .bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea:not([name^=acf-block]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #FFFFFF !important;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=text]:not(.select2-input):not([name^=acf-block])::-webkit-inner-spin-button,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=number]:not([name^=acf-block])::-webkit-inner-spin-button,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=email]:not([name^=acf-block])::-webkit-inner-spin-button,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=tel]:not([name^=acf-block])::-webkit-inner-spin-button,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=url]:not([name^=acf-block])::-webkit-inner-spin-button,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=search]:not([name^=acf-block])::-webkit-inner-spin-button,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=password]:not([name^=acf-block])::-webkit-inner-spin-button,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=file]:not([name^=acf-block])::-webkit-inner-spin-button,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container select:not([name^=acf-block])::-webkit-inner-spin-button, .bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea:not([name^=acf-block])::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  cursor: pointer;
+  display: block;
+  width: 8px;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=text]:not(.select2-input):not([name^=acf-block])::-webkit-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=number]:not([name^=acf-block])::-webkit-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=email]:not([name^=acf-block])::-webkit-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=tel]:not([name^=acf-block])::-webkit-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=url]:not([name^=acf-block])::-webkit-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=search]:not([name^=acf-block])::-webkit-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=password]:not([name^=acf-block])::-webkit-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=file]:not([name^=acf-block])::-webkit-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container select:not([name^=acf-block])::-webkit-input-placeholder, .bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea:not([name^=acf-block])::-webkit-input-placeholder {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=text]:not(.select2-input):not([name^=acf-block])::-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=number]:not([name^=acf-block])::-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=email]:not([name^=acf-block])::-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=tel]:not([name^=acf-block])::-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=url]:not([name^=acf-block])::-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=search]:not([name^=acf-block])::-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=password]:not([name^=acf-block])::-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=file]:not([name^=acf-block])::-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container select:not([name^=acf-block])::-moz-placeholder, .bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea:not([name^=acf-block])::-moz-placeholder {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=text]:not(.select2-input):not([name^=acf-block]):-ms-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=number]:not([name^=acf-block]):-ms-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=email]:not([name^=acf-block]):-ms-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=tel]:not([name^=acf-block]):-ms-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=url]:not([name^=acf-block]):-ms-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=search]:not([name^=acf-block]):-ms-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=password]:not([name^=acf-block]):-ms-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=file]:not([name^=acf-block]):-ms-input-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container select:not([name^=acf-block]):-ms-input-placeholder, .bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea:not([name^=acf-block]):-ms-input-placeholder {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=text]:not(.select2-input):not([name^=acf-block]):-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=number]:not([name^=acf-block]):-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=email]:not([name^=acf-block]):-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=tel]:not([name^=acf-block]):-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=url]:not([name^=acf-block]):-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=search]:not([name^=acf-block]):-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=password]:not([name^=acf-block]):-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=file]:not([name^=acf-block]):-moz-placeholder,
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container select:not([name^=acf-block]):-moz-placeholder, .bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea:not([name^=acf-block]):-moz-placeholder {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_name label {
+  color: #FFFFFF;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_checkbox .gchoice label, .bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_checkbox .gfield_radio .gchoice label, .bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_checkbox .gchoice label, .bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_radio .gfield_radio .gchoice label {
+  color: #FFFFFF;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label {
+  color: #FFFFFF;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label a {
+  color: #FFFFFF;
+}
+.bgblack .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label a:hover {
+  color: #3b42c4;
 }
 
 /***********************************
@@ -1983,6 +2455,123 @@ BLOG PAGE STYLES
   margin-left: 15px;
 }
 
+.navigation .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.navigation .nav-links .page-numbers {
+  border: 0;
+  color: #1C1B1F;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.navigation .nav-links .page-numbers span {
+  width: 84px;
+  height: 52px;
+  color: 1C1B1F;
+  font-size: 16px;
+  overflow: hidden;
+  border-radius: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border: 1px solid #3b42c4;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media only screen and (max-width: 991px) {
+  .navigation .nav-links .page-numbers span {
+    width: 81px;
+    height: 48px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .navigation .nav-links .page-numbers span {
+    width: 74px;
+    height: 43px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .navigation .nav-links .page-numbers span {
+    width: 65px;
+  }
+}
+.navigation .nav-links .page-numbers span:hover {
+  color: #FFFFFF;
+  background: #3b42c4;
+}
+.navigation .nav-links .page-numbers.prev {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: left;
+  margin-right: 10px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+.navigation .nav-links .page-numbers.prev span {
+  margin-right: 10px;
+}
+.navigation .nav-links .page-numbers.next {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: right;
+  margin-left: 10px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.navigation .nav-links .page-numbers.next span {
+  margin-left: 10px;
+}
+.navigation .nav-links .page-numbers:hover {
+  color: #3b42c4;
+}
+.navigation .nav-links .page-numbers:not(.next):not(.prev):not(.dots) {
+  width: 30px;
+  height: 30px;
+  color: #1C1B1F;
+  display: inline;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 500px;
+  background: transparent;
+}
+.navigation .nav-links .page-numbers.current {
+  color: #1C1B1F !important;
+  border: 1px solid #3b42c4 !important;
+}
+
 .blog-details {
   padding: 40px 0 100px;
 }
@@ -1990,8 +2579,8 @@ BLOG PAGE STYLES
   padding-bottom: 100px;
   border-bottom: 1px solid #00A3FF;
 }
-.blog-details__banner .content {
-  max-width: 480px;
+.blog-details__banner .content.has-media {
+  max-width: 580px;
 }
 .blog-details__banner .content .categories {
   margin-bottom: 15px;
@@ -2060,75 +2649,31 @@ BLOG PAGE STYLES
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-.blog-details .social-media {
-  margin-left: -2.5px;
-  margin-right: -2.5px;
-}
-.blog-details .social-media > li {
-  margin: 0;
-  padding-left: 2.5px;
-  padding-right: 2.5px;
-}
-.blog-details .social-media > li:first-child {
-  color: #000000;
-  display: block;
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-family: "Bricolage Grotesque", sans-serif;
-  text-transform: uppercase;
-}
-.blog-details .social-media > li > a {
-  width: 38px;
-  height: 38px;
-  font-size: 18px !important;
-  line-height: 18px !important;
-}
 .blog-details__content {
+  max-width: 900px;
   padding-top: 90px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.blog-details__content .blog-cta {
-  z-index: 1;
-  width: 100%;
-  overflow: hidden;
+.blog-details .call-action {
+  padding: 0;
   margin-top: 30px;
-  position: relative;
-  background: #000000;
-  border-radius: 24px;
-  padding: 20px 30px 25px;
 }
-.blog-details__content .blog-cta:before {
-  top: -162px;
-  z-index: -1;
-  width: 600px;
-  right: -125px;
-  height: 577px;
+.blog-details .socialshare {
+  top: 10px;
+  left: -110px;
   position: absolute;
-  content: url(images/star.png);
 }
-.blog-details__content .blog-cta__text {
-  max-width: 450px;
+.blog-details .socialshare .sharethis-inline-share-buttons .st-btn {
+  padding: 0 !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: block !important;
+  margin: 0 0 15px !important;
+  border-radius: 500px !important;
 }
-.blog-details__content .blog-cta__text .title {
-  font-size: 30px;
-  line-height: 1.2;
-}
-.blog-details__content .blog-cta__text .description {
-  color: #FFFFFF;
-  font-size: 18px;
-  margin-top: 5px;
-  line-height: 28px;
-}
-.blog-details__content .blog-cta__text .btn {
-  color: #000000;
-  margin-top: 20px;
-  background: #FFFFFF;
-}
-.blog-details__content .socialshare {
-  width: 100%;
-  margin-top: 30px;
-  border-radius: 0;
-  padding-top: 30px;
-  border-top: 1px solid #00A3FF;
+.blog-details .socialshare .sharethis-inline-share-buttons .st-btn:last-child {
+  margin-bottom: 0 !important;
 }
 
 /***********************************
@@ -2137,22 +2682,9 @@ FOOTER STYLES
 .footer {
   background: #000000;
   padding: 100px 0 60px;
-  border-top-left-radius: 64px;
-  border-top-right-radius: 64px;
 }
 .footer__logo {
-  width: 100%;
-  max-width: 240px;
-  -webkit-filter: invert(1);
-          filter: invert(1);
   display: inline-block;
-}
-.footer__logo img {
-  width: 100%;
-  height: 100%;
-  max-width: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .footer__text-area {
   gap: 30px;
@@ -3284,8 +3816,6 @@ MEDIA QUERIES
   ***********************************/
   .footer {
     padding-top: 80px;
-    border-top-left-radius: 48px;
-    border-top-right-radius: 48px;
   }
   .footer__widget--menu li.title > a {
     font-size: 22px;
@@ -3511,8 +4041,6 @@ MEDIA QUERIES
   ***********************************/
   .footer {
     padding-top: 60px;
-    border-top-left-radius: 36px;
-    border-top-right-radius: 36px;
   }
   .footer__text-area {
     max-width: 100%;
@@ -3709,8 +4237,6 @@ MEDIA QUERIES
   ***********************************/
   .footer {
     padding: 50px 0;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
   }
   .footer__text-area .footer__logo {
     margin-bottom: 15px;
@@ -3968,8 +4494,6 @@ MEDIA QUERIES
   ***********************************/
   .footer {
     padding: 40px 0;
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
   }
   .footer__text-area .footer__logo img {
     max-width: 190px;

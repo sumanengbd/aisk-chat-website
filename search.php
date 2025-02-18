@@ -24,70 +24,15 @@ get_header(); ?>
 		<section class="feature">
 			<div class="container">
 				<?php
-					echo '<div class="entry-title'.( !$bcontent['disable'] && $paged == 1 && $fposts_query->have_posts() ? ' text-center' : ' mb-0').'">';
+					echo '<div class="entry-title mb-0">';
 
-						printf( 
-							'<h1 class="title">%s</h1>',  
-							get_the_title( $page_id )
+						printf(
+						    '<h1 class="title">%s <span style="color: #3b42c4">%s</span></h1>',
+						    __('Search Results for:', 'aisk'),
+						    esc_html(get_search_query())
 						);
 
-						if( '' !== $blog_page->post_content )
-				        {
-				        	echo '<div class="description font-weight-normal mt-2 h6">';
-
-				        		echo apply_filters('the_content', $blog_page->post_content);
-
-				        	echo '</div>';
-				        }
-
 					echo '</div>';
-
-					if ( !$bcontent['disable'] && $paged == 1 && $fposts_query->have_posts() ) 
-					{
-						echo '<div class="row lr-10 mbm-20">';
-							echo '<div class="col-lg-6">';
-
-								while ( $fposts_query->have_posts() ) 
-								{
-									$fposts_query->the_post();
-
-									get_template_part( 
-										'template-parts/content', 
-										'post',
-										array(
-											'image' => 'post_large',
-											'class' => 'feature__item',
-										)
-									);
-
-									break;
-								}
-
-							echo '</div>';
-
-							if ( $fposts_query->found_posts > 1 ) 
-							{
-								echo '<div class="col-lg-6">';
-
-									while ( $fposts_query->have_posts() ) 
-									{
-										$fposts_query->the_post();
-
-										get_template_part( 
-											'template-parts/content', 
-											'post',
-											array(
-												'class' => 'feature__item has--small d-sm-flex align-items-center justify-content-between flex-row-reverse'
-											)
-										);
-									}
-
-								echo '</div>';
-							}
-
-						echo '</div>';
-					}
-					wp_reset_query();
 				?>
 			</div>
 		</section>
