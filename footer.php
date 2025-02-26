@@ -3,23 +3,45 @@
  * Footer
  *
  */
-$tagline = get_field( 'tagline', 'options' );
-$contacts = get_field( 'contacts', 'options' );
+$action = get_field( 'call_action', 'options' );
 $footer_logo = get_field( 'footer_logo', 'options' );
-$description = get_field( 'description', 'options' );
 $social_media = get_field( 'social_media', 'options' ); ?>
-
+	
+	<?php if ( !empty( $action ) && array_filter( $action ) ): ?>
 	<section class="footer_top pb-3">
 		<div class="container">
 			<div class="entry-title text-center mx-auto">
-				<h2 class="title h1">Try Manychat for free</h2>
-				<div class="description h4 font-weight-normal">
-					<p>Transform more conversations into sales, leads, and conversions today</p>
-				</div>
-				<a href="#" class="btn">Get Started</a>
+				<?php
+					if ( $action['title'] ) 
+					{
+						printf( 
+							'<h2 class="title h1">%s</h2>',  
+							$action['title']
+						);
+					}
+
+					if ( $action['description'] ) 
+					{
+						printf( 
+							'<div class="description h4 font-weight-normal">%s</div>',  
+							$action['description']
+						);
+					}
+
+					if ( $action['button'] ) 
+					{
+						printf( 
+							'<a href="%s" class="btn" target="%s">%s</a>', 
+							esc_url( $action['button']['url'] ), 
+							$action['button']['target'], 
+							$action['button']['title'] 
+						);
+					}
+				?>
 			</div>
 		</div>
-	</section><!-- footer_top -->
+	</section>
+	<?php endif; ?>
 
 	<footer class="footer">
 		<div class="container">
@@ -46,38 +68,11 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 						        }
 						    ?>
 						</a>
-
-						<!-- <div class="text">
-							<?php
-								if ( $tagline ) 
-								{
-									printf( 
-										'<h2 class="tagline text-white">%s</h2>',
-										$tagline  
-									);
-								}
-								else
-								{
-									printf( 
-										'<h2 class="tagline text-white">%s</h2>',
-										get_bloginfo('description')  
-									);
-								}
-
-								if ( $description ) 
-								{
-									printf( 
-										'<div class="description desc-big text-white">%s</div>',  
-										$description
-									);
-								}
-							?>
-						</div> -->
 					</div>
 				</div>
 
 				<div class="col-lg-9">
-					<div class="row lr-10 masonry row-cols-lg-4 row-cols-sm-3 row-cols-2">
+					<div class="row lr-10 row-cols-lg-4 row-cols-sm-3 row-cols-2">
 						<div class="col">
 							<div class="footer__widget">
 								<?php
@@ -118,7 +113,7 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 									wp_nav_menu( array(
 									    'depth'              => 1,
 									    'container'          => false,
-									    'theme_location'     => 'menu-4',
+									    'theme_location'     => 'menu-5',
 									    'menu'               => 'Footer Menu 3',
 									    'menu_id'            => 'footer-menu-3',
 									    'menu_class'         => 'footer__widget--menu list-unstyled',
@@ -138,7 +133,7 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 
 											printf( 
 												'<li class="title"><a>%s</a></li>',
-												esc_html__( 'Resources', 'aisk' )  
+												esc_html__( 'Social', 'aisk' )  
 											);
 
 											foreach ( $social_media as $social ) 
@@ -162,7 +157,7 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 							wp_nav_menu( array(
 							    'depth'              => 1,
 							    'container'          => false,
-							    'theme_location'     => 'menu-5',
+							    'theme_location'     => 'menu-6',
 							    'menu'               => 'Privacy Menu',
 							    'menu_id'            => 'privacy-menu',
 							    'menu_class'         => 'privacy-menu list-inline last_no_bullet',

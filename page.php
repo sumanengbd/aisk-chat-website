@@ -1,11 +1,5 @@
 <?php get_header(); ?>
 
-	<section class="breadcrumb-wrapper">
-		<div class="container">
-			<?php echo aisk_breadcrumb(); ?>
-		</div>
-	</section><!-- breadcrumb -->
-
 	<div id="primary" class="content-area">
 		
 		<?php if ( have_posts() ): while( have_posts() ): the_post(); ?>

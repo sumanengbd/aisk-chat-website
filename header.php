@@ -39,8 +39,28 @@
             <div class="mobile-header d-none">
                 <div class="navbar-header d-flex align-items-center justify-content-between">
                     <div class="logo">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="<?php echo get_theme_file_uri(); ?>/images/logo-white.png" class="img-fluid" alt="">
+                        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <?php
+                                $logo = get_field( 'logo', 'options' );
+                                $logo_mobile = get_field( 'logo_mobile', 'options' );
+
+                                if ( $logo_mobile ) 
+                                {
+                                    printf(
+                                        '<img src="%s" class="img-fluid" alt="%s">', 
+                                        esc_url( $logo_mobile['url'] ), 
+                                        $logo_mobile['alt']
+                                    );
+                                }
+                                else
+                                {
+                                    printf(
+                                        '<img src="%s" class="img-fluid" alt="%s">', 
+                                        esc_url( get_theme_file_uri('images/logo.png') ), 
+                                        get_bloginfo('name')
+                                    );
+                                }
+                            ?>
                         </a>
                     </div>
 
@@ -50,243 +70,33 @@
                 </div>
 
                 <div class="navigation">
-                    <div class="aisk-chat-mobile-nav">
-                        <ul class="nav navbar-nav navbar-mobile">
-                            <li><a href="#">Home</a></li>
-                            <li class="dropdown megamenu">
-                                <a href="#">Features <span class="dropdown-toggle" data-toggle="dropdown"></span></a>
+                    <?php
+                        echo '<div class="aisk-chat-mobile-nav">';
 
-                                <ul class="dropdown-menu">
-                                    <div class="row">
-                                        <li class="col-md-4 title has-button has-button has-description">
-                                            <a href="#">
-                                                <span class="btn">Learn more about us</span>
-                                                <span class="description">Learn more about our awesome company and why we’re so great</span>
-                                                Features
-                                            </a>
-                                        </li>
+                            wp_nav_menu( array(
+                                'depth'              => 2,
+                                'container'          => false,
+                                'theme_location'     => 'menu-1',
+                                'menu'               => 'Primary Menu Mobile',
+                                'menu_id'            => 'primary-menu-mobile',
+                                'menu_class'         => 'nav navbar-nav navbar-mobile',
+                                'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                                'walker'             => new wp_bootstrap_navwalker(),
+                            ));
 
-                                        <li class="col-md-4 has-icon-box dropdown empty">
-                                            <ul class="dropdown-menu">
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-document"></span>
+                        echo '</div>';
 
-                                                        <div class="text">
-                                                            <h6 class="title">System status</h6>
-                                                            <div class="description">
-                                                                <p>Check the status of our services to see if all systems are operational.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-integrations"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Help center</h6>
-                                                            <div class="description">
-                                                                <p>Explore our help center for quick and reliable answers.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-blog"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Blog</h6>
-                                                            <div class="description">
-                                                                <p>News and writings, press releases, and press resources.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-roadmap"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Roadmap</h6>
-                                                            <div class="description">
-                                                                <p>Find out what’s next and vote on features you’d love to see.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="col-md-4 dropdown has-action-box empty">
-                                            <ul class="dropdown-menu">
-                                                <div class="action-box">
-                                                    <div class="action-box__text">
-                                                        <h5 class="title">Aisk: The AI Chatbot for WordPress & WooCommerce</h5>
-                                                        <div class="description">
-                                                            <p>Automate customer support, boost product discovery, and increase sales with just a few clicks.</p>
-                                                        </div>
-                                                        <a href="#" class="btn">14-day free trial</a>
-                                                    </div>
-
-                                                    <div class="action-box__overlay">
-                                                        <img src="<?php echo get_theme_file_uri(); ?>/images/header-action-box.png">
-                                                    </div>
-                                                </div>
-                                            </ul>
-                                        </li>
-                                    </div>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown megamenu">
-                                <a href="#">Blog <span class="dropdown-toggle" data-toggle="dropdown"></span></a>
-
-                                <ul class="dropdown-menu">
-                                    <div class="row">
-                                        <li class="col-md-4 has-icon-box dropdown empty">
-                                            <ul class="dropdown-menu">
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-document"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">System status</h6>
-                                                            <div class="description">
-                                                                <p>Check the status of our services to see if all systems are operational.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-integrations"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Help center</h6>
-                                                            <div class="description">
-                                                                <p>Explore our help center for quick and reliable answers.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-blog"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Blog</h6>
-                                                            <div class="description">
-                                                                <p>News and writings, press releases, and press resources.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-roadmap"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Roadmap</h6>
-                                                            <div class="description">
-                                                                <p>Find out what’s next and vote on features you’d love to see.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="col-md-4 has-icon-box dropdown empty">
-                                            <ul class="dropdown-menu">
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-document"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">System status</h6>
-                                                            <div class="description">
-                                                                <p>Check the status of our services to see if all systems are operational.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-integrations"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Help center</h6>
-                                                            <div class="description">
-                                                                <p>Explore our help center for quick and reliable answers.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-blog"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Blog</h6>
-                                                            <div class="description">
-                                                                <p>News and writings, press releases, and press resources.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-roadmap"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Roadmap</h6>
-                                                            <div class="description">
-                                                                <p>Find out what’s next and vote on features you’d love to see.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="col-md-4 dropdown has-action-box empty">
-                                            <ul class="dropdown-menu">
-                                                <div class="action-box">
-                                                    <div class="action-box__text">
-                                                        <h5 class="title">Aisk: The AI Chatbot for WordPress & WooCommerce</h5>
-                                                        <div class="description">
-                                                            <p>Automate customer support, boost product discovery, and increase sales with just a few clicks.</p>
-                                                        </div>
-                                                        <a href="#" class="btn">14-day free trial</a>
-                                                    </div>
-
-                                                    <div class="action-box__overlay">
-                                                        <img src="<?php echo get_theme_file_uri(); ?>/images/header-action-box.png">
-                                                    </div>
-                                                </div>
-                                            </ul>
-                                        </li>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <ul class="nav navbar-nav">
-                        <li class="menu-btn"><a href="#">Request a Demo</a></li>
-                    </ul>
+                        wp_nav_menu( array(
+                            'depth'              => 1,
+                            'container'          => false,
+                            'theme_location'     => 'menu-2',
+                            'menu_class'         => 'nav navbar-nav',
+                            'menu'               => 'Secondary Menu Mobile',
+                            'menu_id'            => 'secondary-menu-mobile',
+                            'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                            'walker'             => new wp_bootstrap_navwalker(),
+                        ));
+                    ?>
                 </div>
             </div>
         </div><!-- /mobile-header -->
@@ -296,257 +106,76 @@
                 <div class="navbar navbar-expand d-flex align-items-center justify-content-between">
                     <div class="navbar-header d-lg-none d-flex align-items-center">
                         <div class="logo">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="<?php echo get_theme_file_uri(); ?>/images/logo-white.png" class="img-fluid" alt="">
+                            <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                <?php
+                                    if ( $logo ) 
+                                    {
+                                        printf(
+                                            '<img src="%s" class="img-fluid" alt="%s">', 
+                                            esc_url( $logo['url'] ), 
+                                            $logo['alt']
+                                        );
+                                    }
+                                    else
+                                    {
+                                        printf(
+                                            '<img src="%s" class="img-fluid" alt="%s">', 
+                                            esc_url( get_theme_file_uri('images/logo-white.png') ), 
+                                            get_bloginfo('name')
+                                        );
+                                    }
+                                ?>
                             </a>
                         </div>
                     </div>
             
                     <div class="collapse navbar-collapse justify-content-lg-between">
-                        <div class="logo d-lg-block d-none">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="<?php echo get_theme_file_uri(); ?>/images/logo-white.png" class="img-fluid" alt="">
-                            </a>
-                        </div>
+                        <?php
+                            echo '<div class="logo d-lg-block d-none">';
+                                echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'">';
 
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">Home</a></li>
-                            <li class="dropdown megamenu">
-                                <a href="#">Features <span class="dropdown-toggle" data-toggle="dropdown"></span></a>
+                                    if ( $logo ) 
+                                    {
+                                        printf(
+                                            '<img src="%s" class="img-fluid" alt="%s">', 
+                                            esc_url( $logo['url'] ), 
+                                            $logo['alt']
+                                        );
+                                    }
+                                    else
+                                    {
+                                        printf(
+                                            '<img src="%s" class="img-fluid" alt="%s">', 
+                                            esc_url( get_theme_file_uri('images/logo-white.png') ), 
+                                            get_bloginfo('name')
+                                        );
+                                    }
 
-                                <ul class="dropdown-menu">
-                                    <div class="row">
-                                        <li class="col-md-4 title has-button has-button has-description">
-                                            <a href="#">
-                                                <span class="btn">Learn more about us</span>
-                                                <span class="description">Learn more about our awesome company and why we’re so great</span>
-                                                Features
-                                            </a>
-                                        </li>
+                                echo '</a>';
+                            echo '</div>';
 
-                                        <li class="col-md-4 dropdown has-icon-box empty">
-                                            <ul class="dropdown-menu">
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-document"></span>
+                            wp_nav_menu( array(
+                                'depth'              => 2,
+                                'container'          => false,
+                                'theme_location'     => 'menu-1',
+                                'menu'               => 'Primary Menu',
+                                'menu_id'            => 'primary-menu',
+                                'menu_class'         => 'nav navbar-nav',
+                                'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                                'walker'             => new wp_bootstrap_navwalker(),
+                            ));
 
-                                                        <div class="text">
-                                                            <h6 class="title">System status</h6>
-                                                            <div class="description">
-                                                                <p>Check the status of our services to see if all systems are operational.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-integrations"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Help center</h6>
-                                                            <div class="description">
-                                                                <p>Explore our help center for quick and reliable answers.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-blog"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Blog</h6>
-                                                            <div class="description">
-                                                                <p>News and writings, press releases, and press resources.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-roadmap"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Roadmap</h6>
-                                                            <div class="description">
-                                                                <p>Find out what’s next and vote on features you’d love to see.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="col-md-4 dropdown has-action-box empty">
-                                            <div class="action-box">
-                                                <div class="action-box__text">
-                                                    <h5 class="title">Aisk: The AI Chatbot for WordPress & WooCommerce</h5>
-                                                    <div class="description">
-                                                        <p>Automate customer support, boost product discovery, and increase sales with just a few clicks.</p>
-                                                    </div>
-                                                    <a href="#" class="btn">14-day free trial</a>
-                                                </div>
-
-                                                <div class="action-box__overlay">
-                                                    <img src="<?php echo get_theme_file_uri(); ?>/images/header-action-box.png">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li class="dropdown megamenu">
-                                <a href="#">Blog <span class="dropdown-toggle" data-toggle="dropdown"></span></a>
-
-                                <ul class="dropdown-menu">
-                                    <div class="row">
-                                        <li class="col-md-4 dropdown has-icon-box empty">
-                                            <ul class="dropdown-menu">
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-document"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">System status</h6>
-                                                            <div class="description">
-                                                                <p>Check the status of our services to see if all systems are operational.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-integrations"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Help center</h6>
-                                                            <div class="description">
-                                                                <p>Explore our help center for quick and reliable answers.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-blog"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Blog</h6>
-                                                            <div class="description">
-                                                                <p>News and writings, press releases, and press resources.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-roadmap"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Roadmap</h6>
-                                                            <div class="description">
-                                                                <p>Find out what’s next and vote on features you’d love to see.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="col-md-4 dropdown has-icon-box empty">
-                                            <ul class="dropdown-menu">
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-document"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">System status</h6>
-                                                            <div class="description">
-                                                                <p>Check the status of our services to see if all systems are operational.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-integrations"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Help center</h6>
-                                                            <div class="description">
-                                                                <p>Explore our help center for quick and reliable answers.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-blog"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Blog</h6>
-                                                            <div class="description">
-                                                                <p>News and writings, press releases, and press resources.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li class="icon-box">
-                                                    <a href="#" class="icon-box__item">
-                                                        <span class="icon-roadmap"></span>
-
-                                                        <div class="text">
-                                                            <h6 class="title">Roadmap</h6>
-                                                            <div class="description">
-                                                                <p>Find out what’s next and vote on features you’d love to see.</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="col-md-4 dropdown has-action-box empty">
-                                            <div class="action-box">
-                                                <div class="action-box__text">
-                                                    <h5 class="title">Aisk: The AI Chatbot for WordPress & WooCommerce</h5>
-                                                    <div class="description">
-                                                        <p>Automate customer support, boost product discovery, and increase sales with just a few clicks.</p>
-                                                    </div>
-                                                    <a href="#" class="btn">14-day free trial</a>
-                                                </div>
-
-                                                <div class="action-box__overlay">
-                                                    <img src="<?php echo get_theme_file_uri(); ?>/images/header-action-box.png">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-
-                        <ul class="nav navbar-nav navbar-nav-right">
-                            <li class="menu-btn"><a href="#">Get Started</a></li>
-
-                            <li class="mobile-navbar-toggler d-lg-none">
-                                <button class="navbar-toggle" type="button">
-                                    <span class="icon-bar"><span class="inner"></span></span>
-                                    <span class="icon-bar"><span class="inner"></span></span>
-                                    <span class="icon-bar"><span class="inner"></span></span>
-                                </button>
-                            </li>
-                        </ul>
+                            wp_nav_menu( array(
+                                'depth'              => 1,
+                                'container'          => false,
+                                'theme_location'     => 'menu-2',
+                                'menu'               => 'Secondary Menu',
+                                'menu_id'            => 'secondary-menu',
+                                'menu_class'         => 'nav navbar-nav navbar-nav-right',
+                                'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+                                'walker'             => new wp_bootstrap_navwalker(),
+                            ));
+                        ?>
                     </div>
                 </div>
             </div>

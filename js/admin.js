@@ -26,7 +26,7 @@ function dynamic_title_repeater_accordion(repeater_name, field_name) {
 }
 
 function hideVisualEditorOnTemplate() {
-    const hiddenTemplates = ["aisk-page.php"];
+    const hiddenTemplates = ["aisk-page.php", "contact.php"];
 
     function toggleVisualEditor(template) {
         const editor = document.querySelector(".editor-visual-editor");

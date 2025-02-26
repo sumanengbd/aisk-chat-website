@@ -120,14 +120,6 @@ MEDIA QUERIES
 
 	.blog-details {
 		padding-bottom: 80px;
-
-		&__banner {
-			padding-bottom: 80px;
-		}
-
-		&__content {
-		    padding-top: 80px;
-		} 
 	}
 
 	/**********************************
@@ -382,49 +374,33 @@ MEDIA QUERIES
 	    	}
 	    }
 	}
+	
 	/**********************************
 	BLOG PAGE STYLE
 	***********************************/
+    .blog-posts {
+    	margin-bottom: 40px;
+
+    	.content__editor {
+		    font-size: 18px;
+		    line-height: 30px;
+
+		    p {
+		    	margin: 0 0 25px;
+
+		    	&:last-child {
+		    		margin: 0;
+		    	}
+		    }
+		}
+    }
+
 	.blog-page {
 	    padding: 60px 0;
-
-	    .blog-posts {
-	    	margin-bottom: 40px;
-
-	    	.content__editor {
-			    font-size: 18px;
-			    line-height: 30px;
-
-			    p {
-			    	margin: 0 0 25px;
-
-			    	&:last-child {
-			    		margin: 0;
-			    	}
-			    }
-			}
-	    }
 	}
 
 	.blog-details {
 		padding-bottom: 60px;
-
-		&__banner {
-			padding-bottom: 60px;
-
-			.content {
-				max-width: 100%;
-				margin-bottom: 30px;
-			}
-		}
-
-		&__content {
-		    padding-top: 50px;
-		}
-
-		&__sidebar {
-			margin-top: 20px;
-		}
 	}
 
 	div[data-sticky_column] + div[style*="position:"] {
@@ -606,87 +582,44 @@ MEDIA QUERIES
 	/**********************************
 	BLOG PAGE STYLE
 	***********************************/
-	.feature {
-		padding: 50px 0;
+    .blog-posts {
 
-		.entry-title {
-			margin-bottom: 20px;
-		}
+    	&__header {
 
-		&__item {
+    		.post-meta {
+				margin-left: -10px;
+				margin-right: -10px;
 
-			.text {
+    			> li {
+					padding-left: 10px;
+					padding-right: 10px;
 
-				.description {
-					font-size: 18px;
-				}
-			}
+    				> a {
+					    font-size: 18px;
+					    line-height: 26px;
 
-			&.has--small {
+					    &.icon-calendar {
 
-				&:first-child {
-			        margin-top: 25px;
-			        padding-top: 25px;
-			    }
+					    	&:before {
+							    font-size: 17px;
+							}
+					    }
 
-				&:not(:last-child) {
-				    margin-bottom: 25px;
-				    padding-bottom: 25px;
-				}
-			}
-		}
-	}
+					    &:before {
+						    font-size: 20px;
+						}
+					}
+    			}
+    		}
+    	}
+    }
 
 	.blog-page {
 	    padding: 50px 0;
-
-	    .blog-posts {
-
-	    	&__header {
-
-	    		.post-meta {
-					margin-left: -10px;
-					margin-right: -10px;
-
-	    			> li {
-						padding-left: 10px;
-						padding-right: 10px;
-
-	    				> a {
-						    font-size: 18px;
-						    line-height: 26px;
-
-						    &.icon-calendar {
-
-						    	&:before {
-								    font-size: 17px;
-								}
-						    }
-
-						    &:before {
-							    font-size: 20px;
-							}
-						}
-	    			}
-	    		}
-	    	}
-	    }
 	}
 
 	.blog-details {
 		padding-bottom: 50px;
-
-		&__banner {
-			padding-bottom: 50px;
-
-			.content {
-				margin-bottom: 25px;
-			}
-		}
-
-		&__content {
-		    padding-top: 40px;
-		} 
 	}
 
 	/**********************************
@@ -976,61 +909,60 @@ MEDIA QUERIES
 	/**********************************
 	BLOG PAGE STYLE
 	***********************************/
-	.blog-page {
-	    padding: 40px 0;
+    .blog-posts {
 
-	    .blog-posts {
+    	.featured-img {
+		    margin-bottom: 20px;
+		}
 
-	    	.featured-img {
-			    margin-bottom: 20px;
+		.content__editor {
+
+			p {
+		        margin: 0 0 20px;
+		    }
+		}
+    }
+
+    .pagination {
+
+		a:not(.btn) {
+
+			[class*="icon-"] {
+				width: 54px;
+				height: 54px;
+				font-size: 16px;
 			}
+		}
 
-			.content__editor {
+		.float-left {
 
-				p {
-			        margin: 0 0 20px;
-			    }
-			}
-	    }
+			a {
 
-	    .pagination {
-
-			a:not(.btn) {
-
-				[class*="icon-"] {
-					width: 54px;
-					height: 54px;
-					font-size: 16px;
-				}
-			}
-
-			.float-left {
-
-				a {
-
-					i {
-					    margin-right: 10px;
-					}
-				}
-			}
-
-			.float-right {
-
-				a {
-
-					i {
-					    margin-left: 10px;
-					}
+				i {
+				    margin-right: 10px;
 				}
 			}
 		}
+
+		.float-right {
+
+			a {
+
+				i {
+				    margin-left: 10px;
+				}
+			}
+		}
+	}
+
+	.blog-page {
+	    padding: 40px 0;
 	}
 
 	.blog-details {
 		padding-bottom: 40px;
 
 		&__banner {
-			padding-bottom: 40px;
 
 			.media {
 				border-radius: 16px;
@@ -1047,10 +979,6 @@ MEDIA QUERIES
 				}
 			}
 		}
-
-		&__content {
-		    padding-top: 30px;
-		} 
 	}
 	/**********************************
 	FOOTER STYLE

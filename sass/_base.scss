@@ -11,8 +11,8 @@ $base: #284335;
 $green: #2BAB2D;
 
 
-$nunito: "Nunito Sans", sans-serif;
-$grotesque: "Bricolage Grotesque", sans-serif;
+$primary_font: "Bricolage Grotesque", sans-serif;
+$secondary_font: "Nunito Sans", sans-serif;
 
 *:not(ul):not(ol):not(blockquote) {
 	-webkit-box-sizing: border-box;
@@ -55,7 +55,7 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font: 400 16px/24px "Bricolage Grotesque", sans-serif;
+	font: 400 16px/24px $secondary_font;
 }
 
 section {
@@ -77,9 +77,9 @@ select:not([name^="acf-block"]), textarea:not([name^="acf-block"]) {
 	font-size: 16px !important;
 	font-weight: 500 !important;
 	box-shadow: none !important;
-	line-height: 22px !important;
+	line-height: 20px !important;
+	padding: 14px 15px !important;
 	background: transparent !important;
-	padding: 22px 14px 26px !important;
 	@include transition(all 0.3s ease);
 	border: 1px solid #D3D6E0 !important;
 	@include border-radius(4px !important);
@@ -114,7 +114,7 @@ a, button {
 }
 
 p {
-	margin: 0 0 30px;
+	margin: 0 0 20px;
 }
 
 h1, .h1 { font-size: 64px; line-height: 1.1; }
@@ -129,28 +129,28 @@ h1, h2, h3, h4, h5, h6,
 	color: $black;
 	font-weight: 900;
 	margin-bottom: 0;
-	font-family: $nunito;
+	font-family: $primary_font;
 }
 
 .btn {
 	border: 0;
 	outline: 0;
-	color: #FFFFFF;
+	color: $white;
 	font-size: 18px;
 	font-weight: 900;
 	line-height: 24px;
 	background: $blue;
 	padding: 13px 25px;
 	border-radius: 500px;
-	font-family: $nunito;
 	letter-spacing: 0.8px;
+	font-family: $primary_font;
 	box-shadow: none !important;
 	@include transition(all 0.3s ease);
 
 	&:active, &:hover, &:focus {
 		outline: 0;
-		color: $black !important;
-		background: $yellow !important;
+		color: $white;
+		background: darken($blue, 10%);
 	}
 }
 
@@ -234,4 +234,21 @@ h1, h2, h3, h4, h5, h6,
     display: block !important;
     position: relative !important;
     visibility: hidden !important;
+}
+
+.entry-title {
+
+	.title {
+
+		a {
+			color: $blue;
+			text-decoration: underline;
+			@include transition(all 0.3s ease);
+
+			&:hover {
+				color: darken($blue, 10%);
+				text-decoration: underline;
+			}
+		}
+	}
 }

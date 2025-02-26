@@ -47,14 +47,14 @@ get_header();
 											if ( $description ) 
 											{
 												printf( 
-													'<div class="description h5 font-weight-normal">%s</div>', 
+													'<div class="description font-weight-normal h4">%s</div>', 
 													$description
 												);
 											}
 											else
 											{
 												printf( 
-													'<div class="description h5 font-weight-normal">%s</div>', 
+													'<div class="description font-weight-normal h4">%s</div>', 
 													get_bloginfo( 'description' )
 												);
 											}
@@ -686,7 +686,7 @@ get_header();
 
 										foreach ( $faqs as $key => $faq ) 
 										{
-											echo '<div class="card'.( $key == 0 ? ' show' : '').'" data-toggle="collapse" data-target="#faqs-accordion-'.$sec.'-faq-'.$key.'" aria-expanded="'.( $key == 0 ? 'true' : 'false').'" aria-controls="faqs-accordion-'.$sec.'-faq-'.$key.'">';
+											echo '<div class="card'.( $key == 0 ? ' show' : '').'" data-toggle="collapse" data-target="#faqs-accordion-'.$sec.'-faq-'.( $key + 1).'" aria-expanded="'.( $key == 0 ? 'true' : 'false').'" aria-controls="faqs-accordion-'.$sec.'-faq-'.( $key + 1 ).'">';
 
 												if ( $faq['question'] ) 
 												{

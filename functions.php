@@ -13,7 +13,7 @@ if ( ! function_exists( 'aisk_setup' ) ) {
 		/** Enable support for Post Thumbnails on posts and pages. */
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'post_thumb', 240, 156, true );
-		add_image_size( 'post_large', 625, 400, true );
+		add_image_size( 'post_large', 847, 444, true );
 
 		/*** Editor Style */
 		add_editor_style(get_template_directory_uri() . '/css/admin-editor.min.css');
@@ -25,7 +25,8 @@ if ( ! function_exists( 'aisk_setup' ) ) {
 		  	'menu-2' => esc_html__( 'Secondary Menu', 'aisk' ),
 		  	'menu-3' => esc_html__( 'Footer Menu 1', 'aisk' ),
 		  	'menu-4' => esc_html__( 'Footer Menu 2', 'aisk' ),
-		  	'menu-5' => esc_html__( 'Privacy Menu', 'aisk' ),
+		  	'menu-5' => esc_html__( 'Footer Menu 3', 'aisk' ),
+		  	'menu-6' => esc_html__( 'Privacy Menu', 'aisk' ),
 		) );
 	}
 }
@@ -35,7 +36,7 @@ add_action( 'after_setup_theme', 'aisk_setup' );
 function aisk_preconnect() {
     echo '<link href="https://fonts.googleapis.com" rel="preconnect">';
     echo '<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>';
-    echo '<link href="https://fonts.googleapis.com/css2?family=Abel&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">';
+    echo '<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">';
 }
 add_action('wp_head', 'aisk_preconnect', 5);
 
@@ -131,31 +132,6 @@ function aisk_remove_admin_menus() {
 }
 add_action( 'admin_menu', 'aisk_remove_admin_menus', 999);
 
-/*** Gravity form user role */
-function aisk_gforms_editor_access() {
-	$role = get_role( 'editor' );
-	$role->add_cap( 'gform_full_access' );
-}
-add_action( 'after_switch_theme', 'aisk_gforms_editor_access' );
-
-/*** Gravity form anchor */
-add_filter( 'gform_confirmation_anchor', '__return_false' );
-
-function aisk_form_submit_button($button, $form) {
-	return "<button class='btn btn--big' id='gform_submit_button_{$form["id"]}'>{$form['button']['text']}</button>";
-}
-add_filter("gform_submit_button", "aisk_form_submit_button", 10, 2);
-
-function aisk_add_grammarly_disable_attribute( $field_content, $field, $value, $lead_id, $form_id ) {
-    if ( $field->type == 'textarea' ) 
-    {
-        $field_content = str_replace( '<textarea', '<textarea data-enable-grammarly="false"', $field_content );
-    }
-
-    return $field_content;
-}
-add_filter( 'gform_field_content', 'aisk_add_grammarly_disable_attribute', 10, 5 );
-
 /*** get permalink by template name */
 function get_template_id($temp) {
     $link = null;
@@ -177,7 +153,7 @@ function get_template_id($temp) {
 /*** Return an alternate title, without prefix, for every type used in the get_the_archive_title(). */
 add_filter('get_the_archive_title', function ($title) {
 
-    if ( is_category() || is_tag() || is_tax('case-study-category') ) 
+    if ( is_category() || is_tag() ) 
     {
         $title = single_tag_title( '', false );
     }
@@ -344,177 +320,3 @@ function aisk_blog_redirect_old_urls() {
 	}
 }
 add_filter( 'template_redirect', 'aisk_blog_redirect_old_urls' );
-
-/*** Breadcrumb */
-function aisk_breadcrumb( $classes = '' ) {
-
-	global $post;
-
-	$delimiter = '<span class="angle-right">/</span>';
-	$home = 'Home'; 
-	$before = '<span class="current-page">'; 
-	$after = '</span>'; 
-
-	$homeLink = get_bloginfo('url');
-	$blogTitle = get_the_title( get_option( 'page_for_posts' ) );
-	$blogLink = get_permalink( get_option( 'page_for_posts' ) );
-
-	$events = get_post_type_object('product');
-
-	if ( !is_front_page() ) {
-   
-		echo '<nav class="breadcrumb'.(!empty( $classes ) ? ' ' . $classes : '').'">';
-		    
-		    echo '<a href="' . home_url() . '">' . $home . '</a> ' . $delimiter . ' ';
-		   
-		    if ( is_home() ) {
-
-		        echo $before . ' ' . $blogTitle . ' ' . $after;
-
-		    } elseif ( is_category() ) {
-
-			    global $wp_query;
-			    $cat_obj = $wp_query->get_queried_object();
-			    $thisCat = $cat_obj->term_id;
-			    $thisCat = get_category($thisCat);
-			    $parentCat = get_category($thisCat->parent);
-			    if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-			    echo '<a href="' . $blogLink . '">'.$blogTitle.'</a> ' . $delimiter . ' ';
-			    echo $before . single_cat_title('', false) . $after;
-
-		    } elseif ( is_day() ) {
-		      	echo '<a href="' . $blogLink . '">'.$blogTitle.'</a> ' . $delimiter . ' ';
-		      	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-		      	echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-		      	echo $before . get_the_time('d') . $after;
-		   
-		    } elseif ( is_month() ) {
-
-		      	echo '<a href="' . $blogLink . '">'.$blogTitle.'</a> ' . $delimiter . ' ';
-		      	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-		      	echo $before . get_the_time('F') . $after;
-		   
-		    } elseif ( is_year() ) {
-
-		      	echo '<a href="' . $blogLink . '">'.$blogTitle.'</a> ' . $delimiter . ' ';
-		      	echo $before . get_the_time('Y') . $after;
-		   
-		    } else if ( is_author() ) {
-		        global $author;
-		        $userdata = get_userdata( $author );
-		            
-		        echo '<a href="' . $blogLink . '">'.$blogTitle.'</a> ' . $delimiter . ' ';
-		        echo $before . ' ' . $userdata->display_name . ' ' . $after;
-		           
-		    } elseif ( is_single() && !is_attachment() ) {
-
-		        global $wp_query;
-		        $cat_obj = $wp_query->get_queried_object();
-
-		        if ($cat_obj->post_type === 'solution') {
-		        	echo '<a href="' . get_the_permalink( get_template_id('t_solutions.php') ) . '">'.get_the_title( get_template_id('t_solutions.php') ).'</a> ' . $delimiter . ' ';
-		        	echo $before . $cat_obj->post_title . $after;
-
-		        } elseif ( get_post_type() != 'post' ) {
-		          	$post_type = get_post_type_object(get_post_type());
-		          	$slug = $post_type->rewrite;
-		          	echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $delimiter . ' ';
-		          	echo $before . get_the_title() . $after;
-
-		        } else {
-		          	$cat = get_the_category(); $cat = $cat[0];
-		          	echo '<a href="' . $blogLink . '">'.$blogTitle.'</a> ' . $delimiter . ' ';
-		          	//echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-		          	echo $before . get_the_title() . $after;
-		        }
-		    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() && !is_search() ) {
-		    	global $wp_query;
-		    	$cat_obj = $wp_query->get_queried_object();
-		      	$post_type = get_post_type_object(get_post_type());
-		    
-		      	if ( is_tax( 'solution-category' ) ) {
-		      		echo '<a href="' . get_the_permalink( get_template_id('t_solutions.php') ) . '">'.get_the_title( get_template_id('t_solutions.php') ).'</a> ' . $delimiter . ' ';
-		        	echo $before . $cat_obj->name . $after;
-		      	}
-		      	else {
-		        	echo $before . $post_type->labels->singular_name . $after;
-		      	}
-		   
-		    } elseif ( is_attachment() ) {
-
-			    $parent = get_post($post->post_parent);
-			    // $cat = get_the_category($parent->ID); $cat = $cat[0];
-			    // echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-			    echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
-			    echo $before . get_the_title() . $after;
-		   
-		    } elseif ( is_page() && !$post->post_parent ) {
-
-		        echo $before . get_the_title() . $after;
-
-		    } elseif ( is_page() && $post->post_parent ) {
-
-		      	$parent_id = $post->post_parent;
-		      	$breadcrumbs = array();
-		      	while ($parent_id) {
-		      		$page = get_page($parent_id);
-		      		$breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-		      		$parent_id = $page->post_parent;
-		      	}
-
-		      	$breadcrumbs = array_reverse($breadcrumbs);
-		      	foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
-		        	echo $before . get_the_title() . $after;
-		   
-		    } elseif ( is_search() ) {
-
-		        // echo $before . ' ' . $blogTitle . ' ' . $after;
-		        echo $before . 'Search Results for: "' . get_search_query() . '"' . $after;
-
-		    } elseif ( is_tag() ) {
-		        echo '<a href="' . $blogLink . '">'.$blogTitle.'</a> ' . $delimiter . ' ';
-		        echo $before . 'Posts with the tag "' . single_tag_title('', false) . '"' . $after;
-
-		    } elseif ( is_tag() ) {
-
-		        echo '<a href="' . $blogLink . '">'.$blogTitle.'</a> ' . $delimiter . ' ';
-		        echo $before . 'Posts with the tag "' . single_tag_title('', false) . '"' . $after;
-
-		    } elseif ( is_404() ) {
-
-		        echo $before . 'Error 404' . $after;
-		    }
-		   
-		    if ( get_query_var('paged') ) {
-		        if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-		          echo ': ' . __('Page') . ' ' . get_query_var('paged');
-		        if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
-		    }
-			
-		echo '</nav>';
-	} 
-}
-
-/** 
- * Display page template's name column into admin
- */
-function aisk_pages_add_custom_column( $original_columns ) {
-	$new_columns = $original_columns;
-	array_splice( $new_columns, 99 );
-
-  	$new_columns['template'] = 'Template';
-  	return $new_columns;
-}
-add_filter( 'manage_posts_columns', 'aisk_pages_add_custom_column' );
-
-// Add the data to the custom column
-function aisk_pages_add_custom_column_data( $column, $post_id ) {
-  	switch ( $column ) {
-    	case 'template' :
-      		$post = get_post( $post_id );
-      		echo get_post_meta( $post->ID, '_wp_page_template', true );
-      		// echo get_page_template_slug( $post ); 
-    break;
-  }
-}
-add_action( 'manage_posts_custom_column' , 'aisk_pages_add_custom_column_data', 10, 2 );

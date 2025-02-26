@@ -196,56 +196,6 @@
         closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close">close<span class="icon-close"></span></button>',
     });
 
-    // Animate benefit items on scroll
-    function animateBenefitItems() {
-        const items = document.querySelectorAll(".our-benefits__item .right_area");
-        const viewHeight = window.innerHeight;
-
-        items.forEach(item => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top <= viewHeight * 0.8 && rect.bottom >= 0) {
-                item.style.transform = "translateX(0%)";
-                item.style.transition = "transform 1s ease";
-            }
-        });
-    }
-    
-    document.addEventListener("DOMContentLoaded", () => {
-        animateBenefitItems();
-        window.addEventListener("scroll", animateBenefitItems);
-    });
-
-    /*** Trusted Slider */
-    function initTrustedSlider() {
-        const animateSlide = ($slide) => {
-            ['.text', '.media'].forEach((selector, i) => {
-                const animation = i === 0 ? 'animate__fadeInUp' : 'animate__fadeInRight';
-                $slide.find(selector).addClass(`animate__animated ${animation}`);
-                setTimeout(() => $slide.find(selector).removeClass(`animate__animated ${animation}`), 1000);
-            });
-        };
-
-        $('.trusted-slider')
-            .on('init afterChange', (e, slick, currentSlide) => 
-                animateSlide($(slick.$slides[currentSlide || 0]))
-            )
-            .slick({
-                dots: true,
-                fade: true,
-                arrows: false,
-                infinite: true,
-                autoplay: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplaySpeed: 5000,
-                adaptiveHeight: true,
-                cssEase: 'linear',
-                customPaging: (slider, i) => `<button>${i + 1}</button>`,
-            });
-    }
-
-    initTrustedSlider();
-
     /*** lastNobullet */
     function lastNobullet() {
         var lastElement = false;
@@ -268,7 +218,7 @@
     function stickyKit() {
         $("[data-sticky_column]").stick_in_parent({
             parent: "[data-sticky_parent]",
-            offset_top: 80,
+            offset_top: 130,
             bottoming: true,
         });
 
@@ -496,12 +446,5 @@
             direction: direction
         });
     });
-
-    /*** Enable Masonry */
-    var $grid = $('.masonry').masonry({
-        itemSelector: '.col',
-        columnWidth: '.col',
-        horizontalOrder: true,
-   });
 
 }(jQuery));

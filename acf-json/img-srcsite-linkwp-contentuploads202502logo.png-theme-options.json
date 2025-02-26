@@ -26,11 +26,37 @@
             "name": "logo",
             "aria-label": "",
             "type": "image",
-            "instructions": "Image Size: 135px by 55px",
+            "instructions": "Image Size: 158px by 61px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_67bf5e56a44b9",
+            "label": "Mobile Logo",
+            "name": "logo_mobile",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Image Size: 158px by 61px",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -105,6 +131,24 @@
             "selected": 0
         },
         {
+            "key": "field_67bf5c85c4976",
+            "label": "General",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_650753524213c",
             "label": "Logo",
             "name": "footer_logo",
@@ -131,48 +175,6 @@
             "preview_size": "thumbnail"
         },
         {
-            "key": "field_6742d73efdaeb",
-            "label": "Tagline",
-            "name": "tagline",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 1,
-            "placeholder": "Enter your tagline",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_67b4b1348ed18",
-            "label": "Description",
-            "name": "description",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": 3,
-            "placeholder": "Enter your description",
-            "new_lines": "wpautop"
-        },
-        {
             "key": "field_6511d8a781914",
             "label": "Copyright",
             "name": "copyright",
@@ -192,6 +194,119 @@
             "rows": 3,
             "placeholder": "Enter your copyright",
             "new_lines": ""
+        },
+        {
+            "key": "field_67bf5c9dc4977",
+            "label": "Footer Top",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_67bf5cc4c497a",
+            "label": "",
+            "name": "call_action",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_67bf5ccec497b",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Eter your title",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_67bf5cdbc497c",
+                    "label": "Description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "placeholder": "Enter your description",
+                    "new_lines": "wpautop"
+                },
+                {
+                    "key": "field_67bf5ce5c497d",
+                    "label": "Button",
+                    "name": "button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0
+                }
+            ]
+        },
+        {
+            "key": "field_67bf5cb7c4979",
+            "label": "End Footer",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
         },
         {
             "key": "field_6664066b6ce7a",
@@ -751,5 +866,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739895259
+    "modified": 1740594817
 }
