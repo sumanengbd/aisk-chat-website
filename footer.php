@@ -9,11 +9,23 @@ $footer_logo = get_field( 'footer_logo', 'options' );
 $description = get_field( 'description', 'options' );
 $social_media = get_field( 'social_media', 'options' ); ?>
 
+	<section class="footer_top pb-3">
+		<div class="container">
+			<div class="entry-title text-center mx-auto">
+				<h2 class="title h1">Try Manychat for free</h2>
+				<div class="description h4 font-weight-normal">
+					<p>Transform more conversations into sales, leads, and conversions today</p>
+				</div>
+				<a href="#" class="btn">Get Started</a>
+			</div>
+		</div>
+	</section><!-- footer_top -->
+
 	<footer class="footer">
 		<div class="container">
 			<div class="row lr-10">
-				<div class="col-lg-5">
-					<div class="footer__text-area d-lg-flex flex-column-reverse justify-content-between">
+				<div class="col-lg-3">
+					<div class="footer__text-area">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer__logo">
 						    <?php
 						        if ( $footer_logo ) 
@@ -35,7 +47,7 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 						    ?>
 						</a>
 
-						<div class="text">
+						<!-- <div class="text">
 							<?php
 								if ( $tagline ) 
 								{
@@ -60,12 +72,12 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 									);
 								}
 							?>
-						</div>
+						</div> -->
 					</div>
 				</div>
 
-				<div class="col-lg-7">
-					<div class="row lr-10 masonry row-cols-sm-3 row-cols-2">
+				<div class="col-lg-9">
+					<div class="row lr-10 masonry row-cols-lg-4 row-cols-sm-3 row-cols-2">
 						<div class="col">
 							<div class="footer__widget">
 								<?php
@@ -92,6 +104,23 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 									    'theme_location'     => 'menu-4',
 									    'menu'               => 'Footer Menu 2',
 									    'menu_id'            => 'footer-menu-2',
+									    'menu_class'         => 'footer__widget--menu list-unstyled',
+									    'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+									    'walker'             => new wp_bootstrap_navwalker(),
+									));
+								?>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="footer__widget">
+								<?php
+									wp_nav_menu( array(
+									    'depth'              => 1,
+									    'container'          => false,
+									    'theme_location'     => 'menu-4',
+									    'menu'               => 'Footer Menu 3',
+									    'menu_id'            => 'footer-menu-3',
 									    'menu_class'         => 'footer__widget--menu list-unstyled',
 									    'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
 									    'walker'             => new wp_bootstrap_navwalker(),

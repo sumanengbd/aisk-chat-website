@@ -38,13 +38,11 @@
 
         if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) 
         {
-            // down
             body.classList.remove(scrollUp);
             body.classList.add(scrollDown);
         } 
         else if ( currentScroll < lastScroll && body.classList.contains(scrollDown) ) 
         {
-            // up
             body.classList.remove(scrollDown);
             body.classList.add(scrollUp);
         }
@@ -52,7 +50,7 @@
         lastScroll = currentScroll;
     });
 
-    /*** Navbar Menu */
+    /*** Sidr Menu */
     $('.navbar-toggle').sidr({
         name: 'sidr-main',
         side: 'right',
@@ -61,18 +59,12 @@
         renaming: false,
     });
 
-    $('.navbar-toggle.in').on('click', function(e){
-        e.preventDefault();
+    $('.navbar-toggle.in').on('click', function(){
         $.sidr('close', 'sidr-main');
     });
 
-    $(window).scroll(function(){
-        if($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
-            $.sidr('close', 'sidr-main');
-        }
-    });
-
-    function goingClearMobileMenu() {
+    /** Sidr submenu */
+    function aiskChatMobileMenu() {
         var $nav = $(".navbar-mobile"),
             $back_btn = $nav.find(" > li.dropdown > ul.dropdown-menu").prepend("<li class='dropdown-back'><div class='control'>Back<span class='icon-arrow-right'></span></div></li>");
 
@@ -89,31 +81,26 @@
             $(this).parent().parent().addClass("is-open");
             $(this).parents().find( '.navbar-mobile' ).addClass("is-parent");
 
+
             var header = $(this).parent().parent().find('ul.dropdown-menu').height(),
-                gutter = $('.aisk-chat-website-mobile-nav');
+                gutter = $('.aisk-chat-mobile-nav');
 
             if ( gutter ) 
             {
-                gutter.height(header);
+                gutter.height(header+15);
             }
         });
 
         // go back
         $back_btn.on("click", ".dropdown-back", function(e) {
             e.stopPropagation();
-            $(this)
-            .parents(".is-open")
-            .first()
-            .removeClass("is-open");
+            $(this).parents(".is-open").first().removeClass("is-open");
 
             var header = $(this).parents(".is-parent").first().height();
 
-            $(this)
-            .parents(".is-parent")
-            .first()
-            .removeClass("is-parent");
+            $(this).parents(".is-parent").first().removeClass("is-parent");
 
-            var gutter = $('.aisk-chat-website-mobile-nav');
+            var gutter = $('.aisk-chat-mobile-nav');
 
             setTimeout(function() {
                 if (gutter) {
@@ -123,7 +110,7 @@
         });
     }
 
-    goingClearMobileMenu();
+    aiskChatMobileMenu();
 
     /*** Header height = gutter height */
     function setGutterHeight(){
