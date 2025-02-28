@@ -73,6 +73,13 @@ function aisk_admin_dashboard_css() {
 		#acf-group_5a2badeb476ba .hndle { flex-grow: initial; }
 		#acf-group_5a2badeb476ba .hndle img { max-width: 180px; margin-right: 15px; }
 		#acf-group_5a2badeb476ba .hndle span { display: inline-flex; align-items: center; }
+
+		#menu-to-edit li.menu-item .menu-item-settings .acf-menu-item-fields { float: none; clear: both; }
+		#menu-to-edit li.menu-item .menu-item-settings .acf-menu-item-fields .acf-label { margin: 2px 0 5px; }
+		#menu-to-edit li.menu-item .menu-item-settings .acf-menu-item-fields label { font-weight: normal; font-style: italic; margin-bottom: 0; }
+		#menu-to-edit li.menu-item.menu-item-depth-0 .acf-menu-item-fields .acf-field.acf-field-image, #menu-to-edit li.menu-item.menu-item-depth-0 .acf-menu-item-fields .acf-field.acf-field-text, #menu-to-edit li.menu-item.menu-item-depth-0 .acf-menu-item-fields .acf-field.acf-field-radio, #menu-to-edit li.menu-item.menu-item-depth-0 .acf-menu-item-fields .acf-field.acf-field-checkbox, #menu-to-edit li.menu-item.menu-item-depth-0 .acf-menu-item-fields .acf-field-repeater, #menu-to-edit li.menu-item.menu-item-depth-0 .acf-menu-item-fields .acf-field.acf-field-true-false .acf-label { display: none; } 
+		#menu-to-edit li.menu-item.menu-item-depth-1 .acf-menu-item-fields .acf-field.acf-field-true-false, #menu-to-edit li.menu-item.menu-item-depth-2 .acf-menu-item-fields .acf-field.acf-field-true-false, #menu-to-edit li.menu-item.menu-item-depth-3 .acf-menu-item-fields .acf-field.acf-field-true-false { display: none; }
+		#menu-to-edit li.menu-item.menu-item-depth-0:has(.acf-field.acf-field-true-false[data-name="enable_mega_menu"] input[type="checkbox"]:checked) + li.menu-item-depth-1 .acf-menu-item-fields .acf-field.acf-field-radio { display: block; }
 	</style>';
 }
 add_action('admin_head', 'aisk_admin_dashboard_css');

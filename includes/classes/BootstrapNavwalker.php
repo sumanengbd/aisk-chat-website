@@ -19,8 +19,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @return bool Whether the current URL exactly matches the given URL.
 	 */
 	private function is_current_url_exact_match( $url ) {
-	    $current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-	    return ( $url && $current_url === $url );
+	   $current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	   return ( $url && $current_url === $url );
 	}
 
 	/**
@@ -31,8 +31,60 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @param int $depth Depth of page. Used for padding.
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul role=\"menu\" class=\"dropdown-menu\">\n";
+		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) 
+		{
+			$t = '';
+			$n = '';
+		} 
+		else 
+		{
+			$t = "\t";
+			$n = "\n";
+		}
+		$indent = str_repeat( $t, $depth );
+
+		// Default class.
+		$classes = array( 'dropdown-menu' );
+
+		/**
+		 * Filters the CSS class(es) applied to a menu list element.
+		 *
+		 * @since 4.8.0
+		 *
+		 * @param string[] $classes Array of the CSS classes that are applied to the menu `<ul>` element.
+		 * @param stdClass $args    An object of `wp_nav_menu()` arguments.
+		 * @param int      $depth   Depth of menu item. Used for padding.
+		 */
+		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
+		$output .= "{$n}{$indent}<ul$class_names>{$n}";
+		$output .= "{$n}{$indent}<div class=\"row\">{$n}";
+	}
+
+	/**
+	 * Ends the list of after the elements are added.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @see Walker::end_lvl()
+	 *
+	 * @param string   $output Used to append additional content (passed by reference).
+	 * @param int      $depth  Depth of menu item. Used for padding.
+	 * @param stdClass $args   An object of wp_nav_menu() arguments.
+	 */
+	public function end_lvl( &$output, $depth = 0, $args = array() ) {
+		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) 
+		{
+			$t = '';
+			$n = '';
+		} else {
+			$t = "\t";
+			$n = "\n";
+		}
+		$indent  = str_repeat( $t, $depth );
+		$output .= "$indent</div>{$n}";
+		$output .= "$indent</ul>{$n}";
 	}
 
 	/**
@@ -46,6 +98,18 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @param object $args
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+		$description = '';
+
+		$enable_mega_menu = get_field( 'enable_mega_menu', $item );
+		$mm_options = get_field( 'mm_options', $item );
+		$mm_image = get_field( 'mm_image', $item );
+		$mm_button = get_field( 'mm_button', $item );
+
+		if ( $mm_options !== null && $mm_options == 'icon' ) 
+		{
+			$mm_icon = get_field( 'mm_icon', $item );
+		}
+
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
 		/**
@@ -56,16 +120,24 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 		 * comparison that is not case sensitive. The strcasecmp() function returns
 		 * a 0 if the strings are equal.
 		 */
-		if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) {
+		if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) 
+		{
 			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if ( strcasecmp( $item->title, 'divider') == 0 && $depth === 1 ) {
+		} 
+		else if ( strcasecmp( $item->title, 'divider') == 0 && $depth === 1 ) 
+		{
 			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
+		} 
+		else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) 
+		{
 			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
-		} else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
+		} 
+		else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) 
+		{
 			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
-		} else {
-
+		} 
+		else 
+		{
 			$class_names = $value = '';
 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -73,19 +145,61 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
-			if ( $args->has_children )
-				$class_names .= ' dropdown';
-
-			if ( is_page_template('t_home.php') ) 
+			if ( $args->has_children ) 
 			{
-				if ( $item->url && $this->is_current_url_exact_match( $item->url ) ) 
-				{
-					$class_names .= ' active';
-				}
-			} 
-			else if( in_array( 'current-menu-item', $classes ) ) 
+				$class_names .= ' dropdown';
+			}
+
+			if ( $enable_mega_menu ) 
+			{
+				$class_names .= ' megamenu';
+			}
+
+			if ( $mm_options == 'icon' ) 
+			{
+				$class_names .= ' has-icon-box'; 
+			}
+
+			if ( $mm_options == 'action' ) 
+			{
+				$class_names .= ' has-action-box'; 
+			}
+
+			if ( $item->description ) 
+			{
+				$class_names .= ' has-description'; 
+			}
+
+			if ( in_array( 'current-menu-item', $classes ) ) 
 			{
 				$class_names .= ' active';
+			}
+
+			if ( strcasecmp( $item->attr_title, 'empty' ) == 0 )
+			{
+				$class_names .= ' empty';
+			}
+
+			if ( $mm_icon ) 
+			{
+				$mm_icon = '<span class="'.$mm_icon.'"></span>';
+			}
+
+			if ( $mm_image ) 
+			{
+				$mm_image = '<div class="media">
+					<img src="'.esc_url( $mm_image['url'] ).'" alt="'.$mm_image['alt'].'">
+				</div>';
+			}
+
+			if ( $mm_button ) 
+			{
+				$mm_button = '<span class="btn">'.$mm_button.'</span>';
+			}
+
+			if ( $item->description ) 
+			{
+				$description = '<span class="description">' . esc_attr( $item->description ) . '</span>';
 			}
 
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
@@ -101,20 +215,23 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
 
 			// If item has_children add atts to a.
-			if ( $args->has_children && $depth === 0 ) {
+			if ( $args->has_children && $depth === 0 ) 
+			{
 				$atts['href']   		= $item->url;
-				// $atts['data-toggle']	= 'dropdown';
-				// $atts['class']			= 'dropdown-toggle';
 				$atts['aria-haspopup']	= 'true';
-			} else {
+			} 
+			else 
+			{
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
 
 			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 
 			$attributes = '';
-			foreach ( $atts as $attr => $value ) {
-				if ( ! empty( $value ) ) {
+			foreach ( $atts as $attr => $value ) 
+			{
+				if ( ! empty( $value ) ) 
+				{
 					$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 					$attributes .= ' ' . $attr . '="' . $value . '"';
 				}
@@ -129,12 +246,40 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
-			if ( ! empty( $item->attr_title ) )
+			if ( $item->attr_title == 'empty' ) 
+			{
+				$item_output .= '';
+			}
+			elseif ( $mm_options == 'action' ) 
+			{
+				$item_output .= '<a'. $attributes .' class="action-box">';
+			}
+			elseif ( $mm_options == 'icon' ) 
+			{
+				$item_output .= '<a'. $attributes .' class="icon-box__item">';
+			}
+			elseif ( ! empty( $item->attr_title ) ) 
+			{
 				$item_output .= '<a'. $attributes .'><span class="' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
+			}
 			else
+			{
 				$item_output .= '<a'. $attributes .'>';
+			}
 
-			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			if ( $mm_options == 'icon' && $mm_icon ) 
+			{
+				$item_output .= $args->link_before . $mm_icon . '<div class="text">' . '<span class="title">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</span>'. $description . '</div>' . $args->link_after;
+			}
+			elseif ( $mm_options == 'action' && $mm_image || $description || $mm_button ) 
+			{
+				$item_output .= $args->link_before . $mm_image . '<div class="text">' . '<span class="title">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</span>'. $description . $mm_button  . '</span>' . '</div>' . $args->link_after;
+			}
+			elseif ( $item->attr_title !== 'empty' ) 
+			{
+				$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			}
+
 			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="dropdown-toggle" data-toggle="dropdown"></span></a>' : '</a>';
 			$item_output .= $args->after;
 
@@ -163,17 +308,17 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @return null Null on failure with no changes to parameters.
 	 */
 	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
-		if ( ! $element )
-			return;
+        if ( ! $element )
+            return;
 
-		$id_field = $this->db_fields['id'];
+        $id_field = $this->db_fields['id'];
 
-		// Display this element.
-		if ( is_object( $args[0] ) )
-		   $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+        // Display this element.
+        if ( is_object( $args[0] ) )
+           $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
 
-		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-	}
+        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    }
 
 	/**
 	 * Menu Fallback

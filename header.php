@@ -74,7 +74,7 @@
                         echo '<div class="aisk-chat-mobile-nav">';
 
                             wp_nav_menu( array(
-                                'depth'              => 2,
+                                'depth'              => 3,
                                 'container'          => false,
                                 'theme_location'     => 'menu-1',
                                 'menu'               => 'Primary Menu Mobile',
@@ -155,7 +155,7 @@
                             echo '</div>';
 
                             wp_nav_menu( array(
-                                'depth'              => 2,
+                                'depth'              => 3,
                                 'container'          => false,
                                 'theme_location'     => 'menu-1',
                                 'menu'               => 'Primary Menu',
