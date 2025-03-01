@@ -23,10 +23,7 @@ if ( ! function_exists( 'aisk_setup' ) ) {
 		register_nav_menus( array(
 		  	'menu-1' => esc_html__( 'Primary Menu', 'aisk' ),
 		  	'menu-2' => esc_html__( 'Secondary Menu', 'aisk' ),
-		  	'menu-3' => esc_html__( 'Footer Menu 1', 'aisk' ),
-		  	'menu-4' => esc_html__( 'Footer Menu 2', 'aisk' ),
-		  	'menu-5' => esc_html__( 'Footer Menu 3', 'aisk' ),
-		  	'menu-6' => esc_html__( 'Privacy Menu', 'aisk' ),
+		  	'menu-3' => esc_html__( 'Footer Menu', 'aisk' ),
 		) );
 	}
 }
@@ -44,7 +41,7 @@ function aisk_enqueue_scripts() {
 
 	/*** Enqueue styles. */
 	wp_enqueue_style('plugins', get_template_directory_uri() . '/css/plugins.css', array(), date("ymd-Gis", filemtime( get_template_directory() . '/css/plugins.css' )), 'all');
-	wp_enqueue_style( 'aisk-style', get_stylesheet_uri(), array(), "0.1.0");
+	wp_enqueue_style('aisk-style', get_stylesheet_uri(), array(), date("ymd-Gis", filemtime( get_stylesheet_directory() . '/style.css' )), 'all');
 
 	/*** Enqueue scripts. */
 	wp_enqueue_script('jquery');
@@ -96,7 +93,7 @@ function custom_acf_json_filename( $filename, $post, $load_path ) {
 
     return $filename;
 }
-add_filter( 'acf/json/save_file_name', 'custom_acf_json_filename', 10, 3 );
+// add_filter( 'acf/json/save_file_name', 'custom_acf_json_filename', 10, 3 );
 
 /*** Replace {site_link} with site URL on ACF options page output */
 add_action('admin_init', function() {
@@ -261,7 +258,7 @@ function aisk_copyright_shortcode($atts) {
         $output = 'Copyright &copy; '. date('Y') .' '. get_bloginfo('name');
     }
 
-    return '<div class="copyright'.( isset($atts['class']) ? ' '.$atts['class'] : '').'"><p>' . wp_kses_post($output) . '</p></div>';
+    return '<div class="footer__copyright'.( isset($atts['class']) ? ' '.$atts['class'] : '').'"><p>' . wp_kses_post($output) . '</p></div>';
 }
 add_shortcode('copyright', 'aisk_copyright_shortcode');
 

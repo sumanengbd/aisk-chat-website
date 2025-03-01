@@ -7,9 +7,9 @@
 			<div class="container">
 				<div class="blog-details__header text-center">
 					<div class="row lr-10 justify-content-center">
-						<div class="col-lg-6 col-md-8 col-sm-10">
+						<div class="col-lg-8 col-md-8 col-sm-10">
 							<?php 
-								the_title( '<h1 class="title">', '</h1>' ); 
+								the_title( '<h1 class="title h2">', '</h1>' ); 
 
 								printf(
 								    '<ul class="post-meta list-inline">
@@ -47,7 +47,7 @@
 
 				<div class="blog-details__content" data-sticky_parent>
 					<div class="row lr-10 justify-content-center" data-sticky_column>
-						<div class="col-lg-6 col-md-8 col-sm-10">
+						<div class="col-lg-8 col-md-8 col-sm-10">
 							<?php
 								if( '' !== get_post()->post_content )
 						        {

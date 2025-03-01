@@ -32,7 +32,7 @@ get_header();
 											if ( $title ) 
 											{
 												printf( 
-													'<h1 class="title">%s</h1>', 
+													'<h1 class="title fz-big">%s</h1>', 
 													$title
 												);
 											}

@@ -56,7 +56,7 @@
                                 {
                                     printf(
                                         '<img src="%s" class="img-fluid" alt="%s">', 
-                                        esc_url( get_theme_file_uri('images/logo.png') ), 
+                                        esc_url( get_theme_file_uri('images/logo-mobile.svg') ), 
                                         get_bloginfo('name')
                                     );
                                 }
@@ -120,7 +120,7 @@
                                     {
                                         printf(
                                             '<img src="%s" class="img-fluid" alt="%s">', 
-                                            esc_url( get_theme_file_uri('images/logo-white.png') ), 
+                                            esc_url( get_theme_file_uri('images/logo.svg') ), 
                                             get_bloginfo('name')
                                         );
                                     }
@@ -146,7 +146,7 @@
                                     {
                                         printf(
                                             '<img src="%s" class="img-fluid" alt="%s">', 
-                                            esc_url( get_theme_file_uri('images/logo-white.png') ), 
+                                            esc_url( get_theme_file_uri('images/logo.svg') ), 
                                             get_bloginfo('name')
                                         );
                                     }
