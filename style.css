@@ -2741,6 +2741,9 @@ FOOTER STYLES
 }
 .footer_top .entry-title .description {
   margin-top: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .footer_top .entry-title .btn, .footer_top .entry-title .entry-comments .comment-form .form-submit .submit, .entry-comments .comment-form .form-submit .footer_top .entry-title .submit, .footer_top .entry-title .comment-respond .comment-form .form-submit .submit, .comment-respond .comment-form .form-submit .footer_top .entry-title .submit {
   color: #FFFFFF;
