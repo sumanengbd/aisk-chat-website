@@ -45,7 +45,7 @@ $social_media = get_field( 'social_media', 'options' ); ?>
 
 	<footer class="footer">
 		<div class="container">
-			<div class="text-center">
+			<div class="footer__content mx-auto text-center">
 				<?php
 					echo '<div class="footer__logo">';
 						echo '<a href="'.esc_url( home_url( '/' ) ).'">';

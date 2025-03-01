@@ -2383,11 +2383,21 @@ FOOTER STYLES
 	padding: 80px 0;
 	background: $black;
 
+	&__content {
+		max-width: 680px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__logo {
+	    margin-bottom: 40px;
+	}
+
 	&__menu {
-		margin-top: 20px;
+		margin-top: 30px;
 		margin-left: -10px;
 		margin-right: -10px;
-		margin-bottom: -5px;
+		margin-bottom: 30px;
 
 		li {
 		    padding-left: 10px;
@@ -2418,59 +2428,14 @@ FOOTER STYLES
 		color: $white;
 		font-size: 16px;
 		font-weight: 700;
+		margin-top: 30px;
 		line-height: 22px;
-		margin-top: 15px;
 
 		p {
 
 			a {
 				color: $white;
 				text-decoration: underline;
-				@include transition(all 0.3s ease);
-
-				&:any-link {
-
-					&:hover, &:focus {
-						color: $blue;
-						text-decoration: underline;
-					}
-				}
-			}
-		}
-	}
-
-	&__privacy-menu {
-		margin-top: 15px;
-		margin-left: -20px;
-		margin-right: -20px;
-		margin-bottom: -5px;
-
-		li {
-			position: relative;
-			padding-left: 20px;
-			padding-right: 20px;
-			padding-bottom: 5px;
-
-			&:not(.no_bullet) {
-
-				&:before {
-					top: 8px;
-					width: 8px;
-					right: -4px;
-					content: "";
-					height: 8px;
-					position: absolute;
-					background: $white;
-					border-radius: 500px;
-				}
-			}
-
-			a {
-				color: $white;
-				display: block;
-				font-size: 16px;
-				font-weight: 700;
-				line-height: 22px;
 				@include transition(all 0.3s ease);
 
 				&:any-link {
