@@ -2690,8 +2690,16 @@ FOOTER STYLES
 ***********************************/
 .footer_top {
   padding: 100px 0;
-  background: #000000;
   position: relative;
+}
+.footer_top:before {
+  left: 0;
+  bottom: 0;
+  content: "";
+  height: 50%;
+  width: 100%;
+  background: #000000;
+  position: absolute;
 }
 @media only screen and (max-width: 1199px) {
   .footer_top {
@@ -2714,16 +2722,18 @@ FOOTER STYLES
   }
 }
 .footer_top .entry-title {
-  max-width: 760px;
-}
-@media only screen and (max-width: 1199px) {
-  .footer_top .entry-title {
-    max-width: 855px;
-  }
+  padding: 70px;
+  background: #7f54b3;
+  border-radius: 16px;
 }
 @media only screen and (max-width: 991px) {
   .footer_top .entry-title {
-    max-width: 100%;
+    padding: 60px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .footer_top .entry-title {
+    padding: 50px;
   }
 }
 .footer_top .entry-title .title, .footer_top .entry-title .description {
@@ -2733,12 +2743,18 @@ FOOTER STYLES
   margin-top: 10px;
 }
 .footer_top .entry-title .btn, .footer_top .entry-title .entry-comments .comment-form .form-submit .submit, .entry-comments .comment-form .form-submit .footer_top .entry-title .submit, .footer_top .entry-title .comment-respond .comment-form .form-submit .submit, .comment-respond .comment-form .form-submit .footer_top .entry-title .submit {
+  color: #FFFFFF;
   margin-top: 25px;
+  background: #000000;
 }
 @media only screen and (max-width: 767px) {
   .footer_top .entry-title .btn, .footer_top .entry-title .entry-comments .comment-form .form-submit .submit, .entry-comments .comment-form .form-submit .footer_top .entry-title .submit, .footer_top .entry-title .comment-respond .comment-form .form-submit .submit, .comment-respond .comment-form .form-submit .footer_top .entry-title .submit {
     margin-top: 20px;
   }
+}
+.footer_top .entry-title .btn:hover, .footer_top .entry-title .entry-comments .comment-form .form-submit .submit:hover, .entry-comments .comment-form .form-submit .footer_top .entry-title .submit:hover, .footer_top .entry-title .comment-respond .comment-form .form-submit .submit:hover, .comment-respond .comment-form .form-submit .footer_top .entry-title .submit:hover {
+  color: #000000;
+  background: #FFFFFF;
 }
 
 .footer {

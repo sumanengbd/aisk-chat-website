@@ -2331,8 +2331,17 @@ FOOTER STYLES
 ***********************************/
 .footer_top {
 	padding: 100px 0;
-	background: $black;
 	position: relative;
+
+	&:before {
+	    left: 0;
+	    bottom: 0;
+	    content: "";
+	    height: 50%;
+	    width: 100%;
+	    background: $black;
+		position: absolute;
+	}
 
 	@media only screen and (max-width: 1199px) {
 		padding: 80px 0;
@@ -2351,14 +2360,16 @@ FOOTER STYLES
 	}
 
 	.entry-title {
-		max-width: 760px;
-
-		@media only screen and (max-width: 1199px) {
-			max-width: 855px;
-		}
+		padding: 70px;
+		background: #7f54b3;
+		border-radius: 16px;
 
 		@media only screen and (max-width: 991px) {
-			max-width: 100%;
+			padding: 60px;
+		}
+
+		@media only screen and (max-width: 767px) {
+			padding: 50px;
 		}
 
 		.title, .description {
@@ -2370,10 +2381,17 @@ FOOTER STYLES
 		}
 
 		.btn {
+			color: $white;
 			margin-top: 25px;
+			background: $black;
 
 			@media only screen and (max-width: 767px) {
 				margin-top: 20px;
+			}
+
+			&:hover {
+				color: $black;
+				background: $white;
 			}
 		}
 	}
