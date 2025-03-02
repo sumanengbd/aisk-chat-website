@@ -4,6 +4,7 @@ jQuery( document ).ready(function() {
     dynamic_title_repeater_accordion('stories', 'title');
     dynamic_title_repeater_accordion('steps', 'title');
     dynamic_title_repeater_accordion('faqs', 'question');
+    dynamic_title_repeater_accordion('reviews', 'title');
 });
 
 function dynamic_title_repeater_accordion(repeater_name, field_name) {

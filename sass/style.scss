@@ -15,7 +15,7 @@ BASE STYLES
 @include icon-config(
 	'fonts', 
 	'aisk-chat', 
-	'58408211'
+	'43170127'
 );
 
 @import 'icon';
@@ -63,6 +63,7 @@ HEADER STYLES
 	    padding: 12px 20px;
     	border-radius: 16px;
 		@include transition(all 0.3s ease);
+    	box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.2);
 
 		.navbar-header {
 
@@ -142,94 +143,37 @@ HEADER STYLES
 						}
 					}
 
-					&:not(.megamenu) {
-
-						.dropdown-menu {
-							margin: 0;
-							border: 0;
-							padding: 0;
-							opacity: 0;
-							left: auto;
-							display: block;
-							min-width: 240px;
-							visibility: hidden;
-							border-radius: 6px;
-							top: calc(100% + 20px);
-							@include transition(all 0.5s ease);
-							box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.12);
-
-							&:after {
-								top: -3px;
-								width: 6px;
-								content: "";
-								right: 47px;
-								height: 6px;
-								z-index: -1;
-								background: $white;
-								position: absolute;
-								@include transform(rotate(45deg));
-							}
-
-							.row {
-								margin: 0 !important;
-								flex-direction: column;
-							}
-
-							li {
-								margin: 0;
-								padding: 0;
-
-								&:first-child {
-									
-									a {
-										border-top-left-radius: 0;
-										border-top-right-radius: 0;
-									}
-								}
-
-								&:last-child {
-									
-									a {
-										border-bottom-left-radius: 6px;
-										border-bottom-right-radius: 6px;
-									}
-								}
-
-								a {
-									width: 100%;
-									color: $black;
-									display: block;
-									font-size: 16px;
-									font-weight: 400;
-									line-height: 22px;
-									padding: 7.5px 12px;
-									@include transition(all 0.3s ease);
-								}
-
-								&.current-menu-ancestor, &.current-menu-item, &.active, &:hover, &:focus {
-
-									a {
-										color: $white;
-										background: $blue;
-									}
-								}
-							}
-						}
-
-						&.show, &:hover, &:focus {
-
-							.dropdown-menu {
-								opacity: 1;
-								visibility: visible;
-								top: calc(100% + 5px);
-							}
-						}
-					}
-
 					&.dropdown {
 
 						> a {
 							position: relative;
+
+							&:before, &:after {
+								content: '';
+								position: absolute;
+					    	    @include transition(all 0.3s ease);
+							}
+
+							&:before {
+								left: 0;
+								opacity: 0;
+								width: 100%;
+								height: 6px;
+								visibility: hidden;
+								background: $white;
+								top: calc(190% + 20px);
+							    border-top-left-radius: 4px;
+							    border-top-right-radius: 4px;
+							}
+
+							&:after {
+								left: 0;
+								top: 100%;
+								opacity: 0;
+								width: 100%;
+								height: 30px;
+								background: $white;
+							}
 
 						    .dropdown-toggle {
 						    	width: 12px;
@@ -486,7 +430,7 @@ HEADER STYLES
 												padding-top: 20px;
 
 												.title {
-													color: $white;
+													color: $white !important;
 												}
 
 												.description {
@@ -514,10 +458,10 @@ HEADER STYLES
 
 							> a {
 
-								&:after {
+								&:before {
 									opacity: 1;
 							    	visibility: visible;
-									top: calc(100% + 13px);
+									top: calc(190% + 1px);
 								}
 
 								.dropdown-toggle {
@@ -532,6 +476,73 @@ HEADER STYLES
 							    opacity: 1;
 							    visibility: visible;
 							    top: calc(100% + 12px);
+							}
+						}
+					}
+
+					&:not(.megamenu) {
+
+						.dropdown-menu {
+							top: 250%;
+							margin: 0;
+							padding: 0;
+							min-width: 240px;
+							border-radius: 6px;
+							left: 50% !important;
+							@include transition(all 0.3s ease);
+							@include transform(translateX(-50%));
+							box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.12);
+
+							.row {
+								margin: 0 !important;
+								flex-direction: column;
+							}
+
+							li {
+								margin: 0;
+								padding: 0;
+
+								&:first-child {
+									
+									a {
+										border-top-left-radius: 0;
+										border-top-right-radius: 0;
+									}
+								}
+
+								&:last-child {
+									
+									a {
+										border-bottom-left-radius: 6px;
+										border-bottom-right-radius: 6px;
+									}
+								}
+
+								a {
+									width: 100%;
+									color: $black;
+									display: block;
+									font-size: 16px;
+									font-weight: 400;
+									line-height: 22px;
+									padding: 7.5px 12px;
+									@include transition(all 0.3s ease);
+								}
+
+								&.current-menu-ancestor, &.current-menu-item, &.active, &:hover, &:focus {
+
+									a {
+										color: $white;
+										background: $blue;
+									}
+								}
+							}
+						}
+
+						&.show, &:hover, &:focus {
+
+							.dropdown-menu {
+								top: calc(150% + 17px) !important;
 							}
 						}
 					}
@@ -600,7 +611,7 @@ HEADER STYLES
     overflow-y: auto;
     overflow-x: hidden;
     background: $white;
-    box-shadow: 0px 0px 40px rgba($black, 0.06);
+    box-shadow: 0px 0px 50px rgba($black, 0.09);
 
 	&.right {
 		left: auto;
@@ -671,6 +682,10 @@ HEADER STYLES
 					padding-top: 15px;
 					padding-bottom: 15px;
 					border-bottom: 1px solid rgba($blue, 0.2);
+
+					&.has-action-box {
+					    padding-top: 20px;
+					}
 
 					a {
 						color: $black;
@@ -754,9 +769,8 @@ HEADER STYLES
 						    width: 100%;
 						    display: block;
 						    box-shadow: none;
-						    padding-top: 15px;
 						    position: absolute;
-						    background-color: #FFFDFA;
+						    background-color: $white;
 						    -webkit-transform: translate3d(110%, 0, 0);
 						    transform: translate3d(110%, 0, 0);
 						    @include transition(all 0.4s ease);
@@ -777,7 +791,27 @@ HEADER STYLES
 					        }
 
 						    li {
-						    	margin-bottom: 20px;
+						    	width: 100%;
+								display: block;
+								padding-top: 15px;
+								padding-bottom: 15px;
+								border-bottom: 1px solid rgba($blue, 0.2);
+
+								.dropdown-menu {
+
+									li {
+										width: 100%;
+										display: block;
+										padding-top: 15px;
+										padding-bottom: 15px;
+										border-bottom: 1px solid rgba($blue, 0.2);
+
+										&:last-child {
+											border-bottom: 0;
+											padding-bottom: 0;
+										}
+									}
+								}
 
 						    	&.dropdown-back {
 					    		    display: flex;
@@ -828,17 +862,17 @@ HEADER STYLES
 										padding: 0;
 									    color: $base;
 									    display: flex;
-									    font-size: 20px;
+									    font-size: 18px;
 									    font-weight: 700;
-									    line-height: 28px;
+									    line-height: 26px;
 									    font-family: $secondary_font;
 									    flex-direction: column-reverse;
 
 									    .description {
 											color: $base;
+											margin-top: 0;
 											display: block;
 											font-size: 14px;
-											margin-top: 2px;
 											font-weight: 400;
 											line-height: 20px;
 										}
@@ -849,7 +883,7 @@ HEADER STYLES
 										> a {
 
 											&:hover, &:focus {
-												color: $green;
+												color: $blue;
 											}
 										}
 									}
@@ -924,11 +958,10 @@ HEADER STYLES
 										}
 
 										&__item {
+											padding: 0;
 											width: 100%;
-											padding: 10px;
 											overflow: hidden;
 											flex-direction: row;
-											border-radius: 12px;
 											display: inline-flex;
 											background: transparent;
 											@include transition(all 0.3s ease);
@@ -956,7 +989,6 @@ HEADER STYLES
 											&:any-link {
 
 												&:hover, &:focus {
-													background: $gray;
 
 													[class*=icon-] {
 														color: $blue;
@@ -1044,10 +1076,6 @@ HEADER STYLES
 					    			    box-shadow: none;
 					    			    position: initial;
 					    			    width: auto !important;
-
-					    			    li {
-					    			    	margin-bottom: 20px;
-					    			    }
 					    			}
 						    	}
 
@@ -1075,7 +1103,7 @@ HEADER STYLES
 					&.current-menu-item, &.current-menu-paren, &:hover, &:focus {
 
 						> a {
-							color: $green;
+							color: $blue;
 						}
 					}
 				}
@@ -1350,63 +1378,110 @@ HOME STYLES
 	}
 }
 
-.testimonial {
+.testimonials {
 	padding: 100px 0;
 
-	.entry-title {
-		margin-bottom: 50px;
+	@media only screen and (max-width: 1199px) {
+		padding: 80px 0;
 	}
 
-	.background {
-		gap: 30px;
+	@media only screen and (max-width: 991px) {
+		padding: 60px 0;
+	}
+
+	@media only screen and (max-width: 767px) {
+		padding: 50px 0;
+	}
+
+	@media only screen and (max-width: 575px) {
+		padding: 40px 0;
+	}
+
+	.entry-title {
+	    max-width: 780px;
+		margin-bottom: 30px;
+
+		@media only screen and (max-width: 991px) {
+			max-width: 100%;
+		}
+
+		@media only screen and (max-width: 767px) {
+			margin-bottom: 25px;
+		}
+	}
+
+	.minus {
+		margin-bottom: -20px;
+	}
+
+	&__item {
 		width: 100%;
-		display: flex;
+		padding: 25px;
 		overflow: hidden;
-		background: $white;
-		border-radius: 36px;
-		align-items: center;
-		box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.06), 0px 34px 44px 0px rgba(0, 0, 0, 0.06);
+		background: $gray;
+		border-radius: 24px;
+		margin-bottom: 20px;
+		height: calc(100% - 20px);
 
-		.media {
+		@media only screen and (max-width: 991px) {
+			padding: 20px;
+			border-radius: 16px;
+		}
+
+		.ratings {
+			gap: 5px;
 			width: 100%;
-			max-width: 580px;
-			min-width: 580px;
-			overflow: hidden;
+			display: flex;
+			line-height: 1;
+			align-items: center;
 
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
+			[class*="icon-"] {
+				display: block;
+				line-height: 1;
+				color: $yellow;
+				font-size: 20px;
 			}
 		}
 
 		.text {
-			max-width: 605px;
+			margin: 8px 0 12px;
 
-			[class*=icon-] {
-				color: $black;
-				display: block;
-		        font-size: 24px;
-		        line-height: 24px;
-				margin-bottom: 10px;
+			.description {
+				margin-top: 5px;
 			}
+		}
 
-			.quote {
-				color: $black;
-				font-size: 18px;
-				line-height: 28px;
+		.meta {
+			width: 100%;
+			display: block;
+
+			img {
+				width: 30px;
+				height: 30px;
+				overflow: hidden;
+				object-fit: cover;
+				margin-right: 5px;
+				border-radius: 500px;
+				@include transition(all 0.3s ease);
 			}
 
 			.name {
 				color: $black;
 				display: block;
-				font-size: 16px;
-				margin-top: 10px;
-				line-height: 24px;
-				font-weight: 700;
-				font-family: $primary_font;
-				letter-spacing: 0.4px;
-				text-transform: uppercase;
+				line-height: 1;
+				font-size: 18px;
+				@include transition(all 0.3s ease);
+			}
+
+			&:any-link {
+
+				&:hover, &:focus {
+
+					.name {
+						color: $blue;
+						text-decoration: underline;
+					}
+				}
 			}
 		}
 	}
@@ -2329,6 +2404,16 @@ BLOG PAGE STYLES
 /***********************************
 FOOTER STYLES
 ***********************************/
+.page-template-aisk-page {
+
+	&:has(.faqs) {
+
+		.footer_top {
+			background: #edf2ed;
+		}
+	}
+}
+
 .footer_top {
 	padding: 100px 0;
 	position: relative;
@@ -2364,12 +2449,16 @@ FOOTER STYLES
 		background: #7f54b3;
 		border-radius: 16px;
 
-		@media only screen and (max-width: 991px) {
+		@media only screen and (max-width: 1199px) {
 			padding: 60px;
 		}
 
-		@media only screen and (max-width: 767px) {
+		@media only screen and (max-width: 991px) {
 			padding: 50px;
+		}
+
+		@media only screen and (max-width: 767px) {
+			padding: 40px;
 		}
 
 		.title, .description {

@@ -8,7 +8,7 @@ $footer_logo = get_field( 'footer_logo', 'options' );
 $social_media = get_field( 'social_media', 'options' ); ?>
 	
 	<?php if ( !empty( $action ) && array_filter( $action ) ): ?>
-	<section class="footer_top pb-0">
+	<section class="footer_top pt-0 pb-0">
 		<div class="container">
 			<div class="entry-title text-center mx-auto">
 				<?php

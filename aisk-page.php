@@ -464,6 +464,120 @@ get_header();
 					}
 				}
 
+				if ( get_row_layout() == 'reviews' ) 
+				{
+					$title = get_sub_field( 'title' );
+					$reviews = get_sub_field( 'reviews' );
+					$class = get_sub_field( 'class' );
+
+					if ( $title || $reviews ) 
+					{
+						echo '<section class="testimonials '.( $class ).'">';
+							echo '<div class="container">';
+
+								if ( $title ) 
+								{
+									printf( 
+										'<div class="entry-title text-center mx-auto">
+											<h2 class="title">%s</h2>
+										</div>',  
+										$title
+									);
+								}
+
+								if ( $reviews ) 
+								{
+									echo '<div class="row lr-10 minus">';
+
+										foreach ( $reviews as $review ) 
+										{
+											echo '<div class="'.( count( $reviews ) > 1 ? 'col-sm-6' : 'col-sm-12').'">';
+												echo '<div class="testimonials__item">';
+
+													if ( isset($review['star']) ) 
+													{
+													    echo '<div class="ratings">';
+													    
+													    $fullStars = floor( $review['star'] );
+													    $halfStar = ( $review['star'] - $fullStars ) >= 0.5 ? 1 : 0;
+													    $emptyStars = 5 - ( $fullStars + $halfStar );
+
+													    for ( $i = 0; $i < $fullStars; ++$i) 
+													    {
+													        echo '<span class="icon-star"></span>';
+													    }
+
+													    if ( $halfStar ) 
+													    {
+													        echo '<span class="icon-star-half-alt"></span>';
+													    }
+
+													    for ( $i = 0; $i < $emptyStars; ++$i ) 
+													    {
+													        echo '<span class="icon-star-empty"></span>';
+													    }
+
+													    echo '</div>';
+													}
+
+													if ( $review['title'] || $review['message'] ) 
+													{
+														echo '<div class="text">';
+
+															if ( $review['title'] ) 
+															{
+																printf( 
+																	'<h6 class="title">%s</h6>',  
+																	$review['title']
+																);
+															}
+
+															if ( $review['message'] ) 
+															{
+																printf( 
+																	'<div class="description">%s</div>',  
+																	$review['message']
+																);
+															}
+
+														echo '</div>';
+													}
+
+													if ( $review['name'] || $review['image'] ) 
+													{
+														echo '<div class="meta d-flex align-items-center">';
+
+															if ( $review['image'] ) 
+															{
+																printf( 
+																	'<img src="%s" class="img-fluid" alt="%s">', 
+																	esc_url( $review['image']['url'] ), 
+																	$review['image']['alt'] 
+																);
+															}
+
+															if ( $review['name'] ) 
+															{
+																printf( 
+																	'<span class="name">/ %s</span>',  
+																	$review['name']
+																);
+															}
+														echo '</div>';
+													}
+
+												echo '</div>';
+											echo '</div>';
+										}
+
+									echo '</div>';
+								}
+
+							echo '</div>';
+						echo '</section>';
+					}
+				}
+
 				if ( get_row_layout() == 'stories' ) 
 				{
 					$title = get_sub_field( 'title' );

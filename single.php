@@ -74,7 +74,7 @@
 			                                		if ( $call_action['title'] ) 
 			                                		{
 			                                			printf( 
-			                                				'<h2 class="title text-white">%s</h2>', 
+			                                				'<h3 class="title text-white">%s</h3>', 
 			                                				$call_action['title'] 
 			                                			);
 			                                		}

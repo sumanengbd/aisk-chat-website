@@ -11,7 +11,7 @@ $categories = get_the_terms( get_the_ID(), 'category' ); ?>
 		echo '<div class="blog-posts__header text-center">';
 			echo '<a href="'.esc_url( get_the_permalink() ).'">';
 
-				the_title('<h2 class="title h1">', '</h2>');
+				the_title('<h2 class="title">', '</h2>');
 
 			echo '</a>';
 
