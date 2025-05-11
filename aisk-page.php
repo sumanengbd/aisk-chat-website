@@ -101,6 +101,7 @@ get_header();
 					if ( $title || $description || $all_chats ) 
 					{
 						echo '<section class="communication '.( $class ).'">';
+							echo '<a id="'.esc_attr( sanitize_title( $title ) ).'" class="blankSpace"></a>';
 
 							if ( $title || $description ) 
 							{
