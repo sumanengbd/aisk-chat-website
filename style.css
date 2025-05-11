@@ -1811,7 +1811,6 @@ HOME STYLES
 .qualification__item .media {
   width: 100%;
   overflow: hidden;
-  border-radius: 36px;
 }
 .qualification__item .media.has-video {
   width: 100%;
@@ -3980,7 +3979,6 @@ MEDIA QUERIES
   }
   .qualification__item .media {
     margin-bottom: 15px;
-    border-radius: 24px;
   }
   .trusted {
     padding: 60px 0;
@@ -4328,9 +4326,6 @@ MEDIA QUERIES
   }
   .qualification__item {
     margin-bottom: 30px;
-  }
-  .qualification__item .media {
-    border-radius: 16px;
   }
   .qualification__item .media.has-video video {
     height: 330px;
