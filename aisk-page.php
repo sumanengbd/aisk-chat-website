@@ -26,7 +26,7 @@ get_header();
 						echo '<section class="banner '.( $class ).'">';
 							echo '<div class="container">';
 								echo '<div class="row align-items-center">';
-									echo '<div class="'.( $image ? 'col-md-6' : 'col-md-12 fluid').'">';
+									echo '<div class="'.( $image ? 'col-lg-6 col-md-7' : 'col-md-12 fluid').'">';
 										echo '<div class="banner__text">';
 
 											if ( $title ) 
@@ -75,7 +75,7 @@ get_header();
 									if ( $image ) 
 									{
 										printf( 
-											'<div class="col-md-6">
+											'<div class="col-lg-6 col-md-5">
 												<div class="banner__media">
 													<img src="%s" class="img-fluid" alt="%s">
 												</div>

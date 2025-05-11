@@ -1188,6 +1188,21 @@ HOME STYLES
 
 	&__text {
 		max-width: 540px;
+
+		.title {
+
+			span {
+				color: $blue;
+				display: block;
+			}
+
+			br {
+
+				@media only screen and (max-width: 767px) {
+					display: none;
+				}
+			}
+		}
 	    
 	    .description {
 			color: $black;

@@ -1675,6 +1675,15 @@ HOME STYLES
 .banner__text {
   max-width: 540px;
 }
+.banner__text .title span {
+  color: #7F54B3;
+  display: block;
+}
+@media only screen and (max-width: 767px) {
+  .banner__text .title br {
+    display: none;
+  }
+}
 .banner__text .description {
   color: #000000;
   margin-top: 10px;
