@@ -225,6 +225,7 @@ get_header();
 										foreach ($features as $feature ) 
 										{
 											echo '<div class="qualification__item">';
+												echo '<a id="'.esc_attr( sanitize_title( $feature['title'] ) ).'" class="blankSpace"></a>';
 												echo '<div class="row align-items-center">';
 
 													if ( $feature['video'] ) 
