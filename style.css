@@ -3375,6 +3375,33 @@ DEFAULT STYLES
   color: #7F54B3;
 }
 
+.error404 .error-404 .error-header {
+  width: 100%;
+  margin-top: 0;
+  max-width: 680px;
+  padding: 0 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  min-height: inherit;
+  background: transparent;
+  border-bottom: 1px dashed #000000;
+}
+.error404 .error-404 .error-header:after, .error404 .error-404 .error-header:before {
+  content: none;
+}
+.error404 .error-404 .error-header .hero {
+  margin: 0;
+  line-height: 1;
+  font-size: clamp(7rem, 7.55vw, 15rem);
+}
+.error404 .error-404 .error-content p {
+  margin: 0;
+}
+.error404 .error-404 .error-content .btn, .error404 .error-404 .error-content .entry-comments .comment-form .form-submit .submit, .entry-comments .comment-form .form-submit .error404 .error-404 .error-content .submit, .error404 .error-404 .error-content .comment-respond .comment-form .form-submit .submit, .comment-respond .comment-form .form-submit .error404 .error-404 .error-content .submit {
+  margin-top: 30px;
+}
+
 .mfp-move-from-top {
   -webkit-transition: initial;
   transition: initial;
