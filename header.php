@@ -79,7 +79,7 @@
                                 'theme_location'     => 'menu-1',
                                 'menu'               => 'Primary Menu Mobile',
                                 'menu_id'            => 'primary-menu-mobile',
-                                'menu_class'         => 'nav navbar-nav navbar-mobile',
+                                'menu_class'         => 'nav navbar-nav navbar-mobile sscroll',
                                 'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
                                 'walker'             => new wp_bootstrap_navwalker(),
                             ));
@@ -160,7 +160,7 @@
                                 'theme_location'     => 'menu-1',
                                 'menu'               => 'Primary Menu',
                                 'menu_id'            => 'primary-menu',
-                                'menu_class'         => 'nav navbar-nav',
+                                'menu_class'         => 'nav navbar-nav sscroll',
                                 'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
                                 'walker'             => new wp_bootstrap_navwalker(),
                             ));
