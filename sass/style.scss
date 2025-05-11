@@ -547,7 +547,7 @@ HEADER STYLES
 						}
 					}
 
-					&.current-menu-ancestor, &.active, &:hover, &:focus {
+					&:hover, &:focus {
 
 						> a {
 							color: $yellow;
@@ -581,7 +581,7 @@ HEADER STYLES
 								@include transition(all 0.5s ease);
 							}
 
-							&.current-menu-ancestor, &.active, &:hover, &:focus {
+							&:hover, &:focus {
 
 								> a {
 									background: $white;
@@ -716,7 +716,7 @@ HEADER STYLES
 							@include transition(all 0.5s ease);
 						}
 
-						&.current-menu-ancestor, &.active, &:hover, &:focus {
+						&:hover, &:focus {
 
 							> a {
 								background: $blue;
@@ -1100,7 +1100,7 @@ HEADER STYLES
 						}
 					}
 
-					&.current-menu-item, &.current-menu-paren, &:hover, &:focus {
+					&:hover, &:focus {
 
 						> a {
 							color: $blue;

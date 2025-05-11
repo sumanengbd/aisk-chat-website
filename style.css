@@ -1130,7 +1130,7 @@ HEADER STYLES
 .header .navbar .navbar-collapse .navbar-nav > li:not(.megamenu).show .dropdown-menu, .header .navbar .navbar-collapse .navbar-nav > li:not(.megamenu):hover .dropdown-menu, .header .navbar .navbar-collapse .navbar-nav > li:not(.megamenu):focus .dropdown-menu {
   top: calc(150% + 17px) !important;
 }
-.header .navbar .navbar-collapse .navbar-nav > li.current-menu-ancestor > a, .header .navbar .navbar-collapse .navbar-nav > li.active > a, .header .navbar .navbar-collapse .navbar-nav > li:hover > a, .header .navbar .navbar-collapse .navbar-nav > li:focus > a {
+.header .navbar .navbar-collapse .navbar-nav > li:hover > a, .header .navbar .navbar-collapse .navbar-nav > li:focus > a {
   color: #ffba08;
 }
 .header .navbar .navbar-collapse .navbar-nav.navbar-nav-right {
@@ -1157,7 +1157,7 @@ HEADER STYLES
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.header .navbar .navbar-collapse .navbar-nav.navbar-nav-right > li.menu-btn.current-menu-ancestor > a, .header .navbar .navbar-collapse .navbar-nav.navbar-nav-right > li.menu-btn.active > a, .header .navbar .navbar-collapse .navbar-nav.navbar-nav-right > li.menu-btn:hover > a, .header .navbar .navbar-collapse .navbar-nav.navbar-nav-right > li.menu-btn:focus > a {
+.header .navbar .navbar-collapse .navbar-nav.navbar-nav-right > li.menu-btn:hover > a, .header .navbar .navbar-collapse .navbar-nav.navbar-nav-right > li.menu-btn:focus > a {
   background: #FFFFFF;
   color: #000000 !important;
 }
@@ -1277,7 +1277,7 @@ HEADER STYLES
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.sidr .sidr-inner .navigation .navbar-nav > li.menu-btn.current-menu-ancestor > a, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn.active > a, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn:hover > a, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn:focus > a {
+.sidr .sidr-inner .navigation .navbar-nav > li.menu-btn:hover > a, .sidr .sidr-inner .navigation .navbar-nav > li.menu-btn:focus > a {
   background: #7F54B3;
   color: #FFFFFF !important;
 }
@@ -1621,7 +1621,7 @@ HEADER STYLES
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.sidr .sidr-inner .navigation .navbar-nav > li.current-menu-item > a, .sidr .sidr-inner .navigation .navbar-nav > li.current-menu-paren > a, .sidr .sidr-inner .navigation .navbar-nav > li:hover > a, .sidr .sidr-inner .navigation .navbar-nav > li:focus > a {
+.sidr .sidr-inner .navigation .navbar-nav > li:hover > a, .sidr .sidr-inner .navigation .navbar-nav > li:focus > a {
   color: #7F54B3;
 }
 
