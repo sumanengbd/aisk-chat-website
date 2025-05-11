@@ -10,8 +10,8 @@ BASE STYLES
 ***********************************/
 @font-face {
   font-family: "aisk-chat";
-  src: url("fonts/aisk-chat.eot?43170127");
-  src: url("fonts/aisk-chat.eot?43170127#iefix") format("embedded-opentype"), url("fonts/aisk-chat.woff2?43170127") format("woff2"), url("fonts/aisk-chat.woff?43170127") format("woff"), url("fonts/aisk-chat.ttf?43170127") format("truetype"), url("fonts/aisk-chat.svg?43170127#aisk-chat") format("svg");
+  src: url("fonts/aisk-chat.eot?73028982");
+  src: url("fonts/aisk-chat.eot?73028982#iefix") format("embedded-opentype"), url("fonts/aisk-chat.woff2?73028982") format("woff2"), url("fonts/aisk-chat.woff?73028982") format("woff"), url("fonts/aisk-chat.ttf?73028982") format("truetype"), url("fonts/aisk-chat.svg?73028982#aisk-chat") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -39,6 +39,10 @@ BASE STYLES
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ai:before {
+  content: "\e83a";
+}
+
 .icon-arrow-down:before {
   content: "\e810";
 }
@@ -53,6 +57,14 @@ BASE STYLES
 
 .icon-arrow-up:before {
   content: "\e813";
+}
+
+.icon-bag:before {
+  content: "\e821";
+}
+
+.icon-basket:before {
+  content: "\e822";
 }
 
 .icon-blog:before {
@@ -127,6 +139,10 @@ BASE STYLES
   content: "\e80a";
 }
 
+.icon-order:before {
+  content: "\e839";
+}
+
 .icon-pause:before {
   content: "\e816";
 }
@@ -141,6 +157,10 @@ BASE STYLES
 
 .icon-plus:before {
   content: "\e80c";
+}
+
+.icon-question:before {
+  content: "\f29c";
 }
 
 .icon-quote-left:before {
