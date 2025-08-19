@@ -47,6 +47,10 @@ function aisk_enqueue_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('plugins', get_template_directory_uri() . '/js/plugins.js', array(), date("ymd-Gis", filemtime( get_template_directory() . '/js/plugins.js' )), true);
 	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array(), date("ymd-Gis", filemtime( get_template_directory() . '/js/scripts.js' )), true);
+
+	if (is_single() && comments_open()) {
+        wp_enqueue_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js');
+    }
 }
 add_action( 'wp_enqueue_scripts', 'aisk_enqueue_scripts' );
 
@@ -63,6 +67,33 @@ function aisk_admin_scripts() {
 	wp_enqueue_script('sadmin', get_template_directory_uri() . '/js/admin.min.js');
 }
 add_action( 'admin_enqueue_scripts', 'aisk_admin_scripts' );
+
+function aisk_recaptcha_in_comment_form() {
+    echo '<div class="g-recaptcha" data-sitekey="6LdZu6srAAAAAAlky6uUu1MM_ejfW0OFljidmxgD"></div>';
+}
+add_action('comment_form_after_fields', 'aisk_recaptcha_in_comment_form');
+add_action('comment_form_logged_in_after', 'aisk_recaptcha_in_comment_form');
+
+function verify_recaptcha_comment($commentdata) {
+    if (is_user_logged_in()) return $commentdata;
+
+    if (isset($_POST['g-recaptcha-response'])) {
+        $response = wp_remote_get(
+            "https://www.google.com/recaptcha/api/siteverify?secret=6LdZu6srAAAAAJR5C_0GpSZeuAP2zYUgbbIY6Krl&response=" . $_POST['g-recaptcha-response']
+        );
+
+        $response = json_decode(wp_remote_retrieve_body($response), true);
+
+        if (empty($response['success'])) {
+            wp_die(__('reCAPTCHA verification failed. Please go back and try again.'));
+        }
+    } else {
+        wp_die(__('Please complete the reCAPTCHA to submit your comment.'));
+    }
+    return $commentdata;
+}
+add_filter('preprocess_comment', 'verify_recaptcha_comment');
+
 
 /** Options Page Header Background */
 function aisk_admin_dashboard_css() {
