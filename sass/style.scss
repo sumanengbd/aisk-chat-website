@@ -2359,9 +2359,17 @@ BLOG PAGE STYLES
 	}
 
 	.comment-form {
+		display: grid;
+		inline-size: 100%;
+		grid-row-gap: 16px;
+		grid-column-gap: 16px;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(auto-fill,auto);
 
 		p {
-			margin-bottom: 10px;
+			margin-bottom: 0;
+			min-inline-size: 0;
+			grid-column: 1 / -1;
 
 			a {
 				color: $blue;
@@ -2376,6 +2384,27 @@ BLOG PAGE STYLES
 			&:last-child {
 				margin-bottom: 0;
 			}
+
+			&.comment-form-cookies-consent {
+				gap: 10px;
+				display: flex;
+				align-items: baseline;
+			}
+
+			&.comment-form-email, &.comment-form-url {
+				grid-column: span 6;
+				
+				@media only screen and (max-width: 480px) {
+					grid-column: span 12;
+				}
+			}
+		}
+
+		.g-recaptcha {
+			margin-top: -10px;
+			margin-bottom: -10px;
+			transform: scale(0.7);
+			transform-origin: left center;
 		}
 
 		.form-submit {

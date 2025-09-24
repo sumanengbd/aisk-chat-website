@@ -2768,8 +2768,20 @@ BLOG PAGE STYLES
 .entry-comments .commentlist li .comment-body .reply .comment-reply-link:hover, .comment-respond .commentlist li .comment-body .reply .comment-reply-link:hover {
   color: #664193;
 }
+.entry-comments .comment-form, .comment-respond .comment-form {
+  display: -ms-grid;
+  display: grid;
+  inline-size: 100%;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  -ms-grid-columns: 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(auto-fill, auto);
+}
 .entry-comments .comment-form p, .comment-respond .comment-form p {
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  min-inline-size: 0;
+  grid-column: 1/-1;
 }
 .entry-comments .comment-form p a, .comment-respond .comment-form p a {
   color: #7F54B3;
@@ -2782,6 +2794,33 @@ BLOG PAGE STYLES
 }
 .entry-comments .comment-form p:last-child, .comment-respond .comment-form p:last-child {
   margin-bottom: 0;
+}
+.entry-comments .comment-form p.comment-form-cookies-consent, .comment-respond .comment-form p.comment-form-cookies-consent {
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+.entry-comments .comment-form p.comment-form-email, .entry-comments .comment-form p.comment-form-url, .comment-respond .comment-form p.comment-form-email, .comment-respond .comment-form p.comment-form-url {
+  -ms-grid-column-span: 6;
+  grid-column: span 6;
+}
+@media only screen and (max-width: 480px) {
+  .entry-comments .comment-form p.comment-form-email, .entry-comments .comment-form p.comment-form-url, .comment-respond .comment-form p.comment-form-email, .comment-respond .comment-form p.comment-form-url {
+    -ms-grid-column-span: 12;
+    grid-column: span 12;
+  }
+}
+.entry-comments .comment-form .g-recaptcha, .comment-respond .comment-form .g-recaptcha {
+  margin-top: -10px;
+  margin-bottom: -10px;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
 }
 .comment-respond {
   border-color: #7F54B3;
@@ -3412,8 +3451,7 @@ DEFAULT STYLES
 .mfp-move-from-top.mfp-bg {
   opacity: 1 !important;
   background: transparent;
-  -webkit-backdrop-filter: blur(10px) brightness(150%) opacity(115%);
-          backdrop-filter: blur(10px) brightness(150%) opacity(115%);
+  backdrop-filter: blur(10px) brightness(150%) opacity(115%);
   --webkit-backdrop-filter: blur(10px) brightness(150%) opacity(115%);
   background-color: rgba(255, 255, 255, 0.3);
 }

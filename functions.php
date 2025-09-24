@@ -47,6 +47,10 @@ function aisk_enqueue_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('plugins', get_template_directory_uri() . '/js/plugins.js', array(), date("ymd-Gis", filemtime( get_template_directory() . '/js/plugins.js' )), true);
 	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array(), date("ymd-Gis", filemtime( get_template_directory() . '/js/scripts.js' )), true);
+
+	if ( is_singular() && comments_open() ) {
+		wp_enqueue_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), null, true);
+    }
 }
 add_action( 'wp_enqueue_scripts', 'aisk_enqueue_scripts' );
 
@@ -63,6 +67,52 @@ function aisk_admin_scripts() {
 	wp_enqueue_script('sadmin', get_template_directory_uri() . '/js/admin.min.js');
 }
 add_action( 'admin_enqueue_scripts', 'aisk_admin_scripts' );
+
+function aisk_render_recaptcha_comment_field() {
+	echo '<p class="g-recaptcha" data-sitekey="6LcjAdQrAAAAACRs4dJqsPHSIHTbxnyEXrG8l_yb"></p>';
+}
+
+function aisk_recaptcha_before_submit( $submit_field, $args ) {
+	$recaptcha_markup = '<p class="g-recaptcha" data-sitekey="6LcjAdQrAAAAACRs4dJqsPHSIHTbxnyEXrG8l_yb"></p>';
+	return $recaptcha_markup . $submit_field;
+}
+add_filter('comment_form_submit_field', 'aisk_recaptcha_before_submit', 10, 2);
+
+function aisk_verify_recaptcha_on_comment( $commentdata ) {
+	$recaptcha_response = isset($_POST['g-recaptcha-response']) ? sanitize_text_field($_POST['g-recaptcha-response']) : '';
+
+	if ( empty($recaptcha_response) ) {
+		wp_die( __('reCAPTCHA verification failed. Please try again.', 'aisk') );
+	}
+
+	$secret = defined('RECAPTCHA_SECRET_KEY') ? RECAPTCHA_SECRET_KEY : '';
+	if ( empty($secret) ) {
+		wp_die( __('reCAPTCHA secret key not configured. Define RECAPTCHA_SECRET_KEY in wp-config.php.', 'aisk') );
+	}
+
+	$response = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', array(
+		'body' => array(
+			'secret'   => $secret,
+			'response' => $recaptcha_response,
+			'remoteip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '',
+		),
+	) );
+
+	if ( is_wp_error( $response ) ) {
+		wp_die( __('Unable to contact reCAPTCHA. Please try again later.', 'aisk') );
+	}
+
+	$body   = wp_remote_retrieve_body( $response );
+	$result = json_decode( $body, true );
+
+	if ( empty($result['success']) ) {
+		wp_die( __('reCAPTCHA verification failed. Please try again.', 'aisk') );
+	}
+
+	return $commentdata;
+}
+add_filter( 'preprocess_comment', 'aisk_verify_recaptcha_on_comment' );
+
 
 /** Options Page Header Background */
 function aisk_admin_dashboard_css() {

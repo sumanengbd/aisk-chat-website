@@ -181,7 +181,7 @@
             </div>
         </header>
         <?php
-            if ( !isset( $args['gutter_disable'] ) && !$args['gutter_disable'] ) 
+            if ( ! isset( $args['gutter_disable'] ) || ! $args['gutter_disable'] ) 
             {
                 echo '<div class="header-gutter"></div>';
             }
