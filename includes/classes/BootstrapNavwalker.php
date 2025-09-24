@@ -98,6 +98,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @param object $args
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+		$mm_icon = '';
 		$description = '';
 
 		$enable_mega_menu = get_field( 'enable_mega_menu', $item );
